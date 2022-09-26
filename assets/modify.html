@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html debug="ture" lang="zh_tw">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="Patty Hsu">
+      <meta name="copyright" content="">
+      <title>｜FDC</title>
+      <meta property="og:title" content="" />
+      <meta property="og:name" content="" />
+      <meta property="og:type" content="" >
+      <meta property="og:image" content="" />
+      <meta property="og:url" content=""/>
+      <meta property="og:description" content="" />
+      <link rel="canonical" href=""/>
+      <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript">var console = { log: function() {} };</script>
+      <![endif]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=10" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
+      <script src="js/jquery-1.9.1.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
+      <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
+      <script src="js/slick.min.js"></script>
+      <script type="text/javascript" src="js/tinynav.min.js"></script>
+      <script src="js/init.js"></script>
+      <script>
+         $(function () {
+           $('.product_sidebar_list').tinyNav({
+             header: '☰ MENU 選單項目' // Writing any title with this option triggers the header
+           });
+           $('#main_navbar').bootnavbar();
+         });
+      </script>
+   </head>
+   <body>
+       <!-- HEADER -->
+      <header>
+         <!--NAV-->
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <div id="logo">
+               <a href="index.html">
+                  <h1>FD</h1>
+               </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <form class="search_form" action="">
+                        <div class="vessel">
+                           <label>搜尋</label>
+                           <input type="text" name="" placeholder="搜尋">
+                           <input type="submit" value="">
+                        </div>
+                     </form>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>繁體中文</span> <i class="bi bi-chevron-down"></i></a>
+                     <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <div class="dropdown-item active"><a href="javascript:;"">繁體中文 <i class="bi bi-check2"></i></a></div>
+                        <div class="dropdown-item"><a href="javascript:;">簡體中文</a></div>
+                        <div class="dropdown-item"><a href="javascript:;">English</a></div>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="pay.html">快速付款</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="signin.html">登入/註冊</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-item"><a href="index.html"">首頁</a></div>
+                        <div class="dropdown-item"><a href="intro.html">品牌簡介</a></div>
+                        <div class="dropdown-item"><a href="intro.html">四大服務類別</a></div>
+                        <div class="dropdown-item"><a href="customize.html">企業客製</a></div>
+                        <div class="dropdown-item"><a href="javascript:;">熱門推薦</a></div>
+                        <div class="dropdown-item"><a href="blog.html">部落格</a></div>
+                        <div class="dropdown-item"><a href="activity.html">活動頁</a></div>
+                        <div class="dropdown-divider"></div>
+                        <!-- 未登入才顯示 -->
+                        <!-- <div class="dropdown-item l5"><a href="javascript:;">會員註冊</a></div> -->
+                        <!-- 登入才顯示 -->
+                        <div class="dropdown-item l6"><a href="index_un.html">登出</a></div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+         <!--END NAV-->
+      </header>
+      <!--END HEADER-->
+      <div id="wrapper">
+         <!-- 修改密碼 -->
+         <section class="signin">
+            <div class="content">
+               <ul class="info">
+                  <li class="info_logo"><img src="images/logo_small.svg" alt=""></li>
+                  <li class="info_title">忘記密碼</li>
+                  <li class="row info_list mt-5">
+                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_input">
+                        <input type="password" name="" placeholder="輸入舊密碼">
+                     </div>
+                  </li>
+                  <li class="row info_list">
+                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_input">
+                        <input type="password" name="" placeholder="輸入新密碼">
+                     </div>
+                  </li>
+                  <li class="row info_list">
+                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_input">
+                        <input type="password" name="" placeholder="再次輸入新密碼">
+                     </div>
+                  </li>
+                  <li class="row info_list">
+                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_error">
+                        資料錯誤
+                     </div>
+                  </li>
+                  <li class="row info_list">
+                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_btn">
+                        <div class="btn btn_black"><a href="javascripr:;">修改</a></div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <!--END 忘記密碼-->
+      </div>
+      <!--END WRAPPER-->
+      <!-- FOOTER -->
+      <footer>
+         <div id="footer">
+            <ul class="row content">
+               <li class="col-lg col-md-12">
+                  <ul class="footer_info">
+                     <li class="mb-3"><img src="images/logo.svg" alt=""></li>
+                     <li>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</li>
+                     <li>© 2021 FineDayClub All Rights Reserved</li>
+                  </ul>
+               </li>
+               <li class="col-md-auto">
+                  <ul class="footer_nav">
+                     <li><a href="privacy.html">隱私權政策</a></li>
+                     <li><a href="TermsAndConditions.html">使用者條款</a></li>
+                     <li><a href="javascripr:;">常見問題</a></li>
+                     <li><a href="javascript:;" data-toggle="modal" data-target="#contact">聯絡我們</a></li>
+                  </ul>
+               </li>
+               <li class="col-lg-auto col-md">
+                  <ul class="footer_sns">
+                     <li><a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a></li>
+                     <li><a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a></li>
+                     <li><a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a></li>
+                     <li><a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <div id="btn_top">
+            <a href="javascript:;" data-toggle="modal" data-target="#contact"><img src="images/icons/contact.svg" alt="">
+            </a>
+         </div>
+      </footer>
+      <!-- Modal contact -->
+      <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog modal-dialog-s" role="document">
+            <div class="modal-content">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="images/close.png" alt=""></span></button>
+               <div class="modal-body">
+                  <ul class="info">
+                     <li class="info_title">聯絡我們</li>
+                     <li class="row info_list">
+                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
+                           <p>常用姓名</p>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name="" placeholder=""></div>
+                     </li>
+                     <li class="row info_list">
+                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
+                           <p>電子郵件</p>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name="" placeholder=""></div>
+                     </li>
+                     <li class="row info_list">
+                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
+                           <p>聯絡電話</p>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name="" placeholder=""></div>
+                     </li>
+                     <li class="row info_list">
+                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
+                           <p>詢問訊息</p>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><textarea id="w3review" name="w3review" rows="4" cols="50"></textarea></div>
+                     </li>
+                     <li class="row mt-1 info_list">
+                        <li class="row info_list_btn justify-content-end">
+                           <div class="col-lg-2 col-md-2 col-12 m-0 bootstrap_default btn btn_black"><a href="javascripr:;">送出</a></div>
+                        </li>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--END FOOTER-->
+   </body>
+</html>

@@ -1,0 +1,35 @@
+* {
+  outline-color: opacify($fdc-c-primary, 0.2);
+}
+
+html {
+  font-size: 10px; // 讓 1rem = 10 px
+}
+
+body {
+  letter-spacing: $fdc-letter-spacing-base;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $fdc-gray-900;
+  font-size: $font-size-base;
+  background-color: $fdc-c-white;
+}
+
+a {
+  font-weight: $fdc-font-weight-middle;
+}
+
+ul,
+ol {
+  padding-left:  2rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $fdc-font-family-title !important;
+  font-weight: normal;
+  letter-spacing: 0.8px;
+}
+
+p {
+  line-height: 1.7;
+}

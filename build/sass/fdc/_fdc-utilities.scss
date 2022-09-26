@@ -1,0 +1,90 @@
+$fdc-text-gray-colors: ();
+$fdc-text-gray-colors: map-merge(
+  (
+    "dark":             $fdc-text-dark,
+    "gray":             $fdc-text-gray,
+    "gray-light":       $fdc-text-gray-light,
+    "gray-lighter":     $fdc-text-gray-lighter,
+  ),
+  $fdc-text-gray-colors
+);
+
+$fdc-text-sizes: ();
+$fdc-text-sizes: map-merge(
+  (
+    "base":             $font-size-base,
+    "xl":               $font-size-xl,
+    "lg":               $font-size-lg,
+    "sm":               $font-size-sm,
+    "xs":               $font-size-xs,
+  ),
+  $fdc-text-sizes
+);
+
+
+@each $color, $value in $fdc-text-gray-colors {
+  .fdc-text-#{$color} {
+    color: $value !important;
+  }
+}
+
+@each $size, $value in $fdc-text-sizes {
+  .fdc-text-#{$size} {
+    font-size: $value !important;
+  }
+}
+
+.fdc-section-title {
+  position: relative;
+  margin-bottom: 40px;
+
+  &__deco {
+    position: absolute;
+    left:-60px;
+    top: -72px;
+    width: 100%;
+    font-family: $fdc-font-family-title;
+    font-size: 100px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: $fdc-gray-900;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+  }
+
+  &.text-center &__deco {
+    left: 0;
+  }
+}
+
+.fdc-bg--texture {
+  background-image: url(../images/texture_001.png);
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.fdc-section-deco {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    border: 1px solid $fdc-c-secondary-light;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 8px;
+    right: 8px;
+  }
+
+  &::after {
+    left: 17px;
+    right: 17px;
+  }
+}

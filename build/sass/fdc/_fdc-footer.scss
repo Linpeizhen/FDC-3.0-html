@@ -1,0 +1,38 @@
+.fdc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  padding: $fdc-space-sm $fdc-space-base;
+  border-top: 1px solid $border-color;
+  background-color: $fdc-c-white;
+
+  .fdc-lang-switcher {
+    a.active {
+      color: $fdc-text-gray;
+      text-decoration: none;
+      pointer-events: none;
+      font-weight: $font-weight-base;
+    }
+
+    span {
+      padding: 0 .8rem;
+    }
+  }
+
+  .fdc-copyright {
+    color: $fdc-text-gray;
+    font-size: $font-size-sm;
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    padding: $fdc-space-sm;
+    text-align: center;
+
+    .fdc-lang-switcher {
+      margin-bottom: 1.6rem;
+    }
+  }
+}

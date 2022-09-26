@@ -1,0 +1,32 @@
+.modal-dialog {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.modal-content {
+  box-shadow: $fdc-box-shadow-base;
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  background-color: $fdc-c-white;
+  z-index: 3;
+
+  button.close {
+    outline-color: opacify($fdc-c-primary, 0.2);
+    line-height: 1.2;
+  }
+}
+
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #f6f6f6;
+  padding: 1.6rem ($modal-inner-padding - $modal-footer-margin-between / 2);
+  z-index: 9;
+
+  > * {
+    margin: 0 $modal-footer-margin-between / 2;
+  }
+}

@@ -1,0 +1,13 @@
+.fdc-logo {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+
+  img {
+    height: 46px;
+
+    @include media-breakpoint-down(md) {
+      height: 36px;
+    }
+  }
+}

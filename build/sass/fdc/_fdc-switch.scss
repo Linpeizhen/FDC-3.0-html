@@ -1,0 +1,71 @@
+.fdc-switch {
+  &-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 0;
+  }
+
+  &-input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-toggle {
+    position: relative;
+    width: 64px;
+    height: 38px;
+    border-radius: 38px;
+    border: 1px solid $fdc-border-color-base;
+    background-color: $fdc-c-neutral;
+    transition: $transition-base;
+    cursor: pointer;
+
+    $switch-toggle-padding: 4px;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: $switch-toggle-padding;
+      left: $switch-toggle-padding;
+      width: calc(100% / 1.7 - #{$switch-toggle-padding} * 2);
+      height: calc(100% - #{$switch-toggle-padding} * 2);
+      border-radius: 38px;
+      background-color: $fdc-c-white;
+      box-shadow: $box-shadow-sm;
+      transition: $transition-base;
+    }
+
+    .fdc-switch-input:checked ~ & {
+      background-color: $fdc-c-primary;
+
+      &::after {
+        left: calc(100% - #{$switch-toggle-padding} - 100% / 1.7 + #{$switch-toggle-padding} * 2);
+      }
+    }
+
+    .fdc-switch-input:disabled ~ & {
+      opacity: .4;
+      cursor: default;
+
+      &::after {
+        background-color: $fdc-c-neutral-lighter;
+      }
+    }
+  }
+
+  &-text {
+    margin-left: .8rem;
+    cursor: pointer;
+
+    &:empty {
+      display: none;
+    }
+
+    .fdc-switch-input:disabled ~ & {
+      color: #aaa;
+      cursor: default;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.fdc-avatar {
+  @include circle(40px);
+  @extend %bg-img;
+  border: 1px solid $fdc-c-neutral;
+  flex-shrink: 0;
+
+  &.self {
+    border-color: $fdc-c-primary;
+  }
+
+  .text {
+    font-size: $font-size-lg;
+    color: $fdc-c-white;
+    font-weight: bold;
+  }
+
+  &-xl  {
+    @include circle(80px);
+  }
+}

@@ -1,0 +1,17 @@
+// Circle
+@mixin circle($px){
+	width:$px;
+	height:$px;
+	border-radius:$px;
+	line-height:$px;
+	text-align:center;
+}
+
+// Line awesome font setting
+@mixin line-awesome($color: $fdc-text-gray, $size: $font-size-base) {
+	font-family: 'Line Awesome Free';
+	font-weight: 900;
+	line-height: 1;
+	color: $color;
+	font-size: $size;
+}

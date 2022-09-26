@@ -1,0 +1,18 @@
+.dropdown-menu {
+  border: 1px solid $fdc-c-primary;
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:last-child {
+    border: 0;
+  }
+
+  &.active i {
+    margin-left: $fdc-space-xs;
+    font-size: $font-size-lg;
+  }
+}

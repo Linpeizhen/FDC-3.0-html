@@ -1,0 +1,99 @@
+// Custom button style
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 0.16px;
+
+  + .btn {
+    margin-left: .4rem;
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: default;
+  }
+
+  > i,
+  > span {
+    vertical-align: middle;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+
+    &:not(:disabled):not(.disabled):not(:focus) {
+      box-shadow: $btn-box-shadow;
+
+      &:hover {
+        background-color: lighten($value, 5%);
+        border-color:  lighten($value, 5%);
+        box-shadow: $btn-hover-box-shadow;
+      }
+    }
+
+    i:first-child {
+      margin-right: 4px;
+    }
+
+    i:last-child {
+      margin-left: 4px;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    &:not(.disabled):not(:focus) {
+      background: $fdc-c-white;
+    }
+
+    &:not(.disabled):hover {
+      color: $value;
+      background: mix($fdc-c-white, $value, 88%);
+    }
+  }
+}
+
+.btn-white {
+  color: lighten($fdc-text-dark, 8%);
+
+  &.disabled,
+  &:disabled {
+    background-color: $fdc-c-white;
+    border: 1px solid $fdc-c-neutral;
+    color: lighten($fdc-text-dark, 50%);
+  }
+}
+
+.btn-link {
+  color: $fdc-c-primary;
+  font-weight: $fdc-font-weight-middle;
+
+  &:not(:disabled):not(.disabled) {
+    @include hover-focus {
+      background-color: $fdc-c-neutral-light;
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: $fdc-c-neutral;
+    }
+  }
+}
+
+.btn-icon-only {
+  padding: 1rem;
+  line-height: 1;
+
+  &.btn-link{
+    border-radius: 50%;
+  }
+
+  i {
+    width: $font-size-xl;
+    height: $font-size-xl;
+    margin: 0 !important;
+    font-size: $font-size-xl;
+  }
+}

@@ -1,0 +1,329 @@
+// Custom Variables
+// 自訂的變數使用 "fdc" 作為前綴
+
+// Color Options
+$fdc-c-primary:       #2B414B;
+$fdc-c-primary-dark:  #152D37;
+$fdc-c-primary-light: #5F7681;
+$fdc-c-secondary:     #735340;
+$fdc-c-secondary-dark:#503729;
+$fdc-c-secondary-light:#A48573;
+$fdc-c-success:       #687839;
+$fdc-c-warning:       #D6933A;
+$fdc-c-danger:        #A43E3A;
+$fdc-c-info:          #62879D;
+$fdc-c-light:         #666666;
+$fdc-c-blue:          #285B88;
+$fdc-c-gradient:      linear-gradient(135deg,$fdc-c-primary,$fdc-c-primary-light);
+
+$fdc-c-neutral:            #EAE3D1;
+$fdc-c-neutral-light:      #F4F0E7;
+$fdc-c-neutral-lighter:    #FAF8F5;
+
+$fdc-c-white:				#FFFFFF;
+$fdc-c-black: #000000;
+$fdc-gray-100: rgba($fdc-c-black, 0.04);
+$fdc-gray-200: rgba($fdc-c-black, 0.08);
+$fdc-gray-300: rgba($fdc-c-black, 0.12);
+$fdc-gray-400: rgba($fdc-c-black, 0.16);
+$fdc-gray-500: rgba($fdc-c-black, 0.24);
+$fdc-gray-600: rgba($fdc-c-black, 0.44);
+$fdc-gray-700: rgba($fdc-c-black, 0.52);
+$fdc-gray-800: rgba($fdc-c-black, 0.68);
+$fdc-gray-900: rgba($fdc-c-black, 0.80);
+
+// Color Decisions
+$fdc-border-color-dark:  $fdc-gray-400;
+$fdc-border-color-base:  $fdc-gray-300;
+$fdc-border-color-light: $fdc-gray-200;
+
+$fdc-text-dark:          $fdc-gray-900;
+$fdc-text-gray:					$fdc-gray-800;
+$fdc-text-gray-light:		$fdc-gray-700;
+$fdc-text-gray-lighter:  $fdc-gray-600;
+$fdc-text-link:          $fdc-c-primary;
+
+// Typography
+$fdc-font-family-title:         "creamfont";
+$fdc-font-weight-middle:    500;
+$fdc-letter-spacing-base:   0.5px;
+
+// Spacing
+$fdc-space-2xl:       4rem;
+$fdc-space-xl:        3.2rem;
+$fdc-space-lg:        2.4rem;
+$fdc-space-base:      1.6rem;
+$fdc-space-sm:        1.2rem;
+$fdc-space-xs:        .8rem;
+$fdc-space-2xs:        .4rem;
+
+// Others
+$fdc-box-shadow-sm:        0 1px 4px rgba(0, 0, 0, .16);
+$fdc-box-shadow-sm-hover:  0 2px 8px rgba(0, 0, 0, .24);
+$fdc-box-shadow-base:      0 2px 16px rgba(0, 0, 0, 0.16);
+$fdc-box-shadow-lg:        0 2px 20px rgba(0, 0, 0, .08);
+$fdc-box-shadow-lg-hover:  0 4px 28px rgba(0, 0, 0, .16);
+
+$fdc-selected-bg:           rgba($fdc-c-primary, .08);
+$fdc-selected-hover-bg:     rgba($fdc-c-primary, .16);
+
+// Components
+
+// Board
+$fdc-board-padding-x:       $fdc-space-base;
+$fdc-board-padding-x-sm:    $fdc-space-sm;
+
+// Header, Navs
+$fdc-nav-height:            80px; // For header and page-nav
+$fdc-nav-height-sm:         60px;
+
+// Dropdowns
+$fdc-dropdown-max-height:   30rem;
+
+// Forms
+$fdc-input-wrapper-height:    6.6rem;
+
+$fdc-input-disabled-border-color: $fdc-border-color-light;
+
+
+// ----------------------------------------------------------
+// Reset bootstrap's variables
+//
+// 覆蓋 Bootstrap 的 Default 變數
+
+// Color system
+$white:    $fdc-c-white;
+$black:    $fdc-c-black;
+$gray-100: $fdc-gray-100;
+$gray-200: $fdc-gray-200;
+$gray-300: $fdc-gray-300;
+$gray-400: $fdc-gray-400;
+$gray-500: $fdc-gray-500;
+$gray-600: $fdc-gray-600;
+$gray-700: $fdc-gray-700;
+$gray-800: $fdc-gray-800;
+$gray-900: $fdc-gray-900;
+
+$primary:       $fdc-c-primary;
+$secondary:     $fdc-c-secondary;
+$success:       $fdc-c-success;
+$warning:       $fdc-c-warning;
+$danger:        $fdc-c-danger;
+$light:         $fdc-c-light;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary":          $primary,
+    "primary-light":    $fdc-c-primary-light,
+    "primary-dark":     $fdc-c-primary-dark,
+    "secondary":        $secondary,
+    "secondary-light":  $fdc-c-primary-light,
+    "secondary-dark":   $fdc-c-primary-dark,
+    "success":          $success,
+    "warning":          $warning,
+    "danger":           $danger,
+    "light":            $light,
+    "white":            $fdc-c-white,
+    "blue":             $fdc-c-blue,
+    "neutral":          $fdc-c-neutral,
+    "neutral-light":    $fdc-c-neutral-light,
+    "neutral-lighter":  $fdc-c-neutral-lighter,
+    "selected":         $fdc-selected-bg
+  ),
+  $theme-colors
+);
+
+// Spacing
+$spacer: 1.6rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 2.5),
+    6: ($spacer * 3),
+  ),
+  $spacers
+);
+
+// Others
+$box-shadow-sm:          $fdc-box-shadow-sm;
+$box-shadow:             $fdc-box-shadow-base;
+$box-shadow-lg:          $fdc-box-shadow-lg;
+
+$border-radius:               .4rem;
+$border-radius-lg:            .6rem;
+$border-radius-sm:            .2rem;
+
+// Body
+$body-bg:         $fdc-c-neutral;
+$body-color:      $fdc-text-dark;
+
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  2xl: 1400px
+);
+
+// Container
+$container-max-widths: (
+  sm: 560px,
+  md: 750px,
+  lg: 980px,
+  xl: 1190px,
+  2xl: 1390px
+);
+
+
+// Links
+$link-color:      #285B88;
+
+// Components
+$line-height-lg:              1.7;
+$line-height-sm:              1.25;
+
+$border-color:                $fdc-border-color-base;
+
+// Typography
+$font-size-base:              1.6rem;
+$font-size-xl:                $font-size-base * 1.5;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .875;
+$font-size-xs:                $font-size-base * .75;
+
+$font-family-base:            "Loto", "Helvetica Neue", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2.25;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$headings-font-weight:        normal;
+
+$text-muted:		              $fdc-gray-600;
+
+// Buttons
+$btn-padding-x:         4.8rem;
+$btn-padding-y:         1.6rem;
+$input-btn-font-family: $fdc-font-family-title;
+$input-btn-line-height: $line-height-sm;
+
+$btn-padding-x-sm:      2.4rem;
+$btn-padding-y-sm:      .8rem;
+$btn-font-size-sm:      1.4rem;
+
+$btn-padding-x-lg:      4.8rem;
+$btn-padding-y-lg:      2rem;
+$btn-font-size-lg:      1.8rem;
+
+$btn-font-weight:       $fdc-font-weight-middle;
+$btn-box-shadow:        $fdc-box-shadow-sm;
+$btn-hover-box-shadow:  $fdc-box-shadow-sm-hover;
+$btn-disabled-opacity:  .36;
+
+$btn-border-radius:     0;
+
+// Close
+$close-font-size:                   $font-size-xl;
+$close-font-weight:                 normal;
+$close-color:                       $fdc-text-dark;
+$close-text-shadow:                 none;
+
+// Dropdown
+// Dropdown menu container and contents.
+$dropdown-min-width:         16rem;
+$dropdown-padding-y:         0;
+$dropdown-spacer:            .2rem;
+$dropdown-border-width:      0;
+$dropdown-border-radius:     0;
+$dropdown-divider-margin-y:  0;
+$dropdown-box-shadow:        $fdc-box-shadow-base;
+
+$dropdown-link-color:        $fdc-text-dark;
+$dropdown-link-hover-bg:     $fdc-c-neutral-lighter;
+
+$dropdown-link-active-color: $fdc-c-white;
+$dropdown-link-active-bg:    $fdc-c-primary;
+
+$dropdown-link-disabled-color:  $text-muted;
+
+$dropdown-item-padding-y:     $fdc-space-sm;
+$dropdown-item-padding-x:     $fdc-space-lg;
+
+// Forms
+$input-height:               4.6rem;
+$input-padding-x:            1.6rem;
+$input-padding-y:            1.2rem;
+$input-border-radius:        0;
+
+$input-color:                $fdc-text-dark;
+$input-placeholder-color:    $fdc-gray-500;
+
+$input-border-color:         $fdc-border-color-dark;
+$input-disabled-bg:          $fdc-c-neutral-lighter;
+$input-focus-border-color:   $fdc-c-primary;
+$input-focus-box-shadow:     0 0 0 .36rem rgba($fdc-c-primary, 0.2);
+
+$form-group-margin-bottom:   $fdc-space-base;
+
+$form-check-inline-margin-x:        $fdc-space-base;
+$form-check-inline-input-margin-x:  .8rem;
+
+$input-group-addon-bg:              $fdc-c-neutral-lighter;
+
+// Modals
+$modal-inner-padding:               $fdc-space-base;
+
+$modal-footer-margin-between:       1.2rem;
+
+$modal-dialog-margin:               .8rem;
+
+$modal-content-border-color:        $fdc-c-primary;
+
+$modal-backdrop-bg:                 $fdc-text-dark;
+$modal-backdrop-opacity:            .6;
+$modal-footer-border-color:         none;
+$modal-header-padding-y:            $fdc-space-sm;
+$modal-header-padding-x:            $modal-inner-padding;
+
+$modal-xl:                          1200px;
+$modal-lg:                          1000px;
+$modal-md:                          600px;
+$modal-sm:                          400px;
+
+$modal-fade-transform:              scale(0.9);
+$modal-transition:                  transform .1s;
+
+// Tooltips
+$tooltip-font-size:                 1.3rem;
+$tooltip-bg:                        $fdc-text-gray;
+$tooltip-opacity:                   1;
+$tooltip-padding-y:                 .6rem;
+$tooltip-padding-x:                 .8rem;
+$tooltip-margin:                    .2rem;
+
+$tooltip-arrow-width:               0;
+$tooltip-arrow-height:              0;
+$tooltip-arrow-color:               trasparent;
+
+// Popovers
+$popover-max-width:                 360px;
+$popover-border-width:              0;
+$popover-border-radius:             0;
+$popover-box-shadow:                $fdc-box-shadow-base;
+
+$popover-body-padding-y:            $fdc-space-base;
+$popover-body-padding-x:            $fdc-space-sm;
+
+$popover-arrow-width:               2.4rem;
+$popover-arrow-height:              1.4rem;

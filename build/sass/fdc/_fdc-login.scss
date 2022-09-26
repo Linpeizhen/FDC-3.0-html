@@ -1,0 +1,116 @@
+.bg-login{
+    background-image: linear-gradient(to bottom right,$fdc-c-primary-light, $fdc-c-primary);
+}
+
+.fdc-board-login{
+    position: relative;
+    overflow: hidden;
+    background-color: $fdc-c-white;
+    box-shadow: 1rem 1rem 1rem 0 rgba(0,0,0,0.3);
+    border-radius: 0.3rem;
+    margin: 2.4rem 0 0;
+
+    .bg-img{
+        position: relative;
+        padding-bottom: 135%;
+        @extend %bg-img;
+        background-color: $fdc-c-primary;
+    }
+
+    .fdc-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, .4));
+    }
+
+    .content-login{
+        width: 100%;
+
+        // Use image as Logo title
+        img{
+            width: 8.8rem;
+        }
+
+        // Use text as Logo title
+        h1 {
+            font-family: 'STARLUX', sans-serif;
+            font-size: 3.2rem;
+            font-weight: normal;
+            line-height: .7;
+            margin: 0;
+        }
+
+        h6{
+            font-size: 1rem;
+            color: $fdc-c-primary;
+            padding: 1.2rem 0 3rem;
+            border-bottom: 0.2rem solid $fdc-c-primary;
+            margin-bottom: 2.4rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.6rem;
+            i{
+                position: absolute;
+                left: 1.2rem;
+                top: 1.2rem;
+                font-size: 2.2rem;
+                color: $fdc-c-primary;
+            }
+            input{
+            padding: 1.2rem 1.2rem 1.2rem 4.4rem;
+            }
+        }
+
+        .btn-primary{
+            margin-top: 5.2rem;
+        }
+
+        // Error Status
+        .form-text{
+            font-size: $font-size-xs;
+
+            i{
+                font-size: 1.4rem;
+                vertical-align: middle;
+            }
+        }
+
+        .form-text + .btn-primary{
+            margin-top: 1.6rem;
+        }
+    }
+
+    .logo{
+        width: 14rem;
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+    }
+}
+
+.bg-login .fdc-copyright{
+    font-size: 1.2rem;
+    color: $fdc-c-white;
+    margin-top: 2.4rem;
+}
+
+@include media-breakpoint-down(md) {
+
+    .content-login{
+        width: 100%;
+        margin: 5rem 1.6rem 10rem;
+    }
+
+    .bg-login .fdc-copyright{
+        margin-top: 1.2rem;
+    }
+
+    .fdc-card-login .logo{
+        right: 1.6rem;
+        bottom: 1.6rem;
+    }
+}

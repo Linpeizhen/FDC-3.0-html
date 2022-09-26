@@ -1,0 +1,45 @@
+.fdc-magazine {
+  position: relative;
+
+  &__image {
+    position: relative;
+    padding-bottom: 100%;
+    @extend %bg-img;
+  }
+
+  &__deco {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    pointer-events: none;
+    pointer-events: none;
+  }
+
+  &__desc {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    &__image {
+      padding-bottom: 75%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.fdc-magazine--left .fdc-magazine_img_box .deco_img_line {
+  right: -20px;
+}
+
+.fdc-magazine--right .fdc-magazine_img_box {
+  border-width: 1px 1px 0 0;
+}
+
+.fdc-magazine--right .fdc-magazine_img_box .deco_img_line {
+  left: -20px;
+  transform: rotateY(180deg);
+  transform-origin: center;
+}

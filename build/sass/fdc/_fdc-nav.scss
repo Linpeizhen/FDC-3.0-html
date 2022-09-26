@@ -1,0 +1,29 @@
+.fdc-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  > li {
+    margin: 0 20px;
+    font-family: $fdc-font-family-title;
+  }
+
+  &__link {
+    padding: $fdc-space-base 0;
+    color: $fdc-gray-900;
+    white-space: nowrap;
+    transition: .3s ease-out;
+
+    &:hover {
+      opacity: .6;
+      text-decoration: none;
+    }
+
+    .dropdown.show & {
+      opacity: .8;
+    }
+  }
+}

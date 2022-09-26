@@ -1,0 +1,29 @@
+.fdc-pagination {
+
+  > .btn {
+    margin: 0 !important;
+    padding: .8rem;
+    vertical-align: middle;
+  }
+
+  &-text {
+    vertical-align: middle;
+    font-weight: normal;
+    text-transform: none;
+  }
+
+  .dropdown-menu {
+    min-width: 12rem;
+    width: 100%;
+  }
+
+  .fdc-board & {
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    .fdc-board-header &:not(:first-child) {
+      display: none;
+    }
+  }
+}

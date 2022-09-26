@@ -1,0 +1,60 @@
+// ------------------------------------------------
+// FDC variables
+@import "fdc/fdc-variables";
+
+// ------------------------------------------------
+// Bootstrap 4.6.2 variables, mixins and extends
+@import "vendor/bootstrap/functions";
+@import "vendor/bootstrap/variables";
+@import "vendor/bootstrap/mixins";
+
+// Bootstrap 4.6.2 Components
+@import "vendor/bootstrap/reboot";
+@import "vendor/bootstrap/grid";
+@import "vendor/bootstrap/type";
+@import "vendor/bootstrap/badge";
+@import "vendor/bootstrap/button-group";
+@import "vendor/bootstrap/buttons";
+@import "vendor/bootstrap/close";
+@import "vendor/bootstrap/dropdown";
+@import "vendor/bootstrap/images";
+@import "vendor/bootstrap/forms";
+@import "vendor/bootstrap/input-group";
+@import "vendor/bootstrap/modal";
+@import "vendor/bootstrap/tables";
+@import "vendor/bootstrap/transitions";
+@import "vendor/bootstrap/tooltip";
+@import "vendor/bootstrap/popover";
+
+@import "vendor/bootstrap/utilities";
+
+// // Bootstrap Icons 1.9.1
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+// ------------------------------------------------
+// FDC mixins and extends
+@import "fdc/fdc-mixin";
+@import "fdc/fdc-extend";
+
+// FDC  base styles
+@import "fdc/fdc-reboot";
+@import "fdc/fdc-layout";
+
+// Restyle bootstrap's components
+@import "fdc/buttons";
+@import "fdc/dropdown";
+@import "fdc/forms";
+@import "fdc/modal";
+@import "fdc/popover";
+
+// Restyle plugins
+
+
+// FDC components
+@import "fdc/fdc-footer";
+@import "fdc/fdc-header";
+@import "fdc/fdc-logo";
+@import "fdc/fdc-magazine";
+@import "fdc/fdc-nav";
+
+@import "fdc/fdc-utilities";

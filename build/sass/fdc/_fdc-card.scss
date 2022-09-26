@@ -1,0 +1,61 @@
+.fdc-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: $border-radius-lg;
+  background-color: $fdc-c-white;
+  transition: $transition-base;
+
+  &:not(.disabled) {
+    box-shadow: $fdc-box-shadow-lg;
+  }
+
+  &:not(.disabled):hover {
+    box-shadow: $fdc-box-shadow-lg-hover;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    user-select: none;
+    opacity: .64;
+
+    .stretched-link {
+      display: none;
+    }
+  }
+
+  h4 {
+    font-weight: $fdc-font-weight-middle;
+  }
+}
+
+.fdc-card-body {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.fdc-card-footer {
+  padding: 1.6rem 2rem;
+  border-top: 1px solid $fdc-border-color-base;
+}
+
+.landing-card {
+  height: 100%;
+  min-height: 300px;
+
+  .fdc-card-img > img {
+    width: 100%;
+    max-width: 20rem;
+    margin-top: 4rem;
+  }
+
+  .fdc-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fdc-card-footer {
+    margin-top: -0.4rem;
+  }
+}

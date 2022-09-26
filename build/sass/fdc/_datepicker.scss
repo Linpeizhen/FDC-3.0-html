@@ -1,0 +1,98 @@
+// Vue2 datepicker
+.mx-datepicker-main {
+  display: block;
+	color: $fdc-text-dark;
+	border-radius: 4px;
+
+	.modal-open & {
+		z-index: 1050;
+	}
+}
+
+.mx-datepicker {
+	width: 100%;
+
+	.form-inline & {
+		width: auto;
+	}
+}
+
+.mx-calendar-content .cell {
+	font-size: $font-size-sm;
+
+	&:hover {
+		color: $fdc-text-dark;
+		background-color: $fdc-c-neutral-light;
+	}
+
+	&.today {
+		color: $fdc-c-primary;
+		font-weight: 700;
+	}
+
+	&.active {
+		background-color: $fdc-c-primary;
+		color: #fff;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	&.in-range {
+		color: $fdc-text-dark;
+		background-color: $fdc-selected-bg;
+	}
+
+	&.not-current-month {
+		height: 0.1px;
+		padding: 0;
+		visibility: hidden;
+
+		> div {
+			display: none;
+		}
+
+	}
+}
+
+.mx-time-column .mx-time-item {
+	font-size: $font-size-sm;
+
+	&.active {
+		color: $fdc-c-white;
+		background-color: $fdc-c-primary;
+	}
+
+	&:hover {
+		color: $fdc-text-dark;
+		background-color: $fdc-c-neutral-light;
+	}
+}
+
+.mx-btn:hover {
+	color: $fdc-c-primary;
+}
+
+.mx-btn:focus {
+	outline: none;
+	color: $fdc-c-primary;
+}
+
+.mx-btn-text {
+  color: $fdc-text-dark;
+}
+
+[class*=mx-btn-icon-] {
+	color: $fdc-text-gray;
+}
+
+.mx-icon-calendar,
+.mx-icon-clear {
+	right: 1.2rem;
+	color: $fdc-text-gray-light;
+}
+
+.mx-icon-clear {
+	font-size: 2rem;
+}

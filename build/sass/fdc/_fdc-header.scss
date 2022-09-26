@@ -1,0 +1,145 @@
+.fdc-header {
+  $nav-link-padding-sm-y: 12px;
+
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  height: $fdc-nav-height;
+  background: $fdc-c-white;
+  border-bottom: 1px solid $fdc-border-color-light;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .fdc-nav {
+    @include media-breakpoint-down(md) {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      z-index: 9999;
+      overflow-y: auto;
+      background: url(../images/texture_001.png), $fdc-c-primary;
+
+      &.show {
+        display: flex;
+      }
+
+      > li {
+        width: 100%;
+        margin: $nav-link-padding-sm-y 0;
+        text-align: center;
+      }
+
+      &__link {
+        color: $fdc-c-white;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    border-bottom: 1px solid $fdc-gray-400;
+
+    &:focus-within {
+      border-bottom: 1px solid $fdc-gray-800;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      margin-top: 0 !important;
+      padding: $fdc-space-base;
+
+      &, &:focus-within {
+        border-bottom: 1px solid $fdc-c-white;
+      }
+
+      i {
+        color: $fdc-c-white;
+      }
+    }
+  }
+
+  &__search > .form-control {
+    font-family: $fdc-font-family-title;
+    height: 36px;
+    background: transparent;
+    border: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 44px;
+      color: $fdc-c-white;
+    }
+  }
+
+  &__open-menu {
+    display: none;
+
+    img {
+      height: 36px;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: block;
+    }
+  }
+
+  & &__close-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 44px !important;
+    height: 44px;
+    margin: 0 !important;
+    background-color: $fdc-c-neutral;
+    color: $fdc-c-primary;
+    font-size: $font-size-lg;
+    z-index: 9999;
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    height: $fdc-nav-height-sm;
+
+    .dropdown-menu-right {
+      display: block;
+      position: static;
+      width: 100%;
+      background: transparent;
+      border-width: 1px 0 0;
+      border-color: rgba(255, 255, 255, .2);
+      font-family: $fdc-font-family-title;
+
+      .dropdown-item {
+        justify-content: center;
+        margin: $nav-link-padding-sm-y 0;
+        padding: $fdc-space-xs;
+        color: $fdc-c-white;
+      }
+
+      .dropdown-divider {
+        border-color: rgba(255, 255, 255, .2);
+      }
+    }
+  }
+}

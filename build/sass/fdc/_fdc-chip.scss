@@ -1,0 +1,17 @@
+.fdc-chip-group{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fdc-chip{
+    display: flex;
+    align-items: center;
+    margin-right: .8rem;
+    margin: .4rem .8rem .4rem 0;
+    padding: .7rem 1.2rem;
+    border-radius: 99px;
+    background-color: $fdc-c-neutral;
+    border: none;
+    font-size: $font-size-sm;
+    line-height: 1;
+}
