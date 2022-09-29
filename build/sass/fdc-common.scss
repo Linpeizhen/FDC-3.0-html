@@ -28,8 +28,10 @@
 
 @import "vendor/bootstrap/utilities";
 
-// // Bootstrap Icons 1.9.1
+// // Fonts
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+TC&display=swap');
+
 
 // ------------------------------------------------
 // FDC mixins and extends
@@ -51,10 +53,18 @@
 
 
 // FDC components
+@import "fdc/fdc-blog";
+@import "fdc/fdc-blog-card";
+@import "fdc/fdc-carousel";
 @import "fdc/fdc-footer";
 @import "fdc/fdc-header";
 @import "fdc/fdc-logo";
 @import "fdc/fdc-magazine";
 @import "fdc/fdc-nav";
+@import "fdc/fdc-partner-card";
+@import "fdc/fdc-product-card";
+@import "fdc/fdc-service-card";
+@import "fdc/fdc-signin-banner";
+@import "fdc/fdc-tabs";
 
 @import "fdc/fdc-utilities";

@@ -19,7 +19,7 @@
     border-radius: 38px;
     border: 1px solid $fdc-border-color-base;
     background-color: $fdc-c-neutral;
-    transition: $transition-base;
+    transition: $transition-base;;
     cursor: pointer;
 
     $switch-toggle-padding: 4px;
@@ -34,7 +34,7 @@
       border-radius: 38px;
       background-color: $fdc-c-white;
       box-shadow: $box-shadow-sm;
-      transition: $transition-base;
+      transition: $transition-base;;
     }
 
     .fdc-switch-input:checked ~ & {

@@ -4,7 +4,7 @@
   position: relative;
   border-radius: $border-radius-lg;
   background-color: $fdc-c-white;
-  transition: $transition-base;
+  transition: $transition-base;;
 
   &:not(.disabled) {
     box-shadow: $fdc-box-shadow-lg;

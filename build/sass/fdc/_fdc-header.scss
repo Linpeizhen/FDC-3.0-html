@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 99;
-  height: $fdc-nav-height;
+  height: $fdc-header-height;
   background: $fdc-c-white;
   border-bottom: 1px solid $fdc-border-color-light;
 
@@ -119,7 +119,7 @@
   }
 
   @include media-breakpoint-down(md) {
-    height: $fdc-nav-height-sm;
+    height: $fdc-header-height-sm;
 
     .dropdown-menu-right {
       display: block;

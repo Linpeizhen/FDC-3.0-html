@@ -67,6 +67,8 @@ $fdc-box-shadow-lg-hover:  0 4px 28px rgba(0, 0, 0, .16);
 $fdc-selected-bg:           rgba($fdc-c-primary, .08);
 $fdc-selected-hover-bg:     rgba($fdc-c-primary, .16);
 
+$fdc-img-hover-scale:   1.2;
+
 // Components
 
 // Board
@@ -74,8 +76,8 @@ $fdc-board-padding-x:       $fdc-space-base;
 $fdc-board-padding-x-sm:    $fdc-space-sm;
 
 // Header, Navs
-$fdc-nav-height:            80px; // For header and page-nav
-$fdc-nav-height-sm:         60px;
+$fdc-header-height:            80px; // For header and page-nav
+$fdc-header-height-sm:         60px;
 
 // Dropdowns
 $fdc-dropdown-max-height:   30rem;
@@ -155,9 +157,11 @@ $box-shadow-sm:          $fdc-box-shadow-sm;
 $box-shadow:             $fdc-box-shadow-base;
 $box-shadow-lg:          $fdc-box-shadow-lg;
 
-$border-radius:               .4rem;
-$border-radius-lg:            .6rem;
-$border-radius-sm:            .2rem;
+$border-radius:          .4rem;
+$border-radius-lg:       .6rem;
+$border-radius-sm:       .2rem;
+
+$transition-base:        .2s ease-out;
 
 // Body
 $body-bg:         $fdc-c-neutral;
@@ -182,6 +186,7 @@ $container-max-widths: (
   2xl: 1390px
 );
 
+$grid-gutter-width:           24px;
 
 // Links
 $link-color:      #285B88;
@@ -199,7 +204,7 @@ $font-size-lg:                $font-size-base * 1.25;
 $font-size-sm:                $font-size-base * .875;
 $font-size-xs:                $font-size-base * .75;
 
-$font-family-base:            "Loto", "Helvetica Neue", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+$font-family-base:            "Lato", "Helvetica Neue", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 
 $h1-font-size:                $font-size-base * 2.5;
 $h2-font-size:                $font-size-base * 2.25;

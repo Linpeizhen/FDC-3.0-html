@@ -1,0 +1,129 @@
+.fdc-service-cards {
+	display: flex;
+	margin: 0 0 -240px;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+
+	@include media-breakpoint-down(lg) {
+		flex-wrap: wrap;
+		margin: 0;
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		top:0;
+		bottom: 0;
+		object-fit: contain;
+		clip-path: polygon(calc(var(--inset) * 100%)  0%, 100% 0%, calc(100% - var(--inset) * 100%) 100%, 0% 100%);
+		overflow: hidden;
+
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+
+	&::before {
+		content: url(../images/img_deco_line_002.svg);
+		left: 20px;
+		transform: translateX(-55%);
+	}
+
+	&::after {
+		content: url(../images/img_deco_line_003.svg);
+		right: 0;
+		transform: translateX(55%);
+	}
+}
+
+.fdc-service-card {
+	--inset: 0.28;
+	--expand-ration: calc(1 / (1 - (3 / 4 * var(--inset))));
+
+	width: calc(25% * var(--expand-ration));
+	padding-bottom: 24.7%;
+	clip-path: polygon(calc(var(--inset) * 100%)  0%, 100% 0%, calc(100% - var(--inset) * 100%) 100%, 0% 100%);
+	position: relative;
+	background-color: #88715D;
+	overflow: hidden;
+	margin-right: calc(-100% * 1 / 4 * var(--inset) * var(--expand-ration));
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include media-breakpoint-down(lg) {
+		width: 50%;
+		padding: 0;
+		clip-path: none;
+		margin: 0;
+		border: $fdc-space-xs solid $fdc-c-neutral;
+	}
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		margin-bottom: $fdc-space-sm;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		object-fit: cover;
+		object-position: center;
+		opacity: .4;
+		transition: $transition-base;
+
+		.fdc-service-card:hover & {
+			scale: $fdc-img-hover-scale;
+			opacity: 1;
+		}
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top:0 ;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: $fdc-c-white;
+		text-shadow: 0px 4px 40px rgba(0, 0, 0, 0.8);
+		transition: $transition-base;
+
+		@include media-breakpoint-down(lg) {
+			height: auto;
+			position: relative;
+			padding: 60px 0;
+		}
+
+		@include media-breakpoint-down(md) {
+			flex-direction: row;
+			justify-content: space-between;
+			height: 160px;
+			padding: 0 $fdc-space-lg;
+		}
+
+		span {
+			margin: $fdc-space-2xl 0;
+			letter-spacing: 0.5em;
+			white-space: nowrap;
+		}
+
+		html[lang=zh_tw] & span {
+			writing-mode: vertical-lr;
+
+			@include media-breakpoint-down(md) {
+				writing-mode: initial;
+				margin-bottom: 0;
+			}
+		}
+	}
+}

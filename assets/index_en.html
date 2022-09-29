@@ -22,126 +22,132 @@
       <![endif]-->
    <meta http-equiv="X-UA-Compatible" content="IE=10" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
    <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
    <script>
       $(function () {
-         $('.product_sidebar_list').tinyNav({
-            header: '☰ MENU 選單項目' // Writing any title with this option triggers the header
+         $('.fdc-header__open-menu').on('click', function (){
+            $('.fdc-header .fdc-nav').addClass('show');
          });
-         $('#main_navbar').bootnavbar();
+
+         $('.fdc-header__close-menu').on('click', function (){
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $(".fdc-carousel--full .owl-carousel").owlCarousel({
+            loop:true,
+            items:1,
+            nav: true,
+            dots: true,
+            dotsContainer: '.fdc-carousel__dots',
+            navContainer: '.fdc-carousel__control',
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+         });
       });
    </script>
 </head>
 
 <body>
-   <!-- HEADER -->
-   <header>
-      <!--NAV-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-         <div id="logo">
-            <a href="index.html">
-               <h1>FD</h1>
+   <header class="fdc-header">
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
             </a>
          </div>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-               <li class="nav-item">
-                  <form class="search_form" action="">
-                     <div class="vessel">
-                        <label>搜尋</label>
-                        <input type="text" name="" placeholder="搜尋">
-                        <input type="submit" value="">
-                     </div>
-                  </form>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>繁體中文</span> <i
-                        class="bi bi-chevron-down"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                     <div class="dropdown-item active"><a href="javascript:;"">繁體中文 <i class=" bi bi-check2"></i></a>
-                     </div>
-                     <div class="dropdown-item"><a href="javascript:;">簡體中文</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">English</a></div>
-                  </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="pay.html">快速付款</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="javascript:;">Hi, Pei Zhen</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <div class="dropdown-item"><a href="index.html"">首頁</a></div>
-                        <div class=" dropdown-item"><a href="intro.html">品牌簡介</a></div>
-                     <div class="dropdown-item"><a href="intro.html">四大服務類別</a></div>
-                     <div class="dropdown-item"><a href="customize.html">企業客製</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">熱門推薦</a></div>
-                     <div class="dropdown-item"><a href="blog.html">部落格</a></div>
-                     <div class="dropdown-item"><a href="activity.html">活動頁</a></div>
-                     <div class="dropdown-divider"></div>
-                     <!-- 未登入才顯示 -->
-                     <!-- <div class="dropdown-item l5"><a href="javascript:;">會員註冊</a></div> -->
-                     <!-- 登入才顯示 -->
-                     <div class="dropdown-item l6"><a href="index_un.html">登出</a></div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <!--END NAV-->
-   </header>
-   <!--END HEADER-->
-   <div id="wrapper">
-      <!-- BANNER -->
-      <div id="banner">
-         <ul class="banner">
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">Your Ultimate Experience Provider </div>
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
             </li>
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">2</div>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown" >
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="javascript:;">English</a>
+               </div>
             </li>
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">3</div>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/ic_header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="product.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
             </li>
          </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/ic_header_burger.svg" alt="">
+         </a>
+      </div>
+   </header>
+   <main class="fdc-main">
+      <!-- BANNER -->
+      <div class="fdc-carousel fdc-carousel--full">
+         <div class="owl-carousel">
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+         </div>
+         <div class="fdc-carousel__control">
+            <div class="fdc-carousel__dots"></div>
+         </div>
       </div>
       <!--END BANNER-->
 
       <!-- 品牌介紹 -->
-      <section class="index magazine magazine_left brand_intro">
-         <div class="content">
+      <section class="fdc-magazine fdc-magazine--left fdc-bg--texture bg-primary fdc-section-deco">
+         <div class="container">
             <div class="row align-items-center">
-               <div class="col-lg-6">
-                  <div class="magazine_img_box" style="background-image: url(images/magazine_001.jpeg);">
-                     <img class="deco_img_line d-none d-lg-block" src="images/deco_img_line.svg" alt="">
+               <div class="col-lg-5 offset-lg-1">
+                  <div class="fdc-magazine__image" style="background-image: url(images/magazine_001.jpeg);">
+                     <img class="fdc-magazine__deco d-none d-lg-block" src="images/img_deco_line.svg" alt="">
                   </div>
                </div>
-               <div class="col-lg-5 offset-lg-1">
-                  <div class="content_title">品牌簡介</div>
-                  <div class="desc">
-                     FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                     FineDayClub為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
+               <div class="col-lg-4 offset-lg-1">
+                  <h2 class="fdc-section-title text-white">
+                     <div class="fdc-section-title__deco text-white">Intro</div>
+                     品牌簡介
+                  </h2>
+                  <div class="fdc-magazine__desc text-white">
+                     FineDayClub 是 KKday集團於 2020 年 12 月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                     FineDayClub 為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
                   </div>
-                  <div class="text-center text-lg-left">
-                     <div class="btn btn_black_line">
-                        <a href="intro.html">探索更多</a>
-                     </div>
-                  </div>
+                  <a href="product.html" class="btn btn-outline-primary">
+                     <span>探索更多</span>
+                     <i class="bi bi-arrow-right"></i>
+                  </a>
                </div>
             </div>
          </div>
@@ -149,13 +155,16 @@
       <!-- End 品牌介紹 -->
 
       <!-- 四大服務 -->
-      <section class="index our_services">
-         <div class="content">
-            <div class="content_title">四大服務</div>
+      <section class="bg-neutral fdc-bg--texture">
+         <div class="container">
+            <h2 class="fdc-section-title text-center">
+               <div class="fdc-section-title__deco">Service</div>
+               主要服務
+            </h2>
             <div class="service_card_container">
                <div class="row no-gutters">
                   <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_001.jpg);">
+                     <div class="service_card" style="background-image: url(images/service_001.jpeg);">
                         <a href="javascript:;">
                            <div class="service_card_title">
                               <span>旅遊度假</span>
@@ -165,7 +174,7 @@
                      </div>
                   </div>
                   <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_002.jpg);">
+                     <div class="service_card" style="background-image: url(images/service_002.jpeg);">
                         <a href="javascript:;">
                            <div class="service_card_title">
                               <span>餐酒饗宴</span>
@@ -175,7 +184,7 @@
                      </div>
                   </div>
                   <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_003.jpg);">
+                     <div class="service_card" style="background-image: url(images/service_003.jpeg);">
                         <a href="javascript:;">
                            <div class="service_card_title">
                               <span>生活風格</span>
@@ -185,7 +194,7 @@
                      </div>
                   </div>
                   <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_004.jpg);">
+                     <div class="service_card" style="background-image: url(images/service_004.jpeg);">
                         <a href="javascript:;">
                            <div class="service_card_title">
                               <span>專屬選品</span>
@@ -201,25 +210,27 @@
       <!-- End 四大服務 -->
 
       <!-- 企業客製 -->
-      <section class="index magazine magazine_right enterprise_customize">
-         <div class="content">
+      <section class="fdc-magazine fdc-magazine--right bg-neutral-light fdc-bg--texture">
+         <div class="container">
             <div class="row align-items-center">
-               <div class="col-lg-6 offset-lg-1 order-lg-1">
-                  <div class="magazine_img_box" style="background-image: url(images/magazine_002.jpeg);">
-                     <img class="deco_img_line d-none d-lg-block" src="images/deco_img_line.svg" alt="">
+               <div class="col-lg-5 offset-lg-1 order-lg-1">
+                  <div class="fdc-magazine__image" style="background-image: url(images/magazine_002.jpeg);">
+                     <img class="fdc-magazine__deco d-none d-lg-block" src="images/img_deco_line.svg" alt="">
                   </div>
                </div>
-               <div class="col-lg-5">
-                  <div class="content_title">企業客製</div>
-                  <div class="desc">
+               <div class="col-lg-4 offset-lg-1 ">
+                  <h2>
+                     <span class="fdc-deco-title"></span>
+                     企業客製
+                  </h2>
+                  <div class="fdc-magazine__desc">
                      FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
                      FineDayClub為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
                   </div>
-                  <div class="text-center text-lg-left">
-                     <div class="btn btn_black_line">
-                        <a href="customize.html">探索更多</a>
-                     </div>
-                  </div>
+                  <a href="product.html" class="btn btn-primary">
+                     <span>探索更多</span>
+                     <i class="bi bi-arrow-right"></i>
+                  </a>
                </div>
             </div>
          </div>
@@ -228,8 +239,11 @@
 
       <!-- 熱門推薦 -->
       <section class="index product activity_new">
-         <div class="content">
-            <div class="content_title">熱門推薦</div>
+         <div class="container">
+            <h2>
+               <span class="fdc-deco-title"></span>
+               熱門推薦
+            </h2>
             <div class="product_cat_container">
                <ul class="product_cat">
                   <li class="active"><a href="javascript:;">旅遊度假</a></li>
@@ -241,86 +255,89 @@
             </div>
             <div class="row no-gutters">
                <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
+                  <div class="fdc-product-card">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
                      <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/service_001.jpg" alt="">
-                           <span class="product_list_like active"></span>
+                        <div class="fdc-product-card_img">
+                           <img src="images/product_001.jpg" alt="">
+                           <span class="fdc-product-card__like active"></span>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
+                        <p class="fdc-product-card__title">台北文華東方</p>
+                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
                      </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like active"><i class="bi bi-bookmark"></i></span>
+                  <div class="fdc-product-card">
+                     <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
                      <a href="product_detail.html">
-                        <div class="product_list_img">
+                        <div class="fdc-product-card_img">
                            <img src="images/product_002.jpg" alt="">
-                           <span class="product_list_like"></span>
+                           <span class="fdc-product-card__like"></span>
                         </div>
-                        <p class="product_list_title">台北文華東方台北文華東方台北文華東方台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅 ineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
+                        <p class="fdc-product-card__title">台北文華東方台北文華東方台北文華東方台北文華東方</p>
+                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅 ineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
                      </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
+                  <div class="fdc-product-card">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
                      <a href="product_detail.html">
-                        <div class="product_list_img">
+                        <div class="fdc-product-card_img">
                            <img src="images/product_003.jpg" alt="">
-                           <span class="product_list_like"></span>
+                           <span class="fdc-product-card__like"></span>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
+                        <p class="fdc-product-card__title">台北文華東方</p>
+                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
                      </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
+                  <div class="fdc-product-card">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
                      <a href="product_detail.html">
-                        <div class="product_list_img">
+                        <div class="fdc-product-card_img">
                            <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like"></span>
+                           <span class="fdc-product-card__like"></span>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
+                        <p class="fdc-product-card__title">台北文華東方</p>
+                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
                      </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
+                  <div class="fdc-product-card">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
                      <a href="product_detail.html">
-                        <div class="product_list_img">
+                        <div class="fdc-product-card_img">
                            <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like"></span>
+                           <span class="fdc-product-card__like"></span>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
+                        <p class="fdc-product-card__title">台北文華東方</p>
+                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
                      </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
+                  <div class="fdc-product-card">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
                      <a href="product_detail.html">
-                        <div class="product_list_img">
+                        <div class="fdc-product-card_img">
                            <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like"></span>
+                           <span class="fdc-product-card__like"></span>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
+                        <p class="fdc-product-card__title">台北文華東方</p>
+                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
                      </a>
                   </div>
                </div>
             </div>
-            <div class="btn btn_black_line">
-               <a href="product.html">探索更多</a>
+            <div class="text-center mt-5">
+               <a href="product.html" class="btn btn-primary">
+                  <span>探索更多</span>
+                  <i class="bi bi-arrow-right"></i>
+               </a>
             </div>
          </div>
       </section>
@@ -328,20 +345,23 @@
 
       <!--最新消息-->
       <section class="index latest_blog">
-         <div class="content">
-            <div class="content_title">最新消息</div>
+         <div class="container">
+            <h2>
+               <span class="fdc-deco-title"></span>
+               最新消息
+            </h2>
             <div class="row justify-content-center">
                <div class="col-lg-10">
-                  <div class="blog_card">
+                  <div class="fdc-blog-card">
                      <a href="blog_detail.html" class="stretched-link"></a>
                      <div class="row">
                         <div class="col-md-6">
-                           <div class="blog_card_img" style="background-image: url(images/product_001.jpg);"></div>
+                           <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
                         </div>
                         <div class="col-md-6">
-                           <div class="blog_content">
-                              <div class="blog_title">文章標題</div>
-                              <div class="blog_desc">
+                           <div class="fdc-blog-card__content">
+                              <div class="fdc-blog-card__content-title">文章標題</div>
+                              <div class="fdc-blog-card__content-des">
                                  FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
                                  FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
                                  FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
@@ -354,9 +374,10 @@
                </div>
             </div>
             <div class="text-center mt-5">
-               <div class="btn btn_black_line d-inline-block w-auto">
-                  <a href="blog.html">探索更多</a>
-               </div>
+               <a href="blog.html" class="btn btn-primary">
+                  <span>探索更多</span>
+                  <i class="bi bi-arrow-right"></i>
+               </a>
             </div>
          </div>
       </section>
@@ -364,92 +385,174 @@
 
       <!--合作夥伴-->
       <section class="index our_partners">
-         <div class="content">
-            <div class="content_title">合作夥伴</div>
+         <div class="container">
+            <h2>
+               <span class="fdc-deco-title"></span>
+               合作夥伴
+            </h2>
             <div class="row justify-content-center">
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_001.png" alt="">
-                     <div class="partner_title">BMW</div>
+                     <div class="fdc-partner-card__title">BMW</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_002.png" alt="">
-                     <div class="partner_title">Tesla</div>
+                     <div class="fdc-partner-card__title">Tesla</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_003.png" alt="">
-                     <div class="partner_title">Porsche</div>
+                     <div class="fdc-partner-card__title">Porsche</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_004.png" alt="">
-                     <div class="partner_title">Benz</div>
+                     <div class="fdc-partner-card__title">Benz</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_005.png" alt="">
-                     <div class="partner_title">Louis Vuitton</div>
+                     <div class="fdc-partner-card__title">Louis Vuitton</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_001.png" alt="">
-                     <div class="partner_title">BMW</div>
+                     <div class="fdc-partner-card__title">BMW</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_002.png" alt="">
-                     <div class="partner_title">Tesla</div>
+                     <div class="fdc-partner-card__title">Tesla</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_003.png" alt="">
-                     <div class="partner_title">Porsche</div>
+                     <div class="fdc-partner-card__title">Porsche</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_004.png" alt="">
-                     <div class="partner_title">Benz</div>
+                     <div class="fdc-partner-card__title">Benz</div>
                   </div>
                </div>
                <!-- <div class="col-auto">
-                     <div class="partner_card">
+                     <div class="fdc-partner-card">
                         <a href="partner.html" class="stretched-link"></a>
                         <img src="images/partner_005.png" alt="">
-                        <div class="partner_title">Louis Vuitton</div>
+                        <div class="fdc-partner-card__title">Louis Vuitton</div>
                      </div>
                   </div> -->
             </div>
          </div>
       </section>
       <!--END 合作夥伴-->
-   </div>
-   <!--END WRAPPER-->
-   <!-- FOOTER -->
-   <footer>
-      <div id="footer">
-         <ul class="row content">
+
+      <!--加入會員-->
+      <section class="index signin">
+         <div class="container">
+            <ul class="info">
+               <li class="info_logo"><img src="images/logo_small.svg" alt=""></li>
+               <li class="row info_list">
+                  <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
+                     <div>常用姓名＊</div>
+                     <input type="text" name="" placeholder="姓名須與護照相同">
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
+                     <div>稱謂＊</div>
+                     <select>
+                        <option selected>請選擇</option>
+                        <option>先生</option>
+                        <option>小姐</option>
+                        <option>NA</option>
+                     </select>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
+                     <div>生日</div>
+                     <input type="date" name="" placeholder="請選擇">
+                  </div>
+               </li>
+               <li class="row info_list">
+                  <div class="col-lg-6 col-md-12 col-12 bootstrap_default info_list_input phone">
+                     <div>聯絡電話＊</div>
+                     <ul class="row no-gutters">
+                        <li class="col-4">
+                           <select>
+                              <option>+886</option>
+                              <option>+21</option>
+                              <option>+80</option>
+                           </select>
+                        </li>
+                        <li class="col-8"><input type="text" name="" placeholder="e.g. 912345678"></li>
+                     </ul>
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-12 bootstrap_default info_list_input">
+                     <div>電子郵件<span>＊</span></div>
+                     <input type="text" name="" placeholder="e.g. abc@abc.com">
+                  </div>
+               </li>
+               <li class="row info_list">
+                  <div class="col-md-6 col-12 bootstrap_default info_list_input">
+                     <input type="password" name="" placeholder="輸入新密碼">
+                  </div>
+                  <div class="col-md-6 col-12 bootstrap_default info_list_input">
+                     <input type="password" name="" placeholder="再次輸入新密碼">
+                  </div>
+               </li>
+               <li class="row info_list">
+                  <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_error">
+                     資料錯誤
+                  </div>
+               </li>
+               <li class="row info_list">
+                  <div class="col-lg-10 col-md-8 col-12 bootstrap_default info_list_text">
+                     <label><input type="checkbox">我已閱讀並接受條款細則及隱私權政策。</label>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-12 bootstrap_default info_list_btn">
+                     <div class="btn btn_black"><a href="javascripr:;">註冊</a></div>
+                  </div>
+               </li>
+               <li class="row info_list mt-md-2 mt-lg-3">
+                  <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_text text-muted text-md-right">
+                     <span><img src="images/icons/contact_mail.svg" alt=""> service@finedayclub.com</span>
+                     <span><img src="images/icons/contact_tel.svg" alt=""> 02-7703-9668</span>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <!--END 加入會員-->
+   </main>
+   <footer class="fdc-footer">
+      <div class="container">
+         <ul class="row">
             <li class="col-lg col-md-12">
                <ul class="footer_info">
-                  <li class="mb-3"><img src="images/logo.svg" alt=""></li>
+                  <li class="mb-3">
+                     <div class="fdc-logo">
+                        <a href="index.html" class="d-block">
+                           <img src="images/logo.svg" alt="">
+                        </a>
+                     </div>
+                  </li>
                   <li>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</li>
                   <li>© 2021 FineDayClub All Rights Reserved</li>
                </ul>
@@ -472,17 +575,11 @@
             </li>
          </ul>
       </div>
-      <div id="btn_top">
-         <a href="javascript:;" data-toggle="modal" data-target="#contact"><img src="images/icons/contact.svg" alt="">
-         </a>
-      </div>
    </footer>
-   <!-- Modal contact -->
    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-dialog-s" role="document">
          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img
-                     src="images/close.png" alt=""></span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
             <div class="modal-body">
                <ul class="info">
                   <li class="info_title">聯絡我們</li>
@@ -525,23 +622,6 @@
          </div>
       </div>
    </div>
-   <!--END FOOTER-->
-   <script type="text/javascript">
-      $(document).on('ready', function () {
-         $('.banner').slick({
-            lidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            fade: true,
-            speed: 500,
-            infinite: true,
-            cssEase: 'ease-in-out'
-         });
-      });
-   </script>
 </body>
 
 </html>

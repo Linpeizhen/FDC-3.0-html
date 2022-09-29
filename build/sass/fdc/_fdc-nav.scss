@@ -15,15 +15,24 @@
     padding: $fdc-space-base 0;
     color: $fdc-gray-900;
     white-space: nowrap;
-    transition: .3s ease-out;
+    transition: $transition-base;
 
     &:hover {
-      opacity: .6;
+      color: $fdc-c-primary-light;
       text-decoration: none;
+
+      img {
+        opacity: .5;
+        transition: $transition-base;
+      }
     }
 
     .dropdown.show & {
-      opacity: .8;
+      color: $fdc-c-primary-light;
+
+      img {
+        opacity: .8;
+      }
     }
   }
 }

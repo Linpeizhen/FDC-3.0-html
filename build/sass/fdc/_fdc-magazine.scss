@@ -4,7 +4,17 @@
   &__image {
     position: relative;
     padding-bottom: 100%;
+    transition: $transition-base;
     @extend %bg-img;
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 75%;
+      margin-bottom: $fdc-space-2xl;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
   }
 
   &__deco {
@@ -13,6 +23,10 @@
     right: -20px;
     pointer-events: none;
     pointer-events: none;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 
   &__desc {
@@ -21,13 +35,7 @@
     line-height: 1.7;
   }
 
-  @include media-breakpoint-down(lg) {
 
-    &__image {
-      padding-bottom: 75%;
-      margin-bottom: 20px;
-    }
-  }
 }
 
 .fdc-magazine--left .fdc-magazine_img_box .deco_img_line {

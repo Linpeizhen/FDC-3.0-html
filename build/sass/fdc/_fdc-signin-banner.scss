@@ -1,0 +1,20 @@
+.fdc-signin-banner {
+	display: flex;
+	justify-content: flex-end;
+	background-image: url(../images/bg_signin.jpeg);
+	@extend %bg-img;
+
+	&__card {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 55%;
+		height: 320px;
+		background: rgba($fdc-c-primary, .8);
+		backdrop-filter: blur(1px);
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+	}
+}

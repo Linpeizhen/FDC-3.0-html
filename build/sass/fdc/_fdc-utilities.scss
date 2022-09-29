@@ -34,6 +34,12 @@ $fdc-text-sizes: map-merge(
   }
 }
 
+.pt-lg-240 {
+  @include media-breakpoint-up(xl) {
+    padding-top: 240px !important;
+  }
+}
+
 .fdc-section-title {
   position: relative;
   margin-bottom: 40px;
@@ -48,8 +54,29 @@ $fdc-text-sizes: map-merge(
     font-style: italic;
     text-transform: uppercase;
     color: $fdc-gray-900;
-    opacity: 0.2;
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
+    opacity: .04;
+
+    @include media-breakpoint-down(md) {
+      top: -48px;
+      font-size: 60px;
+    }
+
+    [class*=bg-]:not(.bg-neutral-lighter) & {
+      mix-blend-mode: overlay;
+    }
+
+    .bg-neutral & {
+      opacity: 0.3;
+    }
+
+    .bg-neutral-light & {
+      opacity: 0.7;
+    }
+
+    .bg-primary & {
+      opacity: 0.1;
+    }
   }
 
   &.text-center &__deco {
@@ -76,6 +103,15 @@ $fdc-text-sizes: map-merge(
     border: 1px solid $fdc-c-secondary-light;
     z-index: 1;
     pointer-events: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    &:not(.fdc-signin-banner__card) {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &::before {

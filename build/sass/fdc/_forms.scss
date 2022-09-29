@@ -80,7 +80,7 @@ label {
   background-color: $fdc-c-neutral-light;
   border: 1px dashed $fdc-border-color-dark;
   border-radius: $border-radius;
-  transition: $transition-base;
+  transition: $transition-base;;
   color: $fdc-text-gray-light;
 
   &:not(.disabled):hover {
@@ -123,7 +123,7 @@ label {
   padding: 1.6rem;
   border: 1px solid $fdc-border-color-light;
   border-radius: $border-radius;
-  transition: $transition-base;
+  transition: $transition-base;;
 
   &:hover {
     border-color: $fdc-border-color-dark;

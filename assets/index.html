@@ -23,17 +23,30 @@
    <meta http-equiv="X-UA-Compatible" content="IE=10" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
    <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
    <script>
       $(function () {
-         $('.fdc-header__open-menu').on('click', function (){
+         $('.fdc-header__open-menu').on('click', function () {
             $('.fdc-header .fdc-nav').addClass('show');
          });
 
-         $('.fdc-header__close-menu').on('click', function (){
+         $('.fdc-header__close-menu').on('click', function () {
             $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $(".fdc-carousel--full .owl-carousel").owlCarousel({
+            loop: true,
+            items: 1,
+            nav: true,
+            dots: true,
+            dotsContainer: '.fdc-carousel__dots',
+            navContainer: '.fdc-carousel__control',
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
          });
       });
    </script>
@@ -53,7 +66,7 @@
                <input type="text" placeholder="請輸入" class="form-control">
             </li>
             <li class="dropdown">
-               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown" >
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
                   <span>繁體中文</span>
                   <i class="bi bi-chevron-down"></i>
                </a>
@@ -66,8 +79,11 @@
             <li>
                <a href="javascript:;" class="fdc-nav__link">快速付款</a>
             </li>
-            <li class="d-none d-lg-block">
-               <div class="fdc-text-gray-light">Hi, Ivy!</div>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
             </li>
             <li class="dropdown">
                <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
@@ -79,9 +95,6 @@
                   <a class="dropdown-item" href="product.html">熱門商品</a>
                   <a class="dropdown-item" href="customize.html">企業訂製</a>
                   <a class="dropdown-item" href="blog.html">最新消息</a>
-                  <a class="dropdown-item" href="account.html">我的資料</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="index_unlogin.html">登出</a>
                </div>
             </li>
             <li class="fdc-header__close-menu">
@@ -95,21 +108,35 @@
    </header>
    <main class="fdc-main">
       <!-- BANNER -->
-      <section class="fdc-banner fdc-banner--full">
-
-      </section>
+      <div class="fdc-carousel fdc-carousel--full">
+         <div class="owl-carousel">
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+         </div>
+         <div class="fdc-carousel__control">
+            <div class="fdc-carousel__dots"></div>
+         </div>
+      </div>
       <!--END BANNER-->
 
       <!-- 品牌介紹 -->
       <section class="fdc-magazine fdc-magazine--left fdc-bg--texture bg-primary fdc-section-deco">
          <div class="container">
             <div class="row align-items-center">
-               <div class="col-lg-5 offset-lg-1">
+               <div class="col-lg-6 col-xl-5 offset-xl-1">
                   <div class="fdc-magazine__image" style="background-image: url(images/magazine_001.jpeg);">
+                     <a href="intro.html" class="stretched-link"></a>
                      <img class="fdc-magazine__deco d-none d-lg-block" src="images/img_deco_line.svg" alt="">
                   </div>
                </div>
-               <div class="col-lg-4 offset-lg-1">
+               <div class="col-lg-5 col-xl-4 offset-lg-1">
                   <h2 class="fdc-section-title text-white">
                      <div class="fdc-section-title__deco text-white">Intro</div>
                      品牌簡介
@@ -118,7 +145,7 @@
                      FineDayClub 是 KKday集團於 2020 年 12 月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
                      FineDayClub 為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
                   </div>
-                  <a href="product.html" class="btn btn-outline-primary">
+                  <a href="intro.html" class="btn btn-outline-primary">
                      <span>探索更多</span>
                      <i class="bi bi-arrow-right"></i>
                   </a>
@@ -130,78 +157,67 @@
 
       <!-- 四大服務 -->
       <section class="bg-neutral fdc-bg--texture">
-         <div class="container">
-            <h2 class="fdc-section-title text-center">
-               <div class="fdc-section-title__deco">Service</div>
-               主要服務
-            </h2>
-            <div class="service_card_container">
-               <div class="row no-gutters">
-                  <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_001.jpeg);">
-                        <a href="javascript:;">
-                           <div class="service_card_title">
-                              <span>旅遊度假</span>
-                              <img class="icon" src="images/white_arrow_right.svg" alt="">
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_002.jpeg);">
-                        <a href="javascript:;">
-                           <div class="service_card_title">
-                              <span>餐酒饗宴</span>
-                              <img class="icon" src="images/white_arrow_right.svg" alt="">
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_003.jpeg);">
-                        <a href="javascript:;">
-                           <div class="service_card_title">
-                              <span>生活風格</span>
-                              <img class="icon" src="images/white_arrow_right.svg" alt="">
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-                  <div class="col-md-6 col-lg">
-                     <div class="service_card" style="background-image: url(images/service_004.jpeg);">
-                        <a href="javascript:;">
-                           <div class="service_card_title">
-                              <span>專屬選品</span>
-                              <img class="icon" src="images/white_arrow_right.svg" alt="">
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-               </div>
+         <h2 class="fdc-section-title text-center">
+            <div class="fdc-section-title__deco">Service</div>
+            主要服務
+         </h2>
+         <div class="fdc-service-cards">
+            <div class="fdc-service-card">
+               <a href="intro.html#service1" class="stretched-link"></a>
+               <img src="images/service_001.jpeg" alt="" class="fdc-service-card__img">
+               <h4 class="fdc-service-card__title">
+                  <span>旅遊度假</span>
+                  <img class="icon" src="images/white_arrow_right.svg" alt="">
+               </h4>
+            </div>
+            <div class="fdc-service-card">
+               <a href="intro.html#service2" class="stretched-link"></a>
+               <img src="images/service_002.jpeg" alt="" class="fdc-service-card__img">
+               <h4 class="fdc-service-card__title">
+                  <span>餐酒饗宴</span>
+                  <img class="icon" src="images/white_arrow_right.svg" alt="">
+               </h4>
+            </div>
+            <div class="fdc-service-card">
+               <a href="intro.html#service3" class="stretched-link"></a>
+               <img src="images/service_003.jpeg" alt="" class="fdc-service-card__img">
+               <h4 class="fdc-service-card__title">
+                  <span>生活風格</span>
+                  <img class="icon" src="images/white_arrow_right.svg" alt="">
+               </h4>
+            </div>
+            <div class="fdc-service-card">
+               <a href="intro.html#service4" class="stretched-link"></a>
+               <img src="images/service_004.jpeg" alt="" class="fdc-service-card__img">
+               <h4 class="fdc-service-card__title">
+                  <span>奢華酒店</span>
+                  <img class="icon" src="images/white_arrow_right.svg" alt="">
+               </h4>
             </div>
          </div>
       </section>
       <!-- End 四大服務 -->
 
       <!-- 企業客製 -->
-      <section class="fdc-magazine fdc-magazine--right bg-neutral-light fdc-bg--texture">
+      <section class="fdc-magazine fdc-magazine--right bg-neutral-light fdc-bg--texture pt-lg-240">
          <div class="container">
             <div class="row align-items-center">
-               <div class="col-lg-5 offset-lg-1 order-lg-1">
+               <div class="col-lg-6 col-xl-5 offset-lg-1 order-lg-1">
                   <div class="fdc-magazine__image" style="background-image: url(images/magazine_002.jpeg);">
+                     <a href="customize.html" class="stretched-link"></a>
                      <img class="fdc-magazine__deco d-none d-lg-block" src="images/img_deco_line.svg" alt="">
                   </div>
                </div>
-               <div class="col-lg-4 offset-lg-1 ">
-                  <h2>
-                     <span class="fdc-deco-title"></span>
-                     企業客製
+               <div class="col-lg-5 col-xl-4 offset-xl-1">
+                  <h2 class="fdc-section-title">
+                     <div class="fdc-section-title__deco">Customize</div>
+                     企業訂製
                   </h2>
                   <div class="fdc-magazine__desc">
                      FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
                      FineDayClub為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
                   </div>
-                  <a href="product.html" class="btn btn-primary">
+                  <a href="customize.html" class="btn btn-primary">
                      <span>探索更多</span>
                      <i class="bi bi-arrow-right"></i>
                   </a>
@@ -212,98 +228,494 @@
       <!-- End 企業客製 -->
 
       <!-- 熱門推薦 -->
-      <section class="index product activity_new">
+      <section class="bg-neutral-lighter">
          <div class="container">
-            <h2>
-               <span class="fdc-deco-title"></span>
-               熱門推薦
-            </h2>
-            <div class="product_cat_container">
-               <ul class="product_cat">
-                  <li class="active"><a href="javascript:;">旅遊度假</a></li>
-                  <li><a href="javascript:;">餐酒饗宴</a></li>
-                  <li><a href="javascript:;">生活風格</a></li>
-                  <li><a href="javascript:;">專屬選品</a></li>
-                  <li><a href="javascript:;">過去活動</a></li>
+            <div class="d-lg-flex align-lg-baseline justify-content-lg-between">
+               <h2 class="fdc-section-title">
+                  <div class="fdc-section-title__deco">Recommend</div>
+                  熱門推薦
+               </h2>
+               <ul class="nav fdc-tab">
+                  <li class="fdc-tab__item">
+                     <a href="javascript:;" class="fdc-tab__link active" id="tab__travel" data-toggle="tab" data-target="#cat__travel" type="button" role="tab">旅遊度假</a>
+                  </li>
+                  <li class="fdc-tab__item">
+                     <a href="javascript:;" class="fdc-tab__link" id="tab__dining" data-toggle="tab" data-target="#cat__dining" type="button" role="tab">餐酒饗宴</a>
+                  </li>
+                  <li class="fdc-tab__item">
+                     <a href="javascript:;" class="fdc-tab__link" id="tab__lifestyle" data-toggle="tab" data-target="#cat__lifestyle" type="button" role="tab">生活風格</a>
+                  </li>
+                  <li class="fdc-tab__item">
+                     <a href="javascript:;" class="fdc-tab__link" id="tab__hotel" data-toggle="tab" data-target="#cat__hotel" type="button" role="tab">奢華酒店</a>
+                  </li>
+                  <li class="fdc-tab__item">
+                     <a href="javascript:;" class="fdc-tab__link" id="tab__past" data-toggle="tab" data-target="#cat__past" type="button" role="tab">過去活動</a>
+                  </li>
                </ul>
             </div>
-            <div class="row no-gutters">
-               <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like active"></span>
+            <div class="tab-content">
+               <div class="tab-pane active" id="cat__travel">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_003.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_004.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
                   </div>
                </div>
-               <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like active"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/product_002.jpg" alt="">
-                           <span class="product_list_like"></span>
+               <div class="tab-pane" id="cat__dining">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
                         </div>
-                        <p class="product_list_title">台北文華東方台北文華東方台北文華東方台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅 ineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_004.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_003.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
                   </div>
                </div>
-               <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/product_003.jpg" alt="">
-                           <span class="product_list_like"></span>
+               <div class="tab-pane" id="cat__lifestyle">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_003.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_004.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
                   </div>
                </div>
-               <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like"></span>
+               <div class="tab-pane" id="cat__hotel">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_004.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_003.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
                   </div>
                </div>
-               <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like"></span>
+               <div class="tab-pane" id="cat__past">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-4">
-                  <div class="product_list">
-                     <span class="product_list_like"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="product_list_img">
-                           <img src="images/product_001.jpg" alt="">
-                           <span class="product_list_like"></span>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
                         </div>
-                        <p class="product_list_title">台北文華東方</p>
-                        <p class="product_list_des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_003.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_004.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card_img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -318,29 +730,37 @@
       <!--END 熱門推薦-->
 
       <!--最新消息-->
-      <section class="index latest_blog">
+      <section>
          <div class="container">
-            <h2>
-               <span class="fdc-deco-title"></span>
+            <h2 class="fdc-section-title text-center">
+               <div class="fdc-section-title__deco">News</div>
                最新消息
             </h2>
             <div class="row justify-content-center">
-               <div class="col-lg-10">
-                  <div class="blog_card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
+               <div class="col-lg-8">
+                  <div class="fdc-blog-card fdc-blog-card--news">
                      <div class="row">
-                        <div class="col-md-6">
-                           <div class="blog_card_img" style="background-image: url(images/product_001.jpg);"></div>
+                        <div class="col-md-5">
+                           <div class="fdc-blog-card__img">
+                              <img src="images/blog_001.jpg" alt="">
+                           </div>
                         </div>
-                        <div class="col-md-6">
-                           <div class="blog_content">
-                              <div class="blog_title">文章標題</div>
-                              <div class="blog_desc">
-                                 FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                        <div class="col-md-7">
+                           <div class="fdc-blog-card__content">
+                              <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                              <div class="fdc-blog-card__content-des">
+                                 <p>
+                                    FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                    FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                    FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                 </p>
                               </div>
-                              <div class="mt-4 text-right text-muted">繼續閱讀 →</div>
+                              <div class="mt-4 text-right">
+                                 <a href="blog_detail.html" class="btn btn-link p-2">
+                                    <span>繼續閱讀</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                 </a>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -349,7 +769,7 @@
             </div>
             <div class="text-center mt-5">
                <a href="blog.html" class="btn btn-primary">
-                  <span>探索更多</span>
+                  <span>更多文章</span>
                   <i class="bi bi-arrow-right"></i>
                </a>
             </div>
@@ -358,81 +778,71 @@
       <!--END 最新消息-->
 
       <!--合作夥伴-->
-      <section class="index our_partners">
+      <section class="bg-neutral-lighter">
          <div class="container">
-            <h2>
-               <span class="fdc-deco-title"></span>
+            <h2 class="fdc-section-title text-center">
+               <div class="fdc-section-title__deco">Partners</div>
                合作夥伴
             </h2>
             <div class="row justify-content-center">
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_001.png" alt="">
-                     <div class="partner_title">BMW</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_002.png" alt="">
-                     <div class="partner_title">Tesla</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_003.png" alt="">
-                     <div class="partner_title">Porsche</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_004.png" alt="">
-                     <div class="partner_title">Benz</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_005.png" alt="">
-                     <div class="partner_title">Louis Vuitton</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_001.png" alt="">
-                     <div class="partner_title">BMW</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_002.png" alt="">
-                     <div class="partner_title">Tesla</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_003.png" alt="">
-                     <div class="partner_title">Porsche</div>
                   </div>
                </div>
                <div class="col-auto">
-                  <div class="partner_card">
+                  <div class="fdc-partner-card">
                      <a href="partner.html" class="stretched-link"></a>
                      <img src="images/partner_004.png" alt="">
-                     <div class="partner_title">Benz</div>
                   </div>
                </div>
                <!-- <div class="col-auto">
-                     <div class="partner_card">
+                     <div class="fdc-partner-card">
                         <a href="partner.html" class="stretched-link"></a>
                         <img src="images/partner_005.png" alt="">
-                        <div class="partner_title">Louis Vuitton</div>
                      </div>
                   </div> -->
             </div>
@@ -441,78 +851,14 @@
       <!--END 合作夥伴-->
 
       <!--加入會員-->
-      <section class="index signin">
-         <div class="container">
-            <ul class="info">
-               <li class="info_logo"><img src="images/logo_small.svg" alt=""></li>
-               <li class="row info_list">
-                  <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
-                     <div>常用姓名＊</div>
-                     <input type="text" name="" placeholder="姓名須與護照相同">
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
-                     <div>稱謂＊</div>
-                     <select>
-                        <option selected>請選擇</option>
-                        <option>先生</option>
-                        <option>小姐</option>
-                        <option>NA</option>
-                     </select>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
-                     <div>生日</div>
-                     <input type="date" name="" placeholder="請選擇">
-                  </div>
-               </li>
-               <li class="row info_list">
-                  <div class="col-lg-6 col-md-12 col-12 bootstrap_default info_list_input phone">
-                     <div>聯絡電話＊</div>
-                     <ul class="row no-gutters">
-                        <li class="col-4">
-                           <select>
-                              <option>+886</option>
-                              <option>+21</option>
-                              <option>+80</option>
-                           </select>
-                        </li>
-                        <li class="col-8"><input type="text" name="" placeholder="e.g. 912345678"></li>
-                     </ul>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-12 bootstrap_default info_list_input">
-                     <div>電子郵件<span>＊</span></div>
-                     <input type="text" name="" placeholder="e.g. abc@abc.com">
-                  </div>
-               </li>
-               <li class="row info_list">
-                  <div class="col-md-6 col-12 bootstrap_default info_list_input">
-                     <input type="password" name="" placeholder="輸入新密碼">
-                  </div>
-                  <div class="col-md-6 col-12 bootstrap_default info_list_input">
-                     <input type="password" name="" placeholder="再次輸入新密碼">
-                  </div>
-               </li>
-               <li class="row info_list">
-                  <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_error">
-                     資料錯誤
-                  </div>
-               </li>
-               <li class="row info_list">
-                  <div class="col-lg-10 col-md-8 col-12 bootstrap_default info_list_text">
-                     <label><input type="checkbox">我已閱讀並接受條款細則及隱私權政策。</label>
-                  </div>
-                  <div class="col-lg-2 col-md-4 col-12 bootstrap_default info_list_btn">
-                     <div class="btn btn_black"><a href="javascripr:;">註冊</a></div>
-                  </div>
-               </li>
-               <li class="row info_list mt-md-2 mt-lg-3">
-                  <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_text text-muted text-md-right">
-                     <span><img src="images/icons/contact_mail.svg" alt=""> service@finedayclub.com</span>
-                     <span><img src="images/icons/contact_tel.svg" alt=""> 02-7703-9668</span>
-                  </div>
-               </li>
-            </ul>
+      <div class="fdc-signin-banner">
+         <div class="fdc-signin-banner__card fdc-section-deco">
+            <a href="signin.html" class="btn btn-secondary">
+               <span>成為 FineDayClub 會員</span>
+               <i class="bi bi-arrow-right"></i>
+            </a>
          </div>
-      </section>
+      </div>
       <!--END 加入會員-->
    </main>
    <footer class="fdc-footer">
@@ -553,7 +899,8 @@
    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-dialog-s" role="document">
          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true"></span></button>
             <div class="modal-body">
                <ul class="info">
                   <li class="info_title">聯絡我們</li>
