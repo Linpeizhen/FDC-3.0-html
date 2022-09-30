@@ -1,0 +1,31 @@
+.fdc-sns {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include media-breakpoint-down(md) {
+		justify-content: center;
+	}
+
+	li {
+		margin-right: $fdc-space-base;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background-color: $fdc-c-white;
+		border: 1px solid  $fdc-c-neutral;
+		transition: $transition-base;
+
+		&:hover {
+			background-color: $fdc-c-neutral-light;
+		}
+	}
+}

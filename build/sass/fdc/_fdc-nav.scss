@@ -1,6 +1,7 @@
 .fdc-nav {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -12,6 +13,7 @@
   }
 
   &__link {
+    display: block;
     padding: $fdc-space-base 0;
     color: $fdc-gray-900;
     white-space: nowrap;

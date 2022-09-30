@@ -10,7 +10,6 @@
 
   @include media-breakpoint-down(lg) {
     margin-left: calc(-1 * var(--tab-padding-x));
-    margin-right: calc(-1 * var(--tab-padding-x));
     margin-bottom: $fdc-space-xl;
   }
 
