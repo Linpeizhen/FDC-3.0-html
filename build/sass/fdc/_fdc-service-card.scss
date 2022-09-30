@@ -114,12 +114,13 @@
 
 		span {
 			margin: $fdc-space-2xl 0;
-			letter-spacing: 0.5em;
+			letter-spacing: 0.2em;
 			white-space: nowrap;
 		}
 
 		html[lang=zh_tw] & span {
 			writing-mode: vertical-lr;
+			letter-spacing: 0.5em;
 
 			@include media-breakpoint-down(md) {
 				writing-mode: initial;
