@@ -1,4 +1,7 @@
 .form-control {
+  font-family: $font-family-base;
+  letter-spacing: .5px;
+
   &:disabled,
   &[readonly] {
     border-color: $fdc-input-disabled-border-color;
@@ -66,99 +69,6 @@ label {
   div[contenteditable=true].form-control {
     height: 220px;
     overflow: auto;
-  }
-}
-
-// File browser
-.fdc-file-browser {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 1.6rem 2.4rem;
-  background-color: $fdc-c-neutral-light;
-  border: 1px dashed $fdc-border-color-dark;
-  border-radius: $border-radius;
-  transition: $transition-base;;
-  color: $fdc-text-gray-light;
-
-  &:not(.disabled):hover {
-    background-color: $fdc-selected-hover-bg;
-  }
-
-  &.disabled {
-    opacity: 0.5;
-
-    input[type=file] {
-      cursor: default;
-    }
-  }
-
-  > i {
-    margin-right: 1.6rem;
-    font-size: 2.4rem;
-    color: $fdc-text-gray;
-  }
-
-  input[type=file] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-
-    &:active ~ i{
-      color: $fdc-c-primary;
-    }
-  }
-}
-
-.fdc-file-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.6rem;
-  padding: 1.6rem;
-  border: 1px solid $fdc-border-color-light;
-  border-radius: $border-radius;
-  transition: $transition-base;;
-
-  &:hover {
-    border-color: $fdc-border-color-dark;
-  }
-
-  &-name {
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  &-icon {
-    flex-shrink: 0;
-    margin-right: 1.6rem;
-    color: $fdc-text-gray;
-    font-size: 2.4rem;
-  }
-
-  &-clear {
-    flex-shrink: 0;
-    color: $fdc-text-gray-light;
-    font-size: $font-size-lg;
-    visibility: hidden;
-    opacity: 0;
-    transition: $transition-fade;
-    cursor: pointer;
-
-    &:hover {
-      color: $fdc-text-dark;
-    }
-  }
-
-  &:hover &-clear {
-    visibility: visible;
-    opacity: 1;
   }
 }
 

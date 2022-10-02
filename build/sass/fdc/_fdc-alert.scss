@@ -1,47 +1,18 @@
 .fdc-alert {
-  position: fixed;
-  top: calc(#{$fdc-header-height} + 20px);
-  left: 50%;
-  z-index: 1060;
-  transform: translateX(-50%);
-  padding: 1.2rem 2.4rem;
-  color: $fdc-c-white;
-  font-size: $h5-font-size;
-  text-align: center;
-  border-radius: $border-radius;
-  box-shadow: $fdc-box-shadow-sm-hover;
-  visibility: hidden;
-  opacity: 0;
-  transition: $transition-base;;
+  padding: $fdc-space-2xl;
+  overflow: hidden;
 
-  &.show {
-    top: calc(#{$fdc-header-height} + 50px);
-    visibility: visible;
-    opacity: 1;
-  }
+  &__icon {
+    display: flex;
+    justify-content: flex-end;
+    height: 0;
 
-  .fdc-main-nav ~ * &,
-  .fdc-main-nav ~ & {
-    top: calc(#{$fdc-header-height} * 2 + 20px);
-
-    &.show {
-      top: calc(#{$fdc-header-height} * 2 + 50px);
+    i {
+      margin-top:  - 50px;
+      margin-right: - 50px;
+      font-size: 70px;
+      line-height: 1;
+      opacity: .2;
     }
-  }
-}
-
-$alert-colors: () !default;
-$alert-colors: map-merge(
-  (
-    "success":    $success,
-    "danger":     $danger,
-  ),
-  $alert-colors
-);
-
-
-@each $color, $value in $alert-colors {
-  .fdc-alert-#{$color} {
-    background-color: $value;
   }
 }

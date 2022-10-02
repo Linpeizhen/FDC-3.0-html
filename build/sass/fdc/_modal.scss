@@ -8,25 +8,21 @@
 }
 
 .modal-header {
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  // top: 0;
   background-color: $fdc-c-white;
   z-index: 3;
 
   button.close {
     outline-color: opacify($fdc-c-primary, 0.2);
-    line-height: 1.2;
+    font-size: 40px;
   }
 }
 
 .modal-footer {
-  position: sticky;
-  bottom: 0;
-  background-color: #f6f6f6;
-  padding: 1.6rem ($modal-inner-padding - $modal-footer-margin-between / 2);
+  // position: sticky;
+  // bottom: 0;
+  background-color: $fdc-c-white;
+  padding: 0 $modal-inner-padding $fdc-space-base;
   z-index: 9;
-
-  > * {
-    margin: 0 $modal-footer-margin-between / 2;
-  }
 }

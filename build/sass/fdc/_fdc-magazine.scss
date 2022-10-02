@@ -4,7 +4,6 @@
   &__image {
     position: relative;
     padding-bottom: 100%;
-    transition: $transition-base;
     @extend %bg-img;
 
     @include media-breakpoint-down(md) {
@@ -12,13 +11,17 @@
       margin-bottom: $fdc-space-2xl;
     }
 
-    &:hover {
-      opacity: .6;
+    > a {
 
-      a {
-        cursor: url(../images/white_arrow_right.svg), e-resize;
+      ::after {
+        background-color: rgba($fdc-c-white, 0);
       }
 
+      &:hover::after {
+        background-color: rgba($fdc-c-white, .2);
+        cursor: url(../images/white_arrow_right.svg), e-resize;
+        transition: $transition-base;
+      }
     }
   }
 

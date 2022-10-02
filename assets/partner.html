@@ -22,225 +22,267 @@
       <![endif]-->
    <meta http-equiv="X-UA-Compatible" content="IE=10" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
    <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
    <script>
       $(function () {
-         $('.product_sidebar_list').tinyNav({
-            header: '☰ MENU 選單項目' // Writing any title with this option triggers the header
+         $('.fdc-header__open-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').addClass('show');
          });
-         $('#main_navbar').bootnavbar();
+
+         $('.fdc-header__close-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $(".fdc-carousel--full .owl-carousel").owlCarousel({
+            loop: true,
+            items: 1,
+            nav: true,
+            dots: true,
+            dotsContainer: '.fdc-carousel__dots',
+            navContainer: '.fdc-carousel__control',
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+         });
       });
    </script>
 </head>
 
 <body>
-   <!-- HEADER -->
-   <header>
-      <!--NAV-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-         <div id="logo">
-            <a href="index.html">
-               <h1>FD</h1>
+   <header class="fdc-header">
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
             </a>
          </div>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-               <li class="nav-item">
-                  <form class="search_form" action="">
-                     <div class="vessel">
-                        <label>搜尋</label>
-                        <input type="text" name="" placeholder="搜尋">
-                        <input type="submit" value="">
-                     </div>
-                  </form>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>繁體中文</span> <i
-                        class="bi bi-chevron-down"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                     <div class="dropdown-item active"><a href="javascript:;"">繁體中文 <i class=" bi bi-check2"></i></a>
-                     </div>
-                     <div class="dropdown-item"><a href="javascript:;">簡體中文</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">English</a></div>
-                  </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="pay.html">快速付款</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="javascript:;">Hi, Pei Zhen</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <div class="dropdown-item"><a href="index.html"">首頁</a></div>
-                        <div class=" dropdown-item"><a href="intro.html">品牌簡介</a></div>
-                     <div class="dropdown-item"><a href="intro.html">四大服務類別</a></div>
-                     <div class="dropdown-item"><a href="customize.html">企業客製</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">商品</a></div>
-                     <div class="dropdown-item"><a href="blog.html">部落格</a></div>
-                     <div class="dropdown-item"><a href="activity.html">活動頁</a></div>
-                     <div class="dropdown-divider"></div>
-                     <!-- 未登入才顯示 -->
-                     <!-- <div class="dropdown-item l5"><a href="javascript:;">會員註冊</a></div> -->
-                     <!-- 登入才顯示 -->
-                     <div class="dropdown-item l6"><a href="index_un.html">登出</a></div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <!--END NAV-->
-   </header>
-   <!--END HEADER-->
-   <div id="wrapper">
-      <!-- BANNER -->
-      <div id="banner">
-         <ul class="banner">
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">Your Ultimate Experience Provider </div>
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
             </li>
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">2</div>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="index_en.html">English</a>
+               </div>
             </li>
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">3</div>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="product.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
             </li>
          </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/header_burger.svg" alt="">
+         </a>
+      </div>
+   </header>
+   <main class="fdc-main">
+      <!-- BANNER -->
+      <div class="fdc-carousel fdc-carousel--full">
+         <div class="owl-carousel">
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+         </div>
+         <div class="fdc-carousel__control">
+            <div class="fdc-carousel__dots"></div>
+         </div>
       </div>
       <!--END BANNER-->
 
-      <!-- 夥伴簡介 -->
-      <section class="magazine magazine_left partner_intro border-bottom">
-         <div class="content">
+      <!-- 介紹 -->
+      <section class="fdc-magazine fdc-magazine--left fdc-bg--texture bg-primary fdc-section-deco">
+         <div class="container">
             <div class="row align-items-center">
-               <div class="col-lg-6">
-                  <div class="magazine_img_box" style="background-image: url(images/magazine_001.jpeg);">
-                     <img class="deco_img_line d-none d-lg-block" src="images/deco_img_line.svg" alt="">
+               <div class="col-lg-6 col-xl-5 offset-xl-1">
+                  <div class="fdc-magazine__image" style="background-image: url(images/magazine_001.jpeg);">
+                     <img class="fdc-magazine__deco d-none d-lg-block" src="images/img_deco_line.svg" alt="">
                   </div>
                </div>
-               <div class="col-lg-5 offset-md-1">
-                  <div class="content_title">國泰世華</div>
-                  <div class="desc">
-                     FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                     FineDayClub為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
-                  </div>
+               <div class="col-lg-5 col-xl-4 offset-lg-1">
+                  <h2 class="fdc-section-title text-white">
+                     <div class="fdc-section-title__deco text-white">Intro</div>
+                     國泰世華
+                  </h2>
+                  <p class="fdc-magazine__des text-white">
+                     FineDayClub 是 KKday集團於 2020 年 12 月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                     FineDayClub 為您量身策劃，透過專人一對一諮詢的尊榮服務，讓您輕鬆展開兼具深度與廣度的旅程。
+                  </p>
                </div>
             </div>
          </div>
       </section>
-      <!-- End 夥伴簡介 -->
+      <!-- End 介紹 -->
 
 	  <!-- 商品 -->
-	  <section class="product_section">
-		<div class="content">
-		   <div class="content_title">國泰小樹點會員嚴選推薦</div>
-		   <div class="row no-gutters">
-			  <div class="col-md-6 col-lg-4">
-				 <div class="fdc-product-card">
-					<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
-					<a href="product_detail.html">
-					   <div class="fdc-product-card_img">
-						  <img src="images/product_001.jpg" alt="">
-						  <span class="fdc-product-card__like active"></span>
-					   </div>
-					   <p class="fdc-product-card__title">台北文華東方</p>
-					   <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-					</a>
-				 </div>
-			  </div>
-			  <div class="col-md-6 col-lg-4">
-				 <div class="fdc-product-card">
-					<span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
-					<a href="product_detail.html">
-					   <div class="fdc-product-card_img">
-						  <img src="images/product_002.jpg" alt="">
-						  <span class="fdc-product-card__like"></span>
-					   </div>
-					   <p class="fdc-product-card__title">台北文華東方台北文華東方台北文華東方台北文華東方</p>
-					   <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅 ineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-					</a>
-				 </div>
-			  </div>
-			  <div class="col-md-6 col-lg-4">
-				 <div class="fdc-product-card">
-					<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
-					<a href="product_detail.html">
-					   <div class="fdc-product-card_img">
-						  <img src="images/product_003.jpg" alt="">
-						  <span class="fdc-product-card__like"></span>
-					   </div>
-					   <p class="fdc-product-card__title">台北文華東方</p>
-					   <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-					</a>
-				 </div>
-			  </div>
-			  <div class="col-md-6 col-lg-4">
-				 <div class="fdc-product-card">
-					<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
-					<a href="product_detail.html">
-					   <div class="fdc-product-card_img">
-						  <img src="images/product_001.jpg" alt="">
-						  <span class="fdc-product-card__like"></span>
-					   </div>
-					   <p class="fdc-product-card__title">台北文華東方</p>
-					   <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-					</a>
-				 </div>
-			  </div>
-			  <div class="col-md-6 col-lg-4">
-				 <div class="fdc-product-card">
-					<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
-					<a href="product_detail.html">
-					   <div class="fdc-product-card_img">
-						  <img src="images/product_001.jpg" alt="">
-						  <span class="fdc-product-card__like"></span>
-					   </div>
-					   <p class="fdc-product-card__title">台北文華東方</p>
-					   <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-					</a>
-				 </div>
-			  </div>
-			  <div class="col-md-6 col-lg-4">
-				 <div class="fdc-product-card">
-					<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
-					<a href="product_detail.html">
-					   <div class="fdc-product-card_img">
-						  <img src="images/product_001.jpg" alt="">
-						  <span class="fdc-product-card__like"></span>
-					   </div>
-					   <p class="fdc-product-card__title">台北文華東方</p>
-					   <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-					</a>
-				 </div>
-			  </div>
-         </div>
-         <div class="row justify-content-center">
-				<div class="col-lg-8">
-               <div class="note text-center">
-                  <i class="bi bi-exclamation-circle-fill"></i>
-                  <span>如有行程外相關事項，請洽國泰世華小樹點客服。</span>
+	  <section>
+		<div class="container">
+         <h2 class="fdc-section-title">
+            <div class="fdc-section-title__deco">Recommend</div>
+            國泰小樹點會員嚴選推薦
+         </h2>
+         <div class="row">
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_001.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_002.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_003.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_004.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_005.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_006.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_001.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+               <div class="fdc-product-card">
+                  <a href="product_detail.html">
+                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                     <div class="fdc-product-card_img">
+                        <img src="images/product_002.jpg" alt="">
+                     </div>
+                     <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                     <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                  </a>
                </div>
             </div>
          </div>
-		</div>
+      </div>
 	 </section>
 	 <!--END 商品-->
+
+    <section class="pt-0">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-6">
+               <div class="fdc-alert bg-neutral">
+                  <div class="fdc-alert__icon text-secondary-light">
+                     <i class="bi bi-exclamation-circle-fill"></i>
+                  </div>
+                  <p class="mb-0">如有行程外相關事項，請洽國泰世華小樹點客服。</p>
+               </div>
+            </div>
+         </div>
+      </div>
+    </section>
+   </main>
+   <!-- Fixed bottom on screnn -->
+   <div class="fdc-fab">
+      <a href="#" class="fdc-fab__btn">
+         <i class="bi bi-chevron-bar-up"></i>
+      </a>
+      <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-fab__btn">
+         <i class="bi bi-question"></i>
+      </a>
    </div>
-   <!--END WRAPPER-->
-   <!-- FOOTER -->
    <footer class="fdc-footer">
       <div class="container">
          <div class="row align-items-end">
@@ -302,71 +344,46 @@
          </div>
       </div>
    </footer>
-   <!-- Modal contact -->
+
+   <!-- 聯絡我們 modal -->
    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog modal-dialog-s" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img
-                     src="images/close.png" alt=""></span></button>
-            <div class="modal-body">
-               <ul class="info">
-                  <li class="info_title">聯絡我們</li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>常用姓名</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>電子郵件</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>聯絡電話</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>詢問訊息</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><textarea id="w3review"
-                           name="w3review" rows="4" cols="50"></textarea></div>
-                  </li>
-                  <li class="row mt-1 info_list">
-                  <li class="row info_list_btn justify-content-end">
-                     <div class="col-lg-2 col-md-2 col-12 m-0 bootstrap_default btn btn_black"><a
-                           href="javascripr:;">送出</a></div>
-                  </li>
-                  </li>
-               </ul>
+            <div class="modal-header">
+               <h4 class="modal-title">聯絡我們</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x"></i>
+               </button>
             </div>
+            <div class="modal-body">
+               <div class="form-group">
+                  <label>常用姓名*</label>
+                  <input type="text" placeholder="e.g. 王小明" class="form-control">
+               </div>
+               <div class="form-group fdc-has-danger">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+                  <div class="form-text">請輸入</div>
+               </div>
+               <div class="form-group">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>聯絡電話*</label>
+                  <input type="tel" placeholder="e.g. 0912345678" class="form-control">
+               </div>
+               <div class="form-group mb-0">
+                  <label>詢問訊息*</label>
+                  <textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary">送出</button>
+             </div>
          </div>
       </div>
    </div>
-   <!--END FOOTER-->
-   <script type="text/javascript">
-      $(document).on('ready', function () {
-         $('.banner').slick({
-            lidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            fade: true,
-            speed: 500,
-            infinite: true,
-            cssEase: 'ease-in-out'
-         });
-      });
-   </script>
 </body>
 
 </html>

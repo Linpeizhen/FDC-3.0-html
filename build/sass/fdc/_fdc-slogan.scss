@@ -1,0 +1,21 @@
+.fdc-slogan {
+    @extend %bg-img;
+
+    &__content {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        background-color: rgba(34, 34, 34, .4);
+        color: #fff;
+		text-align: center;
+
+		h2 {
+			letter-spacing: 0.16em;
+			margin-bottom: 24px;
+		}
+
+		h6 {
+			letter-spacing: 0.4em;
+			margin-top: 24px;
+		}
+    }
+}
