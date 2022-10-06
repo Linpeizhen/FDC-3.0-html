@@ -5,7 +5,8 @@
   top: 0;
   z-index: 99;
   height: $fdc-header-height;
-  background: $fdc-c-white;
+  background: rgba($fdc-c-white, .88);
+  backdrop-filter: blur(24px);
   border-bottom: 1px solid $fdc-border-color-light;
 
   .container {

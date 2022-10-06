@@ -27,12 +27,13 @@
 
     &__content-title {
         font-size: 24px;
-        margin-bottom: 40px;
+        margin-bottom: $fdc-space-lg;
     }
 
     &__content-des {
         font-size: 16px;
         line-height: 1.7;
+        margin-bottom: $fdc-space-lg;
     }
 
 	.fdc-section-title__deco {
