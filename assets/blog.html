@@ -8,7 +8,7 @@
    <meta name="keywords" content="">
    <meta name="author" content="Patty Hsu">
    <meta name="copyright" content="">
-   <title>BLOG</title>
+   <title>BLOG｜FDC</title>
    <meta property="og:title" content="" />
    <meta property="og:name" content="" />
    <meta property="og:type" content="">
@@ -22,240 +22,356 @@
       <![endif]-->
    <meta http-equiv="X-UA-Compatible" content="IE=10" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
-      <script src="js/jquery-1.9.1.min.js"></script>
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
    <script>
       $(function () {
-         $('.product_sidebar_list').tinyNav({
-            header: '☰ MENU 選單項目' // Writing any title with this option triggers the header
+         $('.fdc-header__open-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').addClass('show');
          });
-         $('#main_navbar').bootnavbar();
+
+         $('.fdc-header__close-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $('.fdc-carousel--full .owl-carousel').owlCarousel({
+            loop: true,
+            items: 1,
+            nav: true,
+            dots: true,
+            dotsContainer: '.fdc-carousel__dots',
+            navContainer: '.fdc-carousel__control',
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+         });
       });
    </script>
 </head>
 
 <body>
-   <!-- HEADER -->
-   <header>
-      <!--NAV-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-         <div id="logo">
-            <a href="index.html">
-               <h1>FD</h1>
+   <header class="fdc-header">
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
             </a>
          </div>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-               <li class="nav-item">
-                  <form class="search_form" action="">
-                     <div class="vessel">
-                        <label>搜尋</label>
-                        <input type="text" name="" placeholder="搜尋">
-                        <input type="submit" value="">
-                     </div>
-                  </form>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>繁體中文</span> <i
-                        class="bi bi-chevron-down"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                     <div class="dropdown-item active"><a href="javascript:;"">繁體中文 <i class=" bi bi-check2"></i></a>
-                     </div>
-                     <div class="dropdown-item"><a href="javascript:;">簡體中文</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">English</a></div>
-                  </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="pay.html">快速付款</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="javascript:;">Hi, Pei Zhen</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <div class="dropdown-item"><a href="index.html"">首頁</a></div>
-                        <div class=" dropdown-item"><a href="intro.html">品牌簡介</a></div>
-                     <div class="dropdown-item"><a href="intro.html">四大服務類別</a></div>
-                     <div class="dropdown-item"><a href="customize.html">企業客製</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">商品</a></div>
-                     <div class="dropdown-item"><a href="blog.html">部落格</a></div>
-                     <div class="dropdown-item"><a href="activity.html">活動頁</a></div>
-                     <div class="dropdown-divider"></div>
-                     <!-- 未登入才顯示 -->
-                     <!-- <div class="dropdown-item l5"><a href="javascript:;">會員註冊</a></div> -->
-                     <!-- 登入才顯示 -->
-                     <div class="dropdown-item l6"><a href="index_un.html">登出</a></div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <!--END NAV-->
-   </header>
-   <!--END HEADER-->
-   <div id="wrapper">
-      <!-- BANNER -->
-      <div id="banner">
-         <ul class="banner">
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">Your Ultimate Experience Provider </div>
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
             </li>
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">2</div>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="index_en.html">English</a>
+               </div>
             </li>
-            <li class="item">
-               <img src="images/banner001.jpg" alt="">
-               <div class="slide_text">3</div>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="product.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
             </li>
          </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/header_burger.svg" alt="">
+         </a>
+      </div>
+   </header>
+   <main class="fdc-main">
+      <!-- BANNER -->
+      <div class="fdc-carousel fdc-carousel--full">
+         <div class="owl-carousel">
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+            <div class="fdc-carousel__item">
+               <img src="images/banner_001.jpeg" alt="">
+            </div>
+         </div>
+         <div class="fdc-carousel__control">
+            <div class="fdc-carousel__dots"></div>
+         </div>
       </div>
       <!--END BANNER-->
 
       <!-- 最新消息 -->
-      <section class="blog_list blog_news">
-         <div class="content">
-            <div class="content_title">最新消息</div>
-            <div class="row align-items-lg-stretch">
-               <div class="col-lg-8">
-                  <div class="fdc-blog-card mb-4">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="row align-items-md-stretch">
-                        <div class="col-md-6">
-                           <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="fdc-blog-card__content  mt-3 mt-md-0">
-                              <div class="fdc-blog-card__content-title">文章標題</div>
-                              <div class="fdc-blog-card__content-des">
-                                 FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+      <section class="bg-neutral-light">
+         <div class="container">
+            <h2 class="fdc-section-title text-center">
+               <div class="fdc-section-title__deco">News</div>
+               最新消息
+            </h2>
+            <div class="row justify-content-center">
+               <!-- 最多顯示三篇，版型如下 -->
+               <div class="col-xl-10">
+                  <div class="fdc-news">
+                     <div class="row align-items-lg-stretch justify-content-center">
+                        <div class="col-lg-8">
+                           <div class="fdc-blog-card fdc-blog-card--news border-bottom-0">
+                              <div class="row">
+                                 <div class="col-md-5">
+                                    <div class="fdc-blog-card__img">
+                                       <img src="images/blog_001.jpg" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-7">
+                                    <div class="fdc-blog-card__content">
+                                       <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                                       <div class="fdc-blog-card__content-des">
+                                          <p>
+                                             FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                             FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                             FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                          </p>
+                                       </div>
+                                       <div class="mt-4 text-right">
+                                          <a href="blog_detail.html" class="btn btn-link p-2">
+                                             <span>繼續閱讀</span>
+                                             <i class="bi bi-arrow-right"></i>
+                                          </a>
+                                       </div>
+                                    </div>
+                                 </div>
                               </div>
-                              <div class="blog_date">2022/11/27</div>
-                              <div class="blog_hashtag_container">
-                                 <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                                 <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                                 <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                           </div>
+                           <hr>
+                           <div class="fdc-blog-card fdc-blog-card--news">
+                              <div class="row">
+                                 <div class="col-md-5">
+                                    <div class="fdc-blog-card__img">
+                                       <img src="images/blog_002.jpg" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-7">
+                                    <div class="fdc-blog-card__content">
+                                       <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                                       <div class="fdc-blog-card__content-des">
+                                          <p>
+                                             FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                             FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                             FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                          </p>
+                                       </div>
+                                       <div class="mt-4 text-right">
+                                          <a href="blog_detail.html" class="btn btn-link p-2">
+                                             <span>繼續閱讀</span>
+                                             <i class="bi bi-arrow-right"></i>
+                                          </a>
+                                       </div>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="fdc-blog-card mb-4 mb-lg-0">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="row align-items-md-stretch">
-                        <div class="col-md-6">
-                           <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="fdc-blog-card__content  mt-3 mt-md-0">
-                              <div class="fdc-blog-card__content-title">文章標題</div>
-                              <div class="fdc-blog-card__content-des">
-                                 FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                              </div>
-                              <div class="blog_date">2022/11/27</div>
-                              <div class="blog_hashtag_container">
-                                 <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                                 <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                                 <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                        <div class="col-lg-4">
+                           <hr class="d-lg-none">
+                           <div class="fdc-blog-card fdc-blog-card--vertical fdc-blog-card--news border-bottom-0">
+                              <div class="row flex-lg-column h-100">
+                                 <div class="col-md-5 col-lg-auto">
+                                    <div class="fdc-blog-card__img">
+                                       <img src="images/blog_001.jpg" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-7 col-lg">
+                                    <div class="fdc-blog-card__content">
+                                       <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                                       <div class="fdc-blog-card__content-des">
+                                          <p>
+                                             FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                             FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                             FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                          </p>
+                                       </div>
+                                       <div class="mt-4 text-right">
+                                          <a href="blog_detail.html" class="btn btn-link p-2">
+                                             <span>繼續閱讀</span>
+                                             <i class="bi bi-arrow-right"></i>
+                                          </a>
+                                       </div>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-lg-4">
-                  <div class="fdc-blog-card h-100">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="row flex-lg-column h-100">
-                        <div class="col-md-6 col-lg-auto flex-lg-grow-1"">
-                           <div class="fdc-blog-card__img h-100" style="background-image: url(images/product_001.jpg);"></div>
-                        </div>
-                        <div class="col-md-6 col-lg-auto">
-                           <div class="fdc-blog-card__content mt-3 mt-md-0 mt-lg-3">
-                              <div class="fdc-blog-card__content-title">文章標題</div>
-                              <div class="fdc-blog-card__content-des">
-                                 FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
-                                 FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+
+               <!-- 只有兩篇，版型如下 -->
+               <!-- <div class="col-xl-8">
+                  <div class="fdc-news">
+                     <div class="fdc-blog-card fdc-blog-card--news border-bottom-0">
+                        <div class="row">
+                           <div class="col-md-5">
+                              <div class="fdc-blog-card__img">
+                                 <img src="images/blog_001.jpg" alt="">
                               </div>
-                              <div class="blog_date">2022/11/27</div>
-                              <div class="blog_hashtag_container">
-                                 <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                                 <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                                 <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                           </div>
+                           <div class="col-md-7">
+                              <div class="fdc-blog-card__content">
+                                 <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                                 <div class="fdc-blog-card__content-des">
+                                    <p>
+                                       FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                       FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                       FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                    </p>
+                                 </div>
+                                 <div class="mt-4 text-right">
+                                    <a href="blog_detail.html" class="btn btn-link p-2">
+                                       <span>繼續閱讀</span>
+                                       <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="fdc-blog-card fdc-blog-card--news">
+                        <div class="row">
+                           <div class="col-md-5">
+                              <div class="fdc-blog-card__img">
+                                 <img src="images/blog_002.jpg" alt="">
+                              </div>
+                           </div>
+                           <div class="col-md-7">
+                              <div class="fdc-blog-card__content">
+                                 <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                                 <div class="fdc-blog-card__content-des">
+                                    <p>
+                                       FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                       FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                       FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                    </p>
+                                 </div>
+                                 <div class="mt-4 text-right">
+                                    <a href="blog_detail.html" class="btn btn-link p-2">
+                                       <span>繼續閱讀</span>
+                                       <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                 </div>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> -->
+
+               <!-- 只有一篇，版型如下 -->
+               <!-- <div class="col-xl-8">
+                  <div class="fdc-news">
+                     <div class="fdc-blog-card fdc-blog-card--news border-bottom-0">
+                        <div class="row">
+                           <div class="col-md-5">
+                              <div class="fdc-blog-card__img">
+                                 <img src="images/blog_001.jpg" alt="">
+                              </div>
+                           </div>
+                           <div class="col-md-7">
+                              <div class="fdc-blog-card__content">
+                                 <h4 class="fdc-blog-card__content-title">文章標題</h4>
+                                 <div class="fdc-blog-card__content-des">
+                                    <p>
+                                       FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                       FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                       FineDayClub為您量身FineDayClub是KKday集團於2020年12月成立，全新頂級客製化生活體驗平台，為您實現夢寐以求的奢華與美好，上山、下海、天之涯、地之極、米其林星級的感動、陳釀美酒的芬芳⋯
+                                    </p>
+                                 </div>
+                                 <div class="mt-4 text-right">
+                                    <a href="blog_detail.html" class="btn btn-link p-2">
+                                       <span>繼續閱讀</span>
+                                       <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
             </div>
          </div>
       </section>
       <!-- End 最新消息 -->
 
       <!-- 熱門文章 -->
-      <section class="blog_list blog_list_small blog_hot">
-         <div class="content">
-            <div class="content_title">熱門文章</div>
+      <section class="bg-neutral-lighter">
+         <div class="container">
+            <h2 class="fdc-section-title">
+               <div class="fdc-section-title__deco">Hot</div>
+               熱門文章
+            </h2>
             <div class="row">
                <div class="col-md-4">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-4">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-4">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
             </div>
@@ -264,159 +380,142 @@
       <!-- End 熱門文章 -->
 
       <!-- 精選文章 -->
-      <section class="blog_list blog_list_small blog_hot border-bottom">
-         <div class="content">
-            <div class="content_title">熱門文章</div>
+      <section>
+         <div class="container">
+            <h2 class="fdc-section-title">
+               <div class="fdc-section-title__deco">Selected</div>
+               精選文章
+            </h2>
             <div class="row">
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
                <div class="col-md-6 col-lg-3">
-                  <div class="fdc-blog-card">
-                     <a href="blog_detail.html" class="stretched-link"></a>
-                     <div class="fdc-blog-card__img" style="background-image: url(images/product_001.jpg);"></div>
-                     <div class="fdc-blog-card__content">
-                        <div class="fdc-blog-card__content-title">文章標題</div>
-                        <div class="blog_date">2022/11/27</div>
-                        <div class="blog_hashtag_container">
-                           <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                           <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
+                  <div class="fdc-blog-card fdc-blog-card--default">
+                     <a href="blog_detail.html">
+                        <div class="fdc-blog-card__img">
+                           <img src="images/blog_001.jpg" alt="">
                         </div>
-                     </div>
+                        <div class="fdc-blog-card__content">
+                           <h5 class="fdc-blog-card__content-title">文章標題</h5>
+                           <div class="fdc-blog-card__date">2022/11/27</div>
+                        </div>
+                     </a>
                   </div>
                </div>
             </div>
-            <div class="text-center mt-4">
-               <div class="btn btn_black_line d-inline-block w-auto">
-                  <a href="product.html">載入更多</a>
-               </div>
+            <div class="text-center mt-5">
+               <!-- 小於八篇不顯示載入按鈕 -->
+               <a href="javascript:;" class="btn btn-outline-primary">
+                  <span>載入更多</span>
+               </a>
+               <!-- 載入中 按鈕顯示以下狀態 -->
+               <!-- <a href="javascript:;" class="btn btn-outline-primary disabled">
+                  <span>載入中...</span>
+               </a> -->
             </div>
          </div>
       </section>
       <!-- End 精選文章 -->
-
-      <!-- Hashtags -->
-      <section class="blog_hashtags">
-         <div class="content">
-            <div class="blog_hashtag_container">
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-            </div>
-         </div>
-      </section>
-      <!-- End Hashtags -->
+   </main>
+   <!-- Fixed bottom on screnn -->
+   <div class="fdc-fab">
+      <a href="#" class="fdc-fab__btn">
+         <i class="bi bi-chevron-bar-up"></i>
+      </a>
+      <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-fab__btn">
+         <i class="bi bi-question"></i>
+      </a>
    </div>
-   <!--END WRAPPER-->
-   <!-- FOOTER -->   <footer class="fdc-footer">
+   <footer class="fdc-footer">
       <div class="container">
          <div class="row align-items-end">
             <div class="col-lg">
@@ -440,7 +539,8 @@
                            <a href="javascripr:;" class="fdc-nav__link">常見問題</a>
                         </li>
                         <li>
-                           <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-nav__link">聯絡我們</a>
+                           <a href="javascript:;" data-toggle="modal" data-target="#contact"
+                              class="fdc-nav__link">聯絡我們</a>
                         </li>
                      </ul>
                   </div>
@@ -477,71 +577,46 @@
          </div>
       </div>
    </footer>
-   <!-- Modal contact -->
+
+   <!-- 聯絡我們 modal -->
    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog modal-dialog-s" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img
-                     src="images/close.png" alt=""></span></button>
+            <div class="modal-header">
+               <h4 class="modal-title">聯絡我們</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x"></i>
+               </button>
+            </div>
             <div class="modal-body">
-               <ul class="info">
-                  <li class="info_title">聯絡我們</li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>常用姓名</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>電子郵件</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>聯絡電話</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>詢問訊息</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><textarea id="w3review"
-                           name="w3review" rows="4" cols="50"></textarea></div>
-                  </li>
-                  <li class="row mt-1 info_list">
-                  <li class="row info_list_btn justify-content-end">
-                     <div class="col-lg-2 col-md-2 col-12 m-0 bootstrap_default btn btn_black"><a
-                           href="javascripr:;">送出</a></div>
-                  </li>
-                  </li>
-               </ul>
+               <div class="form-group">
+                  <label>常用姓名*</label>
+                  <input type="text" placeholder="e.g. 王小明" class="form-control">
+               </div>
+               <div class="form-group fdc-has-danger">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+                  <div class="form-text">請輸入</div>
+               </div>
+               <div class="form-group">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>聯絡電話*</label>
+                  <input type="tel" placeholder="e.g. 0912345678" class="form-control">
+               </div>
+               <div class="form-group mb-0">
+                  <label>詢問訊息*</label>
+                  <textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
             </div>
          </div>
       </div>
    </div>
-   <!--END FOOTER-->
-   <script type="text/javascript">
-      $(document).on('ready', function () {
-         $('.banner').slick({
-            lidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            fade: true,
-            speed: 500,
-            infinite: true,
-            cssEase: 'ease-in-out'
-         });
-      });
-   </script>
 </body>
 
 </html>

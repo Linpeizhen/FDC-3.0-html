@@ -1,0 +1,29 @@
+.fdc-tag-container {
+    display: flex;
+	justify-content: center;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}
+
+.fdc-tag {
+    background-color: $fdc-c-neutral-light;
+	font-family: $fdc-font-family-title;
+    border-radius: 50px;
+    margin-top: $fdc-space-sm;
+    margin-right: $fdc-space-sm;
+
+	&:hover {
+		background-color: $fdc-c-secondary;
+
+		> a {
+			color: $fdc-c-white;
+			text-decoration: none;
+		}
+	}
+
+	> a {
+		display: block;
+		padding: 8px 12px;
+		color: $fdc-c-secondary;
+	}
+}

@@ -22,9 +22,9 @@
       <![endif]-->
    <meta http-equiv="X-UA-Compatible" content="IE=10" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
    <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
    <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
    <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
    <script src="js/owl.carousel.min.js"></script>
@@ -39,7 +39,7 @@
             $('.fdc-header .fdc-nav').removeClass('show');
          });
 
-         $(".fdc-carousel--full .owl-carousel").owlCarousel({
+         $('.fdc-carousel--full .owl-carousel').owlCarousel({
             loop: true,
             items: 1,
             nav: true,
@@ -374,7 +374,7 @@
                </div>
             </div>
             <div class="modal-footer">
-               <button type="button" class="btn btn-secondary">送出</button>
+               <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
              </div>
          </div>
       </div>

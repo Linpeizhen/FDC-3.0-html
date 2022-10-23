@@ -12,7 +12,6 @@ $fdc-c-success:       #687839;
 $fdc-c-warning:       #D6933A;
 $fdc-c-danger:        #A43E3A;
 $fdc-c-info:          #62879D;
-$fdc-c-light:         #666666;
 $fdc-c-blue:          #285B88;
 $fdc-c-gradient:      linear-gradient(135deg,$fdc-c-primary,$fdc-c-primary-light);
 
@@ -111,7 +110,7 @@ $secondary:     $fdc-c-secondary;
 $success:       $fdc-c-success;
 $warning:       $fdc-c-warning;
 $danger:        $fdc-c-danger;
-$light:         $fdc-c-light;
+$light:         $fdc-gray-100;
 
 $theme-colors: ();
 $theme-colors: map-merge(
@@ -268,9 +267,8 @@ $dropdown-item-padding-y:     $fdc-space-sm;
 $dropdown-item-padding-x:     $fdc-space-lg;
 
 // Forms
-$input-height:               4.6rem;
 $input-padding-x:            1.6rem;
-$input-padding-y:            1.2rem;
+$input-padding-y:            1.3rem;
 
 $input-border-radius:        0;
 $input-border-radius-sm:     0;
@@ -279,10 +277,10 @@ $input-border-radius-lg:     0;
 $input-color:                $fdc-text-dark;
 $input-placeholder-color:    $fdc-gray-500;
 
-$input-border-color:         $fdc-border-color-dark;
-$input-disabled-bg:          $fdc-c-neutral-lighter;
+$input-border-color:         $fdc-gray-200;
+$input-disabled-bg:          $fdc-gray-100;
 $input-focus-border-color:   $fdc-c-primary;
-$input-focus-box-shadow:     0 0 0 .2rem rgba($fdc-c-primary-light, 0.2);
+$input-focus-box-shadow:     .2em .2em 0 .2rem rgba($fdc-c-primary-light, 0.2);
 
 $form-group-margin-bottom:   $fdc-space-lg;
 
@@ -339,3 +337,11 @@ $popover-body-padding-x:            $fdc-space-sm;
 
 $popover-arrow-width:               2.4rem;
 $popover-arrow-height:              1.4rem;
+
+// Badges
+
+$badge-font-size:                   $font-size-base;
+$badge-font-weight:                 normal;
+$badge-padding-y:                   $fdc-space-xs;
+$badge-padding-x:                   12px;
+$badge-border-radius:               0;

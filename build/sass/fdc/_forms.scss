@@ -27,51 +27,6 @@ label {
   padding: 0 .2rem;
 }
 
-// input wrapper
-.fdc-input-wrapper {
-  position: relative;
-
-  label {
-    position: absolute;
-    top: .1rem;
-    left: .1rem;
-    right: .1rem;
-    z-index: 1;
-    padding: 1rem 0;
-    margin: 0 1.6rem;
-    pointer-events: none;
-  }
-
-  ~ .form-text {
-    padding: 0 1.6rem;
-  }
-
-  .form-control {
-    height: $fdc-input-wrapper-height;
-    padding-top: 3.4rem;
-  }
-
-  textarea.form-control,
-  div[contenteditable=true].form-control {
-    height: auto;
-    min-height: $fdc-input-wrapper-height;
-
-    ~ label {
-      border-radius: $input-border-radius;
-      background-color: $fdc-c-white;
-    }
-
-    &:disabled ~ label {
-      background-color: $input-disabled-bg;
-    }
-  }
-
-  div[contenteditable=true].form-control {
-    height: 220px;
-    overflow: auto;
-  }
-}
-
 // Validation
 .fdc-has-danger {
   .form-control {
@@ -252,5 +207,37 @@ label {
       margin-top: .25rem;
       font-size: $h5-font-size;
     }
+  }
+}
+
+// Dropdown in form
+.form-control[data-toggle=dropdown] {
+  background-color: $input-bg;
+
+  + .dropdown-menu {
+    width: 100%;
+    min-width: auto;
+    margin-top: -$input-btn-border-width;
+
+    .dropdown-item {
+      white-space: normal;
+      border-bottom: 1px solid $hr-border-color;
+    }
+  }
+}
+
+.dropdown.show .form-control[data-toggle=dropdown] {
+  border-color: $input-focus-border-color;
+}
+
+.fdc-input-addon {
+  position: absolute;
+  top: $input-padding-y;
+  right: $input-padding-x;
+  color: $fdc-gray-600;
+  pointer-events: none;
+
+  + .form-control {
+    padding-right: 44px;
   }
 }

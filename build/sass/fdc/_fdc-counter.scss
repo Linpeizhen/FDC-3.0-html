@@ -1,0 +1,28 @@
+.fdc-counter {
+	display: flex;
+	align-items: center;
+
+	&__num {
+		padding: 0 $fdc-space-base;
+		font-family: monospace;
+		font-weight: 500;
+		font-size: 1.8rem;
+	}
+
+	&__minus,
+	&__plus {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		background-color: $fdc-c-neutral-light;
+		font-size: 2rem;
+		color: $fdc-gray-900;
+
+		&:hover {
+			background-color: $fdc-c-primary;
+			color: $fdc-c-white;
+		}
+	}
+}

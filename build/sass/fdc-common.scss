@@ -50,7 +50,7 @@
 @import "fdc/popover";
 
 // Restyle plugins
-
+@import "fdc/datepicker";
 
 // FDC components
 @import "fdc/fdc-alert";
@@ -58,13 +58,16 @@
 @import "fdc/fdc-blog-card";
 @import "fdc/fdc-card";
 @import "fdc/fdc-carousel";
+@import "fdc/fdc-counter";
 @import "fdc/fdc-fab";
 @import "fdc/fdc-footer";
 @import "fdc/fdc-header";
 @import "fdc/fdc-logo";
 @import "fdc/fdc-magazine";
+@import "fdc/fdc-meta";
 @import "fdc/fdc-nav";
 @import "fdc/fdc-partner-card";
+@import "fdc/fdc-product";
 @import "fdc/fdc-product-card";
 @import "fdc/fdc-service";
 @import "fdc/fdc-service-card";
@@ -72,5 +75,6 @@
 @import "fdc/fdc-slogan";
 @import "fdc/fdc-sns";
 @import "fdc/fdc-tabs";
+@import "fdc/fdc-tag";
 
 @import "fdc/fdc-utilities";

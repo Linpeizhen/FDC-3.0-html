@@ -1,0 +1,24 @@
+.fdc-meta {
+	display: flex;
+	margin: $fdc-space-lg/2 0;
+
+	&__icon {
+		color: $fdc-gray-700;
+		margin-right: $fdc-space-sm;
+	}
+
+	&__detail {
+		font-size: $font-size-sm;
+		color: $fdc-gray-800;
+
+		ul li {
+			margin-top: $fdc-space-xs;
+		}
+	}
+
+	&__title {
+		font-size: $font-size-base;
+		color: $fdc-gray-900;
+	}
+
+}

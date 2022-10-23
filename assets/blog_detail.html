@@ -8,7 +8,7 @@
    <meta name="keywords" content="">
    <meta name="author" content="Patty Hsu">
    <meta name="copyright" content="">
-   <title>文章</title>
+   <title>文章｜FDC</title>
    <meta property="og:title" content="" />
    <meta property="og:name" content="" />
    <meta property="og:type" content="">
@@ -22,157 +22,278 @@
       <![endif]-->
    <meta http-equiv="X-UA-Compatible" content="IE=10" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
-      <script src="js/jquery-1.9.1.min.js"></script>
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
    <script>
       $(function () {
-         $('.product_sidebar_list').tinyNav({
-            header: '☰ MENU 選單項目' // Writing any title with this option triggers the header
+         $('.fdc-header__open-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').addClass('show');
          });
-         $('#main_navbar').bootnavbar();
+
+         $('.fdc-header__close-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $('#recommend-carousel').owlCarousel({
+            responsive: {
+               0: {
+                  autoWidth: true,
+                  items: 1,
+                  nav: false,
+                  dots: false,
+                  margin: 0,
+                  slideBy: 1,
+               },
+               992: {
+                  loop: true,
+                  items: 3,
+                  nav: true,
+                  dots: true,
+                  margin: 24,
+                  slideBy: 'page',
+                  dotsContainer: '#recommend-carousel__dots',
+                  navContainer: '#recommend-carousel__control',
+                  navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+               }
+            }
+         });
       });
    </script>
 </head>
 
 <body>
-   <!-- HEADER -->
-   <header>
-      <!--NAV-->
-      <nav class="navbar navbar-expand-lg navbar-light">
-         <div id="logo">
-            <a href="index.html">
-               <h1>FD</h1>
+   <header class="fdc-header">
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
             </a>
          </div>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-               <li class="nav-item">
-                  <form class="search_form" action="">
-                     <div class="vessel">
-                        <label>搜尋</label>
-                        <input type="text" name="" placeholder="搜尋">
-                        <input type="submit" value="">
-                     </div>
-                  </form>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>繁體中文</span> <i
-                        class="bi bi-chevron-down"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                     <div class="dropdown-item active"><a href="javascript:;"">繁體中文 <i class=" bi bi-check2"></i></a>
-                     </div>
-                     <div class="dropdown-item"><a href="javascript:;">簡體中文</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">English</a></div>
-                  </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="pay.html">快速付款</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="javascript:;">Hi, Pei Zhen</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <div class="dropdown-item"><a href="index.html"">首頁</a></div>
-                        <div class=" dropdown-item"><a href="intro.html">品牌簡介</a></div>
-                     <div class="dropdown-item"><a href="intro.html">四大服務類別</a></div>
-                     <div class="dropdown-item"><a href="customize.html">企業客製</a></div>
-                     <div class="dropdown-item"><a href="javascript:;">商品</a></div>
-                     <div class="dropdown-item"><a href="blog.html">部落格</a></div>
-                     <div class="dropdown-item"><a href="activity.html">活動頁</a></div>
-                     <div class="dropdown-divider"></div>
-                     <!-- 未登入才顯示 -->
-                     <!-- <div class="dropdown-item l5"><a href="javascript:;">會員註冊</a></div> -->
-                     <!-- 登入才顯示 -->
-                     <div class="dropdown-item l6"><a href="index_un.html">登出</a></div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <!--END NAV-->
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="index_en.html">English</a>
+               </div>
+            </li>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="product.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
+            </li>
+         </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/header_burger.svg" alt="">
+         </a>
+      </div>
    </header>
-   <!--END HEADER-->
-   <div id="wrapper">
+   <main class="fdc-main fdc-blog">
+      <!-- Banner -->
+      <div class="fdc-blog__banner fdc-bg--texture bg-primary fdc-section-deco pb-0">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-xl-10">
+                  <div class="fdc-blog__banner-img" style="background-image: url(images/article_001.jpeg);"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End Banner -->
+
       <!-- 文章 -->
-      <section class="blog_detail border-bottom">
-         <div class="content">
+      <section class="fdc-blog__detail bg-neutral-lighter">
+         <div class="container">
             <div class="row">
-               <div class="col-12 order-lg-1">
-                  <div class="blog_detail_banner" style="background-image: url(images/service_002.jpg);"></div>
-               </div>
-               <div class="col-12 order-lg-0">
-                  <div class="blog_detail_meta">
-                     <div class="row justify-content-lg-between align-items-lg-center">
-                        <div class="col-lg-auto">
-                           <div class="blog_date">2022/1/25</div>
-                        </div>
-                        <div class="col-lg-auto">
-                           <div class="blog_hashtag_container">
-                              <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-                              <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-                              <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
-                           </div>
-                        </div>
-                     </div>
+               <div class="col-lg-10 col-xl-6 offset-lg-1 offset-xl-3">
+                  <div class="fdc-blog__title">
+                     <img src="images/blog_deco.svg" alt="" class="fdc-blog__title-deco">
+                     <div class="fdc-blog__title-date">2022年1月25日</div>
+                     <h1 class="fdc-blog__title-main">愛上喜翁民宿開箱</h1>
+                     <h2 class="fdc-blog__title-sub">新竹Glamping一泊四食露營體驗</h2>
                   </div>
-               </div>
-            </div>
-            <div class="blog_detail_share">
-               <i class="bi bi-share-fill text-muted"></i>
-                  <div class="blog_share_btn">
-                     <a href="javascript:;">
-                        <img src="images/icons/share_fb.svg" alt="">
-                     </a>
-                  </div>
-                  <div class="blog_share_btn">
-                     <a href="javascript:;">
-                        <img src="images/icons/share_ig.svg" alt="">
-                     </a>
-                  </div>
-                  <div class="blog_share_btn">
-                     <a href="javascript:;">
-                        <img src="images/icons/share_line.svg" alt="">
-                     </a>
-                  </div>
-                  <div class="blog_share_btn">
-                     <a href="javascript:;">
-                        <img src="images/icons/share_mail.svg" alt="">
-                     </a>
-                  </div>
-            </div>
-            <div class="row justify-content-lg-center">
-               <div class="col-lg-8">
-                  <div class="blog_detail_title">
-                     <h1>愛上喜翁民宿開箱</h1>
-                     <h2>新竹Glamping一泊四食露營體驗</h2>
-                  </div>
-                  <div class="blog_detail_article">
-                     <p>愛上喜翁露營值得去嗎？喜歡露營的朋友絕對聽過位於新竹五峰鄉的愛上喜翁民宿露營區，充滿仙氣的雲海背景以及隱身在森林裡的米白色帳篷群，隨手拍都是洗版IG的美照，清新的空氣以及各種奢華體驗讓前往的旅人享受遺世獨立之感。</p>
-                     <p>這篇整理了愛上喜翁Glamping的一泊四食露營體驗、交通接駁、房價介紹與官網資訊，無論是首次聽說愛上喜翁豪華露營、還是觀望許久的你，快跟著KKday在這炙熱的天氣一起前往新竹愛上喜翁放鬆避暑吧！</p>
+                  <!-- 後台編輯器的文章內容 -->
+                  <div class="fdc-blog__article">
+                     <p>愛上喜翁露營值得去嗎？喜歡露營的朋友絕對聽過位於新竹五峰鄉的愛上喜翁民宿露營區，充滿仙氣的雲海背景以及隱身在森林裡的米白色帳篷群，隨手拍都是洗版IG的美照，清新的空氣以及各種奢華體驗讓前往的旅人享受遺世獨立之感。
+                     </p>
+                     <p>這篇整理了愛上喜翁Glamping的一泊四食露營體驗、交通接駁、房價介紹與官網資訊，無論是首次聽說愛上喜翁豪華露營、還是觀望許久的你，快跟著KKday在這炙熱的天氣一起前往新竹愛上喜翁放鬆避暑吧！
+                     </p>
                      <hr>
-                     <h3>愛上喜翁豪華露營介紹</h2>
+                     <h3>愛上喜翁豪華露營介紹</h3>
                      <figure>
                         <img src="images/blog_001.jpg" alt="">
                         <figcaption>Source: KKday</figcaption>
-                      </figure>
-                     <p>愛上喜翁位於露營勝地新竹五峰鄉，當地原住民稱當地為「上喜翁」，代表著雲霧之上，高海拔的地理位置讓愛上喜翁在夏季也能享有舒適的體感溫度，也因為四周幾乎無光害，夜晚還可以抬頭仰望滿天星空！</p>
+                     </figure>
+                     <p>愛上喜翁位於露營勝地新竹五峰鄉，當地原住民稱當地為「上喜翁」，代表著雲霧之上，高海拔的地理位置讓愛上喜翁在夏季也能享有舒適的體感溫度，也因為四周幾乎無光害，夜晚還可以抬頭仰望滿天星空！
+                     </p>
                      <figure>
                         <img src="images/blog_002.jpg" alt="">
                         <figcaption>Source: KKday</figcaption>
-                      </figure>
-                      <p>除了絕美的山林雲海景色，每年初春以及春夏之際還有櫻花花海與螢火蟲風采可以欣賞，而且愛上喜翁露營區腹地十分寬廣，可以沿著步道小徑散步，體會從早到晚的山區天氣變化，一旁種植著許多蔬果作物，其中紅薑黃更是園區必嚐「喜翁茶」的主要成分呢。</p>
-                      <hr>
-                      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CgLmpgGPoyj/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CgLmpgGPoyj/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">在 Instagram 查看這則貼文</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CgLmpgGPoyj/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">KKday Taiwan 🇹🇼（@kkdaytw）分享的貼文</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+                     </figure>
+                     <p>除了絕美的山林雲海景色，每年初春以及春夏之際還有櫻花花海與螢火蟲風采可以欣賞，而且愛上喜翁露營區腹地十分寬廣，可以沿著步道小徑散步，體會從早到晚的山區天氣變化，一旁種植著許多蔬果作物，其中紅薑黃更是園區必嚐「喜翁茶」的主要成分呢。
+                     </p>
+                     <hr>
+                     <blockquote class="instagram-media" data-instgrm-captioned
+                        data-instgrm-permalink="https://www.instagram.com/p/CgLmpgGPoyj/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                        <div style="padding:16px;"> <a
+                              href="https://www.instagram.com/p/CgLmpgGPoyj/?utm_source=ig_embed&amp;utm_campaign=loading"
+                              style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                              target="_blank">
+                              <div style=" display: flex; flex-direction: row; align-items: center;">
+                                 <div
+                                    style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                 </div>
+                                 <div
+                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                    <div
+                                       style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                    </div>
+                                    <div
+                                       style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div style="padding: 19% 0;"></div>
+                              <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg
+                                    width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                    xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                       <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                          <g>
+                                             <path
+                                                d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                             </path>
+                                          </g>
+                                       </g>
+                                    </g>
+                                 </svg></div>
+                              <div style="padding-top: 8px;">
+                                 <div
+                                    style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                    在 Instagram 查看這則貼文</div>
+                              </div>
+                              <div style="padding: 12.5% 0;"></div>
+                              <div
+                                 style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                                 <div>
+                                    <div
+                                       style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                    </div>
+                                    <div
+                                       style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                    </div>
+                                    <div
+                                       style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                    </div>
+                                 </div>
+                                 <div style="margin-left: 8px;">
+                                    <div
+                                       style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                    </div>
+                                    <div
+                                       style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                    </div>
+                                 </div>
+                                 <div style="margin-left: auto;">
+                                    <div
+                                       style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                    </div>
+                                    <div
+                                       style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                    </div>
+                                    <div
+                                       style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div
+                                 style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                                 <div
+                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                                 </div>
+                                 <div
+                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                                 </div>
+                              </div>
+                           </a>
+                           <p
+                              style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                              <a href="https://www.instagram.com/p/CgLmpgGPoyj/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                 style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                                 target="_blank">KKday Taiwan 🇹🇼（@kkdaytw）分享的貼文</a>
+                           </p>
+                        </div>
+                     </blockquote>
+                     <script async src="//www.instagram.com/embed.js"></script>
+                  </div>
+                  <!-- END 後台編輯器的文章內容 -->
+                  <hr>
+                  <h4 class="text-center text-secondary mb-3">關鍵字</h4>
+                  <div class="fdc-tag-container">
+                     <div class="fdc-tag"><a href="javascript:;">Lifestyle</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Travel</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Dining</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Lifestyle</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Travel</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Dining</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Lifestyle</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Travel</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Dining</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Lifestyle</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Travel</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Dining</a></div>
+                     <div class="fdc-tag"><a href="javascript:;">Lifestyle</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-1 col-xl-2">
+                  <div class="fdc-blog__share">
+                     <i class="bi bi-share-fill text-muted"></i>
+                     <div class="fdc-blog__share-btn">
+                        <a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a>
+                     </div>
+                     <div class="fdc-blog__share-btn">
+                        <a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a>
+                     </div>
+                     <div class="fdc-blog__share-btn">
+                        <a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a>
+                     </div>
+                     <div class="fdc-blog__share-btn">
+                        <a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a>
+                     </div>
                   </div>
                </div>
             </div>
@@ -181,48 +302,77 @@
       <!-- END 文章 -->
 
       <!-- 推薦商品 -->
-      <section class="index product activity_new">
-         <div class="content">
-            <div class="content_title">推薦商品</div>
-            <div class="row no-gutters justify-content-center">
-               <div class="col-md-6 col-lg-4">
-                  <div class="fdc-product-card">
-                     <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="fdc-product-card_img">
-                           <img src="images/product_001.jpg" alt="">
-                           <span class="fdc-product-card__like active"></span>
-                        </div>
-                        <p class="fdc-product-card__title">台北文華東方</p>
-                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
+      <section class="overflow-hidden">
+         <div class="container">
+            <h2 class="fdc-section-title text-center">
+               <div class="fdc-section-title__deco">Recommend</div>
+               推薦商品
+            </h2>
+         </div>
+         <div class="px-lg-4">
+            <div class="row justify-content-center">
+               <div class="col-xl-10">
+                  <div class="owl-carousel owl-theme" id="recommend-carousel">
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="fdc-carousel__control" id="recommend-carousel__control">
+                     <div class="fdc-carousel__dots" id="recommend-carousel__dots"></div>
                   </div>
                </div>
-               <div class="col-md-6 col-lg-4">
-                  <div class="fdc-product-card">
-                     <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
-                     <a href="product_detail.html">
-                        <div class="fdc-product-card_img">
-                           <img src="images/product_002.jpg" alt="">
-                           <span class="fdc-product-card__like"></span>
-                        </div>
-                        <p class="fdc-product-card__title">台北文華東方台北文華東方台北文華東方台北文華東方</p>
-                        <p class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅 ineDay x 台北文華東方合作推出獨家限量頂級之旅</p>
-                     </a>
-                  </div>
-               </div>
-            </div>
-            <div class="blog_hashtag_container justify-content-center mt-5">
-               <div class="blog_hashtag"><a href="javascript:;">#Lifestyle</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Travel</a></div>
-               <div class="blog_hashtag"><a href="javascript:;">#Dining</a></div>
             </div>
          </div>
       </section>
       <!--END 推薦商品-->
+   </main>
+   <!-- Fixed bottom on screnn -->
+   <div class="fdc-fab">
+      <a href="#" class="fdc-fab__btn">
+         <i class="bi bi-chevron-bar-up"></i>
+      </a>
+      <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-fab__btn">
+         <i class="bi bi-question"></i>
+      </a>
    </div>
-   <!--END WRAPPER-->
-   <!-- FOOTER -->   <footer class="fdc-footer">
+   <footer class="fdc-footer">
       <div class="container">
          <div class="row align-items-end">
             <div class="col-lg">
@@ -246,7 +396,8 @@
                            <a href="javascripr:;" class="fdc-nav__link">常見問題</a>
                         </li>
                         <li>
-                           <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-nav__link">聯絡我們</a>
+                           <a href="javascript:;" data-toggle="modal" data-target="#contact"
+                              class="fdc-nav__link">聯絡我們</a>
                         </li>
                      </ul>
                   </div>
@@ -283,71 +434,46 @@
          </div>
       </div>
    </footer>
-   <!-- Modal contact -->
+
+   <!-- 聯絡我們 modal -->
    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog modal-dialog-s" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img
-                     src="images/close.png" alt=""></span></button>
+            <div class="modal-header">
+               <h4 class="modal-title">聯絡我們</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x"></i>
+               </button>
+            </div>
             <div class="modal-body">
-               <ul class="info">
-                  <li class="info_title">聯絡我們</li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>常用姓名</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>電子郵件</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>聯絡電話</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name=""
-                           placeholder=""></div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                        <p>詢問訊息</p>
-                     </div>
-                     <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><textarea id="w3review"
-                           name="w3review" rows="4" cols="50"></textarea></div>
-                  </li>
-                  <li class="row mt-1 info_list">
-                  <li class="row info_list_btn justify-content-end">
-                     <div class="col-lg-2 col-md-2 col-12 m-0 bootstrap_default btn btn_black"><a
-                           href="javascripr:;">送出</a></div>
-                  </li>
-                  </li>
-               </ul>
+               <div class="form-group">
+                  <label>常用姓名*</label>
+                  <input type="text" placeholder="e.g. 王小明" class="form-control">
+               </div>
+               <div class="form-group fdc-has-danger">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+                  <div class="form-text">請輸入</div>
+               </div>
+               <div class="form-group">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>聯絡電話*</label>
+                  <input type="tel" placeholder="e.g. 0912345678" class="form-control">
+               </div>
+               <div class="form-group mb-0">
+                  <label>詢問訊息*</label>
+                  <textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
             </div>
          </div>
       </div>
    </div>
-   <!--END FOOTER-->
-   <script type="text/javascript">
-      $(document).on('ready', function () {
-         $('.banner').slick({
-            lidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            fade: true,
-            speed: 500,
-            infinite: true,
-            cssEase: 'ease-in-out'
-         });
-      });
-   </script>
 </body>
 
 </html>

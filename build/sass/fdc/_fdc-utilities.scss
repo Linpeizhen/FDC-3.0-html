@@ -5,6 +5,7 @@ $fdc-text-gray-colors: map-merge(
     "gray":             $fdc-text-gray,
     "gray-light":       $fdc-text-gray-light,
     "gray-lighter":     $fdc-text-gray-lighter,
+    "gray-500":         $fdc-gray-500,
   ),
   $fdc-text-gray-colors
 );
@@ -46,9 +47,9 @@ $fdc-text-sizes: map-merge(
 
   &__deco {
     position: absolute;
-    left:-60px;
+    left:-80px;
     top: -72px;
-    width: 100%;
+    padding: 0 20px;
     font-family: $fdc-font-family-title;
     font-size: 100px;
     font-style: italic;
@@ -80,7 +81,10 @@ $fdc-text-sizes: map-merge(
   }
 
   &.text-center &__deco {
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100vw;
+    overflow: hidden;
   }
 }
 
@@ -123,4 +127,8 @@ $fdc-text-sizes: map-merge(
     left: 17px;
     right: 17px;
   }
+}
+
+.badge-light {
+  color: $fdc-gray-800;
 }

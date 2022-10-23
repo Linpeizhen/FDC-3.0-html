@@ -15,4 +15,8 @@
       opacity: .2;
     }
   }
+
+  ul > li {
+    margin-bottom: $fdc-space-xs;
+  }
 }

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html debug="ture" lang="zh_tw">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <meta name="author" content="Patty Hsu">
+   <meta name="copyright" content="">
+   <title>商品介（已登入）｜FDC</title>
+   <meta property="og:title" content="" />
+   <meta property="og:name" content="" />
+   <meta property="og:type" content="">
+   <meta property="og:image" content="" />
+   <meta property="og:url" content="" />
+   <meta property="og:description" content="" />
+   <link rel="canonical" href="" />
+   <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript">var console = { log: function() {} };</script>
+      <![endif]-->
+   <meta http-equiv="X-UA-Compatible" content="IE=10" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <script src="js/jquery-1.9.1.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/bootstrap-datepicker.min.js"></script>
+   <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
+   <script>
+      $(function () {
+         $('.fdc-header__open-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').addClass('show');
+         });
+
+         $('.fdc-header__close-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $('.fdc-product__banner .owl-carousel').owlCarousel({
+            loop: true,
+            items: 1,
+            nav: true,
+            dots: true,
+            dotsContainer: '.fdc-product__banner .fdc-carousel__dots',
+            navContainer: '.fdc-product__banner .fdc-carousel__control',
+            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+         });
+
+         $('#recommend-carousel').owlCarousel({
+            responsive: {
+               0 : {
+                  autoWidth: true,
+                  items: 1,
+                  nav: false,
+                  dots: false,
+                  margin: 0,
+                  slideBy: 1,
+               },
+               992 : {
+                  loop: true,
+                  items: 3,
+                  nav: true,
+                  dots: true,
+                  margin: 24,
+                  slideBy: 'page',
+                  dotsContainer: '#recommend-carousel__dots',
+                  navContainer: '#recommend-carousel__control',
+                  navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+               }
+            }
+         });
+
+         $('.has-datepicker').each(function() {
+            var $container = $(this).parent('.form-group');
+            console.log(this);
+            $(this).datepicker({
+               format: 'yyyy-mm-dd',
+               autoclose: true,
+               templates: {
+                  leftArrow: '<i class="bi bi-chevron-left"></i>',
+                  rightArrow: '<i class="bi bi-chevron-right"></i>',
+               }
+            });
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <header class="fdc-header" text-success>
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
+            </a>
+         </div>
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="index_en.html">English</a>
+               </div>
+            </li>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="product.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
+            </li>
+         </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/header_burger.svg" alt="">
+         </a>
+      </div>
+   </header>
+   <main class="fdc-main fdc-product">
+      <!-- Banner -->
+      <div class="fdc-product__banner fdc-bg--texture bg-neutral fdc-section-deco pb-0">
+         <div class="container">
+            <div class="fdc-carousel">
+               <div class="owl-carousel owl-theme" id="product-banner">
+                  <div class="fdc-product__banner-img" style="background-image: url(images/product_detail_001.jpg);"></div>
+                  <div class="fdc-product__banner-img" style="background-image: url(images/product_detail_002.jpg);"></div>
+                  <div class="fdc-product__banner-img" style="background-image: url(images/product_detail_003.jpg);"></div>
+                  <div class="fdc-product__banner-img" style="background-image: url(images/product_detail_004.jpg);"></div>
+               </div>
+               <div class="fdc-carousel__control" id="product-banner__control">
+                  <div class="fdc-carousel__dots" id="product-banner__dots"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End Banner -->
+
+      <!-- 商品介紹 -->
+      <section class="fdc-product__detail bg-neutral-lighter">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-7 col-xl-6 offset-xl-1">
+                  <div class="fdc-product__title">
+                     <img src="images/product_deco.svg" alt="" class="fdc-product__title-deco">
+                     <h1 class="fdc-product__title-main">Diptyqye 夏日香氛慢旅</h1>
+                     <h2 class="fdc-product__title-sub">礁溪小雨林｜蘭陽野奢旅行</h2>
+                  </div>
+                  <hr>
+                  <!-- 後台編輯器的文章內容 -->
+                  <div class="fdc-product__article">
+                     <h4>【FineDayClub會員禮遇】</h4>
+                     <p>
+                        Diptyque X FineDayClub X小雨林 | 夏日香氛之旅
+                     </p>
+                     <p>
+                        贈送夏日香氛專屬贈禮（每房一組）
+                     </p>
+                     <ol>
+                        <li>Diptyque 禮物包裝布袋*1 </li>
+                        <li>Diptyque 行李吊牌*1 </li>
+                        <li>Diptyque 佛手柑賦活潔淨露 10ml *2 </li>
+                        <li>Diptyque 限量夏日戶外身體噴霧 100ml *1</li>
+                     </ol>
+                     <h4>【限量保留日期送Diptyque夏日香氛入房禮】</h4>
+                     <p>
+                        8/10, 8/14, 8/15, 8/17, 9/6, 9/7, 9/13
+                     </p>
+                     <h4>【特色內容】</h4>
+                     <p>
+                        今夏，FineDayClub 攜手法國藝術香氛品牌Diptyque 與宜蘭隱世秘境小雨林，使用夏季元素為主軸推出 <夏日香氛之旅>。以小雨林的房間、戶外純白帳篷做為場域，帶來自然、原始、藝術、療癒的夏日時光，在蘭陽平原上探索另一種理想生活方式。在寬敞舒適的民宿空間裡，享受一泊三食的奢華美好，重啟五感詩意之旅。
+                     </p>
+                     <p>
+                        獨家體驗安排礁溪野奢手沖精品咖啡體驗，自然系私廚午茶與星空私廚晚餐野宴，使用日本頂級戶外品牌 Snow Peak 全套露營設備-在微風與綠意中，搭配蟲鳴鳥聲，不論身處小雨林的何處，跟隨 Diptyque 夏日系列，探尋大自然的蹤跡。室內外空間的綠意、蟲鳴、微風彷彿融為一體，讓到訪者能全身心投入自然的懷抱。
+                     </p>
+                     <p>
+                        於此也能自費安排，透過SPA芳療一洗心中塵埃，精油以金、木、水、火、土五元素為基底，由旅客親手研磨與調配，為自身製作專屬芳草精油，在油壓舒緩的節奏下，還能靜品通達心靈的頌缽療癒體驗，紛雜思緒於聲聲嗡鳴中消散，身心藉由藝術重回自然與原始的懷抱，徹底解放身受桎梏的五感，還原生活純粹之貌。
+                     </p>
+                     <h4>【內容介紹】</h4>
+                     <h6>ZeraCafe 手沖精品咖啡體驗</h6>
+                     <ol>
+                        <li>ZeraCafe x 鄭超人 聯名豆 手沖精品咖啡教學</li>
+                        <li>ZeraCafe 精選品牌手沖器具組體驗</li>
+                     </ol>
+                     <h6>雨林私廚午茶</h6>
+                     <ol>
+                        <li>ZeraCafe x 鄭超人 聯名豆 手沖精品咖啡教學</li>
+                        <li>ZeraCafe 精選品牌手沖器具組體驗</li>
+                     </ol>
+                     <small>*備註：下午茶內容依季節調整，以實際提供為主</small>
+                     <h6>私廚戶外精製野宴</h6>
+                     <ol>
+                        <li>依循本土脈絡開展，無論是時令蔬蓏抑或大溪漁港每日現流的魚鮮，都有機會在雨林私廚的巧手慧心下，蛻化成一道道兼具美味與創意的料理</li>
+                     </ol>
+                     <h4>【房型介紹】</h4>
+                     <p>大穀倉 兩人房一大床｜由老穀倉改建，療癒系80坪超大空間，並能與林同宿，大遍落地窗外綠意盎然，彷彿置身戶外。房間內有客廳、投影電影院、手工長餐桌、起居室與獨立泡湯浴缸。</p>
+                     <p>林子裡泡湯 兩人房一大床｜ 60 年老紅磚屋改建的15坪空間，最大特色為極為療癒並延伸至戶外泡湯空間，黑薄紗環繞，林木花草相伴，於手作磨石子湯池內，享受療癒舒緩的澡池。</p>
+                     <p>植物工作室 兩人房兩大床（可安排四位入住） | 60老紅磚屋改建的12坪空間，臥室採兩房設計，最大特色為向外延伸的頂層玻璃泡湯空間，老屋磚紅搭配植栽綠意伴隨木質調的基底，自然濃度提升而湧現放鬆心情。</p>
+                     <small>溫馨提醒：實際房況、預訂內容、房價與預定狀態依下需求單後客服回覆為主</small>
+                     <h4>【FineDayClub 會員專屬加購SPA療程】</h4>
+                     <p>
+                        100 分鐘 NT$ 3,000 | 一對一專屬舒壓按摩療程
+                        <br>芳療師依照個人身體狀態，透過經絡的氣結釋放，客製化手法結合暖宮療程、頌缽音療、自製花草精油、提供一對一專屬的身體舒壓按摩療程。
+                     </p>
+                     <h4>【關於小雨林】 </h4>
+                     <p>
+                        小雨林的兩位主人—阿佐與小雨兩夫妻，將家族閒置多年的木造老穀倉，打造成與自然和諧共處，能夠感受到陽光、綠意，微風和雨滴的草本系 Villa ，位於溫泉鄉得天獨厚的綠地，只要打開客房內的浴池水龍頭，就會源源湧出天然溫泉，寬敞的浴池讓人可以盡情地伸展全身，讓湯泉洗滌一切的疲憊和塵囂。
+                     </p>
+                     <h4>【關於 Diptyque】 </h4>
+                     <p>
+                        Diptyque 是來自法國的藝術香氛品牌。由三位具有藝術背景的好友在巴黎創立，原以室內家飾布料製造為主，1963年開始販售第一款香氛蠟燭，其獨特的香氛配方，Diptyque今日已經成為巴黎頂級香氛品牌，皆以旅行靈感的創作各地的香氛之旅。
+                     </p>
+                     <figure>
+                        <figcaption>預定即可入住 Diptyque 香氛房一晚，並贈送夏日香氛專屬贈禮。</figcaption>
+                        <img src="images/product_detail_005.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>野奢自然系私廚午茶 | Diptyque檸檬草香氛蠟燭為手沖咖啡、私廚甜點饗宴增添夏日酸澀清新的香氣，馬鞭草、橙花的縈繞下，檸檬草展現了獨特的花香與檸香，並兼具驅蚊作用，彷彿為這午後戶外時光量身打造 。（下午茶內容物依時節調整，圖片僅供參考，以實際提供為主）</figcaption>
+                        <img src="images/product_detail_006.jpg" alt="">
+                        <img src="images/product_detail_007.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>伴隨 Diptyque 香氛蠟燭的香氣，使人從日常思緒中沉靜下來，感受片刻的身心靈療育。</figcaption>
+                        <img src="images/product_detail_008.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>大穀倉 兩人房｜80坪超大室內空間伴隨木質與綠意，輕鬆療癒，客廳廚房臥室湯池一應俱全。</figcaption>
+                        <img src="images/product_detail_009.jpg" alt="">
+                        <img src="images/product_detail_010.jpg" alt="">
+                        <img src="images/product_detail_011.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>林子裡泡湯 兩人房｜15坪大老紅磚屋改建，搭配療癒滿點泡湯空間。</figcaption>
+                        <img src="images/product_detail_012.jpg" alt="">
+                        <img src="images/product_detail_013.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>林子裡泡湯 兩人房｜15坪大老紅磚屋改建，搭配療癒滿點泡湯空間。</figcaption>
+                        <img src="images/product_detail_014.jpg" alt="">
+                        <img src="images/product_detail_015.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>星空私廚晚餐野宴 | 時令食材搭配創意料理手法。 （圖片僅供參考，以實際提供為主）</figcaption>
+                        <img src="images/product_detail_016.jpg" alt="">
+                        <img src="images/product_detail_017.jpg" alt="">
+                     </figure>
+                     <figure>
+                        <figcaption>SPA 芳療 | 芳療師依照個人身體狀態，透過經絡的氣結釋放。</figcaption>
+                        <img src="images/product_detail_018.jpg" alt="">
+                     </figure>
+                  </div>
+                  <!-- END 後台編輯器的文章內容 -->
+                  <div>
+                     <h3>行程說明</h3>
+                     <h4>第 1 天</h4>
+                     <div class="fdc-product__schedule">
+                        <h5>Check in / F1 練習賽</h5>
+                        <p>*貼心提醒：賽程請以官方公告為準，此賽事行程僅供參考</p>
+                        <p>
+                           Sep 30 (Fri)<br>
+                           15:00 入住五星級飯店 PARKROYAL COLLECTION MARINA BAY<br>
+                           F1 賽事活動參考時程<br>
+                           15:00 會場開放<br>
+                           15:00 - 21:00 F1 新加坡大獎賽 - 練習賽<br>
+                           當日演唱會嘉賓： Marshmello
+                        </p>
+                     </div>
+                     <h4>第 2 天</h4>
+                     <div class="fdc-product__schedule">
+                        <h5>F1 正式賽</h5>
+                        <p>*貼心提醒：賽程請以官方公告為準，此賽事行程僅供參考</p>
+                        <p>
+                           Sep 30 (Fri)<br>
+                           15:00 入住五星級飯店 PARKROYAL COLLECTION MARINA BAY<br>
+                           F1 賽事活動參考時程<br>
+                           15:00 會場開放<br>
+                           15:00 - 21:00 F1 新加坡大獎賽 - 練習賽<br>
+                           當日演唱會嘉賓： Marshmello
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-5 col-xl-4 offset-xl-1">
+                  <!-- 商品訂購資訊 -->
+                  <div class="fdc-product__sidebar">
+                     <div class="fdc-product__book">
+                        <div class="d-flex align-items-baseline justify-content-between">
+                           <h6 class="mt-0">建議售價</h6>
+                           <h4 class="mt-0">$10,245 <span class="fdc-text-base">起</span></h4>
+                        </div>
+                        <div class="form-group">
+                           <div class="dropdown">
+                              <div class="fdc-input-addon">
+                                 <i class="bi bi-chevron-down"></i>
+                              </div>
+                              <!-- <input type="text" class="form-control" value="" placeholder="請選擇方案" data-toggle="dropdown" readonly> -->
+                              <a href="#" class="form-control text-decoration-none" data-toggle="dropdown">
+                                 <span class="fdc-text-gray-500">請選擇方案</span>
+                              </a>
+                              <!-- 選擇後將選項文字帶入上方 a 的中 (非 span 中) -->
+                              <div class="dropdown-menu">
+                                 <a href="javascript:;" class="dropdown-item">
+                                    大穀倉 兩人房一大床（一天限定一組 | 雙人建議售價 77,900 起）
+                                 </a>
+                                 <a href="javascript:;" class="dropdown-item">
+                                    林子裡泡湯 兩人房一大床（一天限定一組 | 雙人建議售價 77,900 起）
+                                 </a>
+                                 <a href="javascript:;" class="dropdown-item">
+                                    植物工作室 兩人房兩大床（一天限定一組 | 雙人建議售價 77,900 起）
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="fdc-input-addon">
+                              <i class="bi bi-calendar4-week"></i>
+                           </div>
+                           <input type="text" class="form-control has-datepicker" placeholder="請選擇日期" data-toggle="dropdown">
+                        </div>
+                        <div class="form-group">
+                           <div class="form-control d-flex align-items-center justify-content-between">
+                              <div>數量</div>
+                              <div class="fdc-counter">
+                                 <a href="javascript:;" class="fdc-counter__minus"><i class="bi bi-dash"></i></a>
+                                 <span class="fdc-counter__num">1</span>
+                                 <a href="javascript:;" class="fdc-counter__plus"><i class="bi bi-plus"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-block mb-3" data-toggle="modal" data-target="#success-booked">
+                           <span>預約行程</span>
+                           <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="javascript:;" class="btn btn-outline-primary btn-block ml-0">
+                           <i class="bi bi-bookmark"></i>
+                           <span>加入收藏</span>
+                        </a>
+                        <!-- 已加入收藏時顯示以下按鈕 -->
+                        <!-- <a href="javascript:;" class="btn btn-outline-primary btn-block ml-0">
+                           <i class="bi bi-bookmark-fill"></i>
+                           <span>已加入收藏</span>
+                        </a> -->
+                     </div>
+                     <div class="fdc-product__book-detail">
+                        <div class="badge badge-light mb-2">
+                           旅遊度假
+                        </div>
+                        <div class="fdc-meta">
+                           <div class="fdc-meta__icon">
+                              <i class="bi bi-pin-map"></i>
+                           </div>
+                           <div class="fdc-meta__detail">
+                              <div class="fdc-meta__title">
+                                 台灣, 宜蘭
+                              </div>
+                           </div>
+                        </div>
+                        <div class="fdc-meta">
+                           <div class="fdc-meta__icon">
+                              <i class="bi bi-clock"></i>
+                           </div>
+                           <div class="fdc-meta__detail">
+                              <div class="fdc-meta__title">
+                                 旅程時間 2 天
+                              </div>
+                           </div>
+                        </div>
+                        <div class="fdc-meta">
+                           <div class="fdc-meta__icon">
+                              <i class="bi bi-card-checklist"></i>
+                           </div>
+                           <div class="fdc-meta__detail">
+                              <div class="fdc-meta__title">
+                                 行程包含項目
+                              </div>
+                              <ul class="list-unstyled">
+                                 <li class="d-flex">
+                                    <i class="bi bi-check2 text-success mr-1"></i>
+                                    <span>指定日期、房型住宿一晚</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-check2 text-success mr-1"></i>
+                                    <span>夏日香氛專屬贈禮一份</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-check2 text-success mr-1"></i>
+                                    <span>私廚精緻野宴兩位</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-check2 text-success mr-1"></i>
+                                    <span>自然系下午茶兩位</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-check2 text-success mr-1"></i>
+                                    <span>豐盛精緻早餐兩位</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-x-lg text-danger mr-1"></i>
+                                    <span>個人花費</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-x-lg text-danger mr-1"></i>
+                                    <span>行程內無包含交通，請貴賓自行安排，如需安排將另行報價</span>
+                                 </li>
+                                 <li class="d-flex">
+                                    <i class="bi bi-x-lg text-danger mr-1"></i>
+                                    <span>需另行加購專屬的身體舒壓按摩療程</span>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="fdc-meta">
+                           <div class="fdc-meta__icon">
+                              <i class="bi bi-exclamation-octagon"></i>
+                           </div>
+                           <div class="fdc-meta__detail">
+                              <div class="fdc-meta__title">
+                                 注意事項
+                              </div>
+                              <ul>
+                                 <li>鄰近戶外大自然，並非城市住宅。門外就是有田有菜園的自然環境，鄉下地方的日常是有小昆蟲訪客的進進出出。(若介意者可以考慮)</li>
+                                 <li>入住時間：下午3:00 － 下午6:00。</li>
+                                 <li>退房時間：上午11:00。</li>
+                                 <li>早餐會由服務人員送到房門口。</li>
+                                 <li>下午茶與晚餐皆以室外帳篷為主，如有需求於室內用餐，請於出發五天前做確認。</li>
+                                 <li>加床費用：12 歲以上每位加床 NT$4000（含床墊床具、盥洗用具、早餐、下午茶、晚餐）。</li>
+                                 <li>加床費用：12  歲以下每人加床 NT$1200 （含床墊床具、盥洗用具、早餐）; 若需加購餐食，精品手沖咖啡體驗及下午茶單點每位 NT$900、晚餐單點每位 NT$2000。</li>
+                                 <li>12 歲以下不加床免費（不含床墊床具、盥洗用具、早餐、下午茶、晚餐）。若不加晚餐，晚餐仍然會提供主食如白飯/麵/燉湯等等，可與父母搭配晚餐餐點共食。</li>
+                                 <li>如有任何飲食禁忌請提前告知。</li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="fdc-meta">
+                           <div class="fdc-meta__icon">
+                              <i class="bi bi-x-octagon"></i>
+                           </div>
+                           <div class="fdc-meta__detail">
+                              <div class="fdc-meta__title">
+                                 取消條款
+                              </div>
+                              <ul>
+                                 <li>所選日期 15 天(含)之前取消,收取手續費 0%</li>
+                                 <li>所選日期 10 天(含)之前取消,收取手續費 30%</li>
+                                 <li>所選日期 7 天(含)之前取消,收取手續費 50%</li>
+                                 <li>所選日期 3 天(含)之前取消,收取手續費 80%</li>
+                                 <li>所選日期 1 天(含)之前取消,收取手續費 100%</li>
+                                 <li>出發當日取消,收取手續費 100%</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- END 商品訂購資訊 -->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- END 商品介紹 -->
+
+      <!-- 推薦商品 -->
+      <section class="overflow-hidden">
+         <div class="container">
+            <h2 class="fdc-section-title text-center">
+               <div class="fdc-section-title__deco">Recommend</div>
+               你可能也會喜歡...
+            </h2>
+         </div>
+         <div class="px-lg-4">
+            <div class="row justify-content-center">
+               <div class="col-xl-10">
+                  <div class="owl-carousel owl-theme" id="recommend-carousel">
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                     <div class="fdc-product-card">
+                        <a href="product_detail.html">
+                           <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                           <div class="fdc-product-card__img">
+                              <img src="images/product_001.jpg" alt="">
+                           </div>
+                           <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                           <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="fdc-carousel__control" id="recommend-carousel__control">
+                     <div class="fdc-carousel__dots" id="recommend-carousel__dots"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--END 推薦商品-->
+   </main>
+   <!-- Fixed bottom on screnn -->
+   <div class="fdc-fab">
+      <a href="#" class="fdc-fab__btn">
+         <i class="bi bi-chevron-bar-up"></i>
+      </a>
+      <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-fab__btn">
+         <i class="bi bi-question"></i>
+      </a>
+   </div>
+   <footer class="fdc-footer">
+      <div class="container">
+         <div class="row align-items-end">
+            <div class="col-lg">
+               <div class="fdc-logo mb-2 mb-lg-0">
+                  <a href="index.html" class="d-block">
+                     <img src="images/logo.svg" alt="">
+                  </a>
+               </div>
+            </div>
+            <div class="col-xl-auto">
+               <div class="row align-items-center">
+                  <div class="col-lg-auto">
+                     <ul class="fdc-nav justify-content-center justify-content-lg-end">
+                        <li>
+                           <a href="privacy.html" class="fdc-nav__link">隱私權政策</a>
+                        </li>
+                        <li>
+                           <a href="TermsAndConditions.html" class="fdc-nav__link">使用者條款</a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;" class="fdc-nav__link">常見問題</a>
+                        </li>
+                        <li>
+                           <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-nav__link">聯絡我們</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="col-lg col-xl-auto">
+                     <div class="mr-lg-3 mt-3 mb-4 m-lg-0">
+                        <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+                     </div>
+                  </div>
+                  <div class="col col-lg-auto col-">
+                     <ul class="fdc-sns">
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/whatsapp.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="fdc-footer__copyright">
+            <span>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</span>
+            <span>© 2021 FineDayClub All Rights Reserved</span>
+         </div>
+      </div>
+   </footer>
+
+   <!-- 聯絡我們 modal -->
+   <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title">聯絡我們</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x"></i>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group">
+                  <label>常用姓名*</label>
+                  <input type="text" placeholder="e.g. 王小明" class="form-control">
+               </div>
+               <div class="form-group fdc-has-danger">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+                  <div class="form-text">請輸入</div>
+               </div>
+               <div class="form-group">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>聯絡電話*</label>
+                  <input type="tel" placeholder="e.g. 0912345678" class="form-control">
+               </div>
+               <div class="form-group mb-0">
+                  <label>詢問訊息*</label>
+                  <textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+             </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- 預約成功 modal -->
+   <div class="modal fade" id="success-booked" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-body">
+               <div class="d-flex align-items-center pt-3">
+                  <img src="images/icons/bi_calendar-check.svg" alt="" class="mr-4">
+                  <div>
+                     <h4>感謝您的預約！</h4>
+                     <h5 class="my-0">專人將於 24 小時內與您聯繫。</h5>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-outline-primary" data-dismiss="modal">了解</button>
+             </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
