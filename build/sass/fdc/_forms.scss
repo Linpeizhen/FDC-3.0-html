@@ -2,6 +2,10 @@
   font-family: $font-family-base;
   letter-spacing: .5px;
 
+  &:hover {
+    box-shadow: $input-focus-box-shadow;
+  }
+
   &:disabled,
   &[readonly] {
     border-color: $fdc-input-disabled-border-color;
@@ -213,6 +217,12 @@ label {
 // Dropdown in form
 .form-control[data-toggle=dropdown] {
   background-color: $input-bg;
+  height: auto;
+  text-overflow: ellipsis;
+
+  &[readonly] {
+    cursor: pointer;
+  }
 
   + .dropdown-menu {
     width: 100%;
