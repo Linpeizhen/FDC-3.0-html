@@ -8,6 +8,10 @@
 	z-index: 99;
 	height: 0;
 
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+
 	&__btn {
 		display: flex;
 		align-items: center;

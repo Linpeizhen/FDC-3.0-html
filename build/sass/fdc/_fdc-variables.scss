@@ -289,6 +289,11 @@ $form-check-inline-input-margin-x:  .8rem;
 
 $input-group-addon-bg:              $fdc-c-neutral-lighter;
 
+$custom-control-gutter:               1.2rem;
+$custom-control-indicator-size:       2rem;
+$custom-control-indicator-checked-bg: $fdc-c-secondary;
+$custom-control-label-color:          $fdc-gray-800;
+
 // Modals
 $modal-inner-padding:               $fdc-space-lg;
 
@@ -345,3 +350,25 @@ $badge-font-weight:                 normal;
 $badge-padding-y:                   $fdc-space-xs;
 $badge-padding-x:                   12px;
 $badge-border-radius:               0;
+
+// Pagination
+
+$pagination-padding-y:              0;
+$pagination-padding-x:              0;
+
+$pagination-color:                  $fdc-gray-600;
+$pagination-bg:                     transparent;
+$pagination-border-color:           transparent;
+
+$pagination-focus-box-shadow:       none;
+
+$pagination-hover-color:            $fdc-c-secondary;
+$pagination-hover-bg:               transparent;
+
+$pagination-active-color:           $fdc-c-secondary;
+$pagination-active-bg:              transparent;
+$pagination-active-border-color:    $fdc-c-secondary-light;
+
+$pagination-border-radius-sm:       0;
+$pagination-border-radius-lg:       0;
+

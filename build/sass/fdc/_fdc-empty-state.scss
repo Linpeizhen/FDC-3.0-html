@@ -1,0 +1,18 @@
+.fdc-empty-state {
+	padding-top: $fdc-space-2xl;
+	padding-bottom: $fdc-space-2xl;
+	text-align: center;
+
+	&__img {
+		width: 240px;
+		margin-bottom: $fdc-space-xl;
+	}
+
+	h4 {
+		margin-bottom: $fdc-space-base;
+	}
+
+	p {
+		margin-bottom: $fdc-space-lg;
+	}
+}

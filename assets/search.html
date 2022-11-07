@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html debug="ture" lang="zh_tw">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <meta name="author" content="Patty Hsu">
+   <meta name="copyright" content="">
+   <title>Products</title>
+   <meta property="og:title" content="" />
+   <meta property="og:name" content="" />
+   <meta property="og:type" content="">
+   <meta property="og:image" content="" />
+   <meta property="og:url" content="" />
+   <meta property="og:description" content="" />
+   <link rel="canonical" href="" />
+   <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript">var console = { log: function() {} };</script>
+      <![endif]-->
+   <meta http-equiv="X-UA-Compatible" content="IE=10" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <script src="js/jquery-1.9.1.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
+   <script>
+      $(function () {
+         $('.fdc-header__open-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').addClass('show');
+         });
+
+         $('.fdc-header__close-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $('.fdc-product-filter__fixed-button .btn').on('click', function () {
+            $('.fdc-product-filter').addClass('show');
+         });
+
+         $('.fdc-product-filter__actions .btn').on('click', function () {
+            $('.fdc-product-filter').removeClass('show');
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <header class="fdc-header">
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
+            </a>
+         </div>
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="index_en.html">English</a>
+               </div>
+            </li>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="search.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
+            </li>
+         </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/header_burger.svg" alt="">
+         </a>
+      </div>
+   </header>
+   <main class="fdc-main">
+      <!-- product -->
+      <section class="py-6">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3">
+                  <div class="fdc-product-filter">
+                     <div class="fdc-product-filter__title">
+                        <h5>「飯店」的搜尋結果</h5>
+                        <h2>25 個體驗</h2><!-- 無篩選、搜尋關鍵字時顯示「探索所有體驗」 -->
+                     </div>
+                     <ul class="fdc-product-filter__items">
+                        <li>
+                           <h5>服務</h5>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="service" id="service1" checked>
+                              <label class="custom-control-label" for="service1">
+                                 <h6>全部</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="service" id="service2">
+                              <label class="custom-control-label" for="service2">
+                                 <h6>旅遊度假</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="service" id="service3">
+                              <label class="custom-control-label" for="service3">
+                                 <h6>餐酒饗宴</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="service" id="service4">
+                              <label class="custom-control-label" for="service4">
+                                 <h6>生活風格</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="service" id="service5">
+                              <label class="custom-control-label" for="service5">
+                                 <h6>專屬選品</h6>
+                              </label>
+                           </div>
+                        </li>
+                     </ul>
+                     <ul class="fdc-product-filter__items">
+                        <li>
+                           <h5>地區</h5>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location1" checked>
+                              <label class="custom-control-label" for="location1">
+                                 <h6>全部</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location2">
+                              <label class="custom-control-label" for="location2">
+                                 <h6>台灣</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location3">
+                              <label class="custom-control-label" for="location3">
+                                 <h6>日本</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location4">
+                              <label class="custom-control-label" for="location4">
+                                 <h6>港澳</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location5">
+                              <label class="custom-control-label" for="location5">
+                                 <h6>中國</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location6">
+                              <label class="custom-control-label" for="location6">
+                                 <h6>越南</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location7">
+                              <label class="custom-control-label" for="location7">
+                                 <h6>英國</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location8">
+                              <label class="custom-control-label" for="location8">
+                                 <h6>法國</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location9">
+                              <label class="custom-control-label" for="location9">
+                                 <h6>德國</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location10">
+                              <label class="custom-control-label" for="location10">
+                                 <h6>奧地利</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location11">
+                              <label class="custom-control-label" for="location11">
+                                 <h6>瑞士</h6>
+                              </label>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="custom-control custom-radio">
+                              <input class="custom-control-input" type="radio" name="location" id="location12">
+                              <label class="custom-control-label" for="location12">
+                                 <h6>冰島</h6>
+                              </label>
+                           </div>
+                        </li>
+                     </ul>
+                     <div class="fdc-product-filter__actions d-lg-none">
+                        <a href="javascript:;" class="btn btn-outline-primary mr-2">取消</a>
+                        <a href="javascript:;" class="btn btn-primary flex-grow-1">篩選</a>
+                     </div>
+                  </div>
+               </div>
+               <!-- 以下為搜尋有結果時顯示之產品列表-->
+               <!-- 無篩選、搜尋關鍵字時顯示「探索所有體驗」 -->
+               <!-- 頁數最多顯示五個，例如到第七頁，數字顯示 3 4 5 6 [7] -->
+               <div class="col-lg-9">
+                  <div class="text-center d-lg-none mb-5">
+                     <h5>「飯店」的搜尋結果</h5>
+                     <h2>25 個體驗</h2>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_003.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_004.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_005.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_006.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_001.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-xl-4">
+                        <div class="fdc-product-card">
+                           <a href="product_detail.html">
+                              <span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+                              <div class="fdc-product-card__img">
+                                 <img src="images/product_002.jpg" alt="">
+                              </div>
+                              <h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+                              <div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mt-6">
+                     <nav>
+                        <ul class="pagination justify-content-center">
+                           <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+                           </li>
+                           <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                           <li class="page-item"><a class="page-link" href="#">2</a></li>
+                           <li class="page-item"><a class="page-link" href="#">3</a></li>
+                           <li class="page-item"><a class="page-link" href="#">4</a></li>
+                           <li class="page-item"><a class="page-link" href="#">5</a></li>
+                           <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+
+               <!-- 以下為搜尋無結果時顯示之 empty state -->
+               <!-- <div class="col-lg-9">
+                  <div class="fdc-empty-state">
+                     <img src="images/empty_result.svg" alt="" class="fdc-empty-state__img">
+                     <h4>找不到結果</h4>
+                     <p>請重設篩選條件以找到更多體驗</p>
+                     // 下方按鈕點擊後 filter 皆切換回「全部」
+                     <a href="javascript:;" class="btn btn-secondary">重設篩選條件</a>
+                  </div>
+               </div> -->
+            </div>
+            <div class="fdc-product-filter__fixed-button d-lg-none">
+               <a href="javascript:;" class="btn btn-primary btn-block">篩選</a>
+            </div>
+         </div>
+      </section>
+      <!--END product-->
+   </main>
+   <!-- Fixed bottom on screnn -->
+   <div class="fdc-fab">
+      <a href="#" class="fdc-fab__btn">
+         <i class="bi bi-chevron-bar-up"></i>
+      </a>
+      <a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-fab__btn">
+         <i class="bi bi-question"></i>
+      </a>
+   </div>
+   <footer class="fdc-footer">
+      <div class="container">
+         <div class="row align-items-end">
+            <div class="col-lg">
+               <div class="fdc-logo mb-2 mb-lg-0">
+                  <a href="index.html" class="d-block">
+                     <img src="images/logo.svg" alt="">
+                  </a>
+               </div>
+            </div>
+            <div class="col-xl-auto">
+               <div class="row align-items-center">
+                  <div class="col-lg-auto">
+                     <ul class="fdc-nav justify-content-center justify-content-lg-end">
+                        <li>
+                           <a href="privacy.html" class="fdc-nav__link">隱私權政策</a>
+                        </li>
+                        <li>
+                           <a href="TermsAndConditions.html" class="fdc-nav__link">使用者條款</a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;" class="fdc-nav__link">常見問題</a>
+                        </li>
+                        <li>
+                           <a href="javascript:;" data-toggle="modal" data-target="#contact"
+                              class="fdc-nav__link">聯絡我們</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="col-lg col-xl-auto">
+                     <div class="mr-lg-3 mt-3 mb-4 m-lg-0">
+                        <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+                     </div>
+                  </div>
+                  <div class="col col-lg-auto col-">
+                     <ul class="fdc-sns">
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/whatsapp.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="fdc-footer__copyright">
+            <span>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</span>
+            <span>© 2021 FineDayClub All Rights Reserved</span>
+         </div>
+      </div>
+   </footer>
+
+   <!-- 聯絡我們 modal -->
+   <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title">聯絡我們</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x"></i>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group">
+                  <label>常用姓名*</label>
+                  <input type="text" placeholder="e.g. 王小明" class="form-control">
+               </div>
+               <div class="form-group fdc-has-danger">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+                  <div class="form-text">請輸入</div>
+               </div>
+               <div class="form-group">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>聯絡電話*</label>
+                  <input type="tel" placeholder="e.g. 0912345678" class="form-control">
+               </div>
+               <div class="form-group mb-0">
+                  <label>詢問訊息*</label>
+                  <textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

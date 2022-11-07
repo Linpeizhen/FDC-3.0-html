@@ -106,7 +106,7 @@
 </head>
 
 <body>
-   <header class="fdc-header" text-success>
+   <header class="fdc-header">
       <div class="container">
          <div class="fdc-logo">
             <a href="index.html" class="d-block">
@@ -119,7 +119,7 @@
                <input type="text" placeholder="請輸入" class="form-control">
             </li>
             <li class="dropdown">
-               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown" >
                   <span>繁體中文</span>
                   <i class="bi bi-chevron-down"></i>
                </a>
@@ -132,11 +132,8 @@
             <li>
                <a href="javascript:;" class="fdc-nav__link">快速付款</a>
             </li>
-            <li>
-               <a href="signin.html" class="fdc-nav__link">登入</a>
-            </li>
-            <li>
-               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            <li class="d-none d-lg-block">
+               <div class="fdc-text-gray-light">Hi, Ivy!</div>
             </li>
             <li class="dropdown">
                <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
@@ -145,9 +142,12 @@
                <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item" href="index.html">首頁</a>
                   <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
-                  <a class="dropdown-item" href="product.html">熱門商品</a>
+                  <a class="dropdown-item" href="search.html">熱門商品</a>
                   <a class="dropdown-item" href="customize.html">企業訂製</a>
                   <a class="dropdown-item" href="blog.html">最新消息</a>
+                  <a class="dropdown-item" href="account.html">我的資料</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="index.html">登出</a>
                </div>
             </li>
             <li class="fdc-header__close-menu">
@@ -589,9 +589,9 @@
                      </ul>
                   </div>
                   <div class="col-lg col-xl-auto">
-                     <div class="mr-lg-3 mt-3 mb-4 m-lg-0">
+                     <!-- <div class="mr-lg-3 mt-3 mb-4 m-lg-0">
                         <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
-                     </div>
+                     </div> -->
                   </div>
                   <div class="col col-lg-auto col-">
                      <ul class="fdc-sns">

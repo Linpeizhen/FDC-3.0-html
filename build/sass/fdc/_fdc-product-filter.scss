@@ -1,0 +1,66 @@
+.fdc-product-filter {
+	@include media-breakpoint-down(md) {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		position: fixed;
+		transform: translateY(50px);
+		bottom: 0;
+		left: 0;
+		z-index: 9999;
+		width: 100vw;
+		padding: $grid-gutter-width $grid-gutter-width 0;
+		max-height: calc(100vh - 80px);
+		background-color: #fff;
+		box-shadow: 0px -16px 40px rgba(0, 0, 0, 0.24);
+		overflow-y: auto;
+		overscroll-behavior-y: contain;
+		transition: .3s ease-out;
+
+		&__title {
+			display: none;
+		}
+	}
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: initial;
+		transform: translateY(0px);
+	}
+
+	&__items {
+		margin: $fdc-space-2xl 0;
+		padding: 0;
+		list-style: none;
+
+		> li {
+			margin: $fdc-space-base 0;
+
+			h6 {
+				line-height: $line-height-base;
+			}
+		}
+	}
+
+	&__actions {
+		display: flex;
+		white-space: nowrap;
+		position: sticky;
+		bottom: 0;
+		z-index: 9;
+		margin-top: 40px;
+		margin-left: - $grid-gutter-width;
+		margin-right: - $grid-gutter-width;
+		padding: $grid-gutter-width / 2;
+		background-color: $fdc-c-white;
+		border-top: 1px solid $fdc-gray-200
+	}
+
+	&__fixed-button {
+		position: sticky;
+		bottom: $grid-gutter-width / 2;
+		z-index: 9;
+		margin-top: $fdc-space-2xl;
+	  }
+}
