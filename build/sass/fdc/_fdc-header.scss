@@ -20,6 +20,7 @@
     @include media-breakpoint-down(md) {
       display: none;
       flex-direction: column;
+      flex-wrap: nowrap;
       position: fixed;
       top: 0;
       bottom: 0;
@@ -28,13 +29,14 @@
       height: 100vh;
       z-index: 9999;
       overflow-y: auto;
+      overscroll-behavior: contain;
       background: url(../images/texture_001.png), $fdc-c-primary;
 
       &.show {
         display: flex;
       }
 
-      > li {
+      >li {
         width: 100%;
         margin: $nav-link-padding-sm-y 0;
         text-align: center;
@@ -42,6 +44,8 @@
 
       &__link {
         color: $fdc-c-white;
+        padding-top: 4px;
+        padding-bottom: 4px;
       }
     }
   }
@@ -57,12 +61,30 @@
     }
 
     @include media-breakpoint-down(md) {
-      width: 100%;
+      width: 100vw;
       margin-top: 0 !important;
       padding: $fdc-space-base;
 
-      &, &:focus-within {
+      &,
+      &:focus-within {
         border-bottom: 1px solid $fdc-c-white;
+      }
+
+      .form-control {
+        &::-moz-placeholder {
+          color: $fdc-c-white;
+          opacity: .2;
+        }
+
+        &:-ms-input-placeholder {
+          color: $fdc-c-white;
+          opacity: .2;
+        }
+
+        &::placeholder {
+          color: $fdc-c-white;
+          opacity: .2;
+        }
       }
 
       i {
@@ -71,7 +93,7 @@
     }
   }
 
-  &__search > .form-control {
+  &__search>.form-control {
     font-family: $fdc-font-family-title;
     height: 36px;
     background: transparent;
@@ -130,12 +152,21 @@
       border-width: 1px 0 0;
       border-color: rgba(255, 255, 255, .2);
       font-family: $fdc-font-family-title;
+      box-shadow: none;
 
       .dropdown-item {
         justify-content: center;
         margin: $nav-link-padding-sm-y 0;
         padding: $fdc-space-xs;
         color: $fdc-c-white;
+        transition: $transition-base;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background: transparent;
+          color: $fdc-c-primary-light;
+        }
       }
 
       .dropdown-divider {

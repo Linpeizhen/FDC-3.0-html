@@ -59,8 +59,12 @@ $fdc-text-sizes: map-merge(
     opacity: .04;
 
     @include media-breakpoint-down(md) {
+      $offset: 16px;
       top: -48px;
+      left: calc(-#{$grid-gutter-width} - #{$offset});
       font-size: 60px;
+      max-width: calc(100vw + #{$offset});
+      overflow-x: hidden;
     }
 
     [class*=bg-]:not(.bg-neutral-lighter) & {
