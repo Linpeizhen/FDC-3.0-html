@@ -61,7 +61,7 @@
     }
 
     @include media-breakpoint-down(md) {
-      width: 100vw;
+      width: 100vw !important;
       margin-top: 0 !important;
       padding: $fdc-space-base;
 
@@ -94,7 +94,6 @@
   }
 
   &__search>.form-control {
-    font-family: $fdc-font-family-title;
     height: 36px;
     background: transparent;
     border: 0;

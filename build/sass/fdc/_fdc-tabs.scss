@@ -17,6 +17,7 @@
     display: block;
     position: relative;
     padding: $fdc-space-sm var(--tab-padding-x);
+    appearance: none;
     color: $fdc-c-secondary-light;
     text-align: center;
     transition: $transition-base;
