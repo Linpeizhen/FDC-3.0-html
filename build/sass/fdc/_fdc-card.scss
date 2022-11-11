@@ -1,11 +1,16 @@
 .fdc-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   position: relative;
   background-color: $fdc-c-white;
   border-top: 1px solid $fdc-c-secondary;
   border-bottom: 1px solid $fdc-c-secondary;
-  transition: $transition-base;;
+  transition: $transition-base;
+
+  @include media-breakpoint-down(md) {
+    height: auto;
+  }
 
   &:not(.disabled) {
     box-shadow: $fdc-box-shadow-lg;

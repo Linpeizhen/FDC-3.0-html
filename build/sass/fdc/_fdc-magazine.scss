@@ -7,7 +7,6 @@
     @extend %bg-img;
 
     @include media-breakpoint-down(md) {
-      padding-bottom: 75%;
       margin-bottom: $fdc-space-2xl;
     }
 
