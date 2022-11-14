@@ -13,6 +13,13 @@
   }
 }
 
+select.form-control {
+  appearance: none;
+  background-image: url("../images/icons/bi_chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
 textarea.form-control,
 div[contenteditable=true].form-control {
   line-height: $line-height-lg;
@@ -244,6 +251,7 @@ label {
   position: absolute;
   top: $input-padding-y;
   right: $input-padding-x;
+  z-index: 4;
   color: $fdc-gray-600;
   pointer-events: none;
 

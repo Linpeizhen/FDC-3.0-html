@@ -2,12 +2,18 @@
     @extend %bg-img;
 
     &__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
         padding-top: 120px;
         padding-bottom: 120px;
         color: #fff;
 		text-align: center;
 
-		h2 {
+		h2,
+		h3 {
 			letter-spacing: 0.16em;
 			margin-bottom: 24px;
 		}
@@ -17,4 +23,9 @@
 			margin-top: 24px;
 		}
     }
+
+	&__logo {
+		width: 120px;
+		margin-bottom: 40px;
+	}
 }

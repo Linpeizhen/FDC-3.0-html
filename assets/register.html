@@ -1,314 +1,335 @@
 <!DOCTYPE html>
 <html debug="ture" lang="zh_tw">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="">
-      <meta name="keywords" content="">
-      <meta name="author" content="Patty Hsu">
-      <meta name="copyright" content="">
-      <title>｜FDC</title>
-      <meta property="og:title" content="" />
-      <meta property="og:name" content="" />
-      <meta property="og:type" content="" >
-      <meta property="og:image" content="" />
-      <meta property="og:url" content=""/>
-      <meta property="og:description" content="" />
-      <link rel="canonical" href=""/>
-      <!--[if IE]>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <meta name="author" content="Patty Hsu">
+   <meta name="copyright" content="">
+   <title>加入會員｜FDC</title>
+   <meta property="og:title" content="" />
+   <meta property="og:name" content="" />
+   <meta property="og:type" content="">
+   <meta property="og:image" content="" />
+   <meta property="og:url" content="" />
+   <meta property="og:description" content="" />
+   <link rel="canonical" href="" />
+   <!--[if IE]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <script type="text/javascript">var console = { log: function() {} };</script>
       <![endif]-->
-      <meta http-equiv="X-UA-Compatible" content="IE=10" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
-      <script src="js/jquery-1.9.1.min.js"></script>
+   <meta http-equiv="X-UA-Compatible" content="IE=10" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/vendor/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+   <script src="js/jquery-1.9.1.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/bootstrap-datepicker.min.js"></script>
    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
-      <link href="css/fdc-common.css" rel="stylesheet" type="text/css"/>
-      <script src="js/slick.min.js"></script>
-      <script type="text/javascript" src="js/tinynav.min.js"></script>
-      <script src="js/init.js"></script>
-      <script>
-         $(function () {
-           $('.product_sidebar_list').tinyNav({
-             header: '☰ MENU 選單項目' // Writing any title with this option triggers the header
-           });
-           $('#main_navbar').bootnavbar();
+   <script>
+      $(function () {
+         $('.fdc-header__open-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').addClass('show');
          });
-      </script>
-   </head>
-   <body>
-       <!-- HEADER -->
-      <header>
-         <!--NAV-->
-         <nav class="navbar navbar-expand-lg navbar-light">
-            <div id="logo">
-               <a href="index.html">
-                  <h1>FD</h1>
-               </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                     <form class="search_form" action="">
-                        <div class="vessel">
-                           <label>搜尋</label>
-                           <input type="text" name="" placeholder="搜尋">
-                           <input type="submit" value="">
-                        </div>
-                     </form>
-                  </li>
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>繁體中文</span> <i class="bi bi-chevron-down"></i></a>
-                     <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                        <div class="dropdown-item active"><a href="javascript:;"">繁體中文 <i class="bi bi-check2"></i></a></div>
-                        <div class="dropdown-item"><a href="javascript:;">簡體中文</a></div>
-                        <div class="dropdown-item"><a href="javascript:;">English</a></div>
-                     </div>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="pay.html">快速付款</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="signin.html">登入/註冊</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="dropdown-item"><a href="index.html"">首頁</a></div>
-                        <div class="dropdown-item"><a href="intro.html">品牌簡介</a></div>
-                        <div class="dropdown-item"><a href="intro.html">四大服務類別</a></div>
-                        <div class="dropdown-item"><a href="customize.html">企業客製</a></div>
-                        <div class="dropdown-item"><a href="javascript:;">熱門推薦</a></div>
-                        <div class="dropdown-item"><a href="blog.html">部落格</a></div>
-                        <div class="dropdown-item"><a href="activity.html">活動頁</a></div>
-                        <div class="dropdown-divider"></div>
-                        <!-- 未登入才顯示 -->
-                        <!-- <div class="dropdown-item l5"><a href="javascript:;">會員註冊</a></div> -->
-                        <!-- 登入才顯示 -->
-                        <div class="dropdown-item l6"><a href="index_un.html">登出</a></div>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-         </nav>
-         <!--END NAV-->
-      </header>
-      <!--END HEADER-->
-      <div id="wrapper">
-         <!-- 登入 -->
-         <section class="index signin">
-            <div class="content">
-               <ul class="info">
-                  <li class="info_logo"><img src="images/logo_small.svg" alt=""></li>
-                  <li class="row info_list">
-                     <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
-                        <div>常用姓名＊</div>
-                        <input type="text" name="" placeholder="姓名須與護照相同">
-                     </div>
-                     <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
-                        <div>稱謂＊</div>
-                        <select>
-                           <option selected>請選擇</option>
-                           <option>先生</option>
-                           <option>小姐</option>
-                           <option>NA</option>
-                        </select>
-                     </div>
-                     <div class="col-lg-4 col-md-12 col-12 bootstrap_default info_list_input">
-                        <div>生日</div>
-                        <input type="date" name="" placeholder="請選擇">
-                     </div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-6 col-md-12 col-12 bootstrap_default info_list_input phone">
-                        <div>聯絡電話＊</div>
-                        <ul class="row no-gutters">
-                           <li class="col-4">
-                              <select>
-                                 <option>+886</option>
-                                 <option>+21</option>
-                                 <option>+80</option>
-                              </select>
-                           </li>
-                           <li class="col-8"><input type="text" name="" placeholder="e.g. 912345678"></li>
-                        </ul>
-                     </div>
-                     <div class="col-lg-6 col-md-12 col-12 bootstrap_default info_list_input">
-                        <div>電子郵件<span>＊</span></div>
-                        <input type="text" name="" placeholder="e.g. abc@abc.com">
-                     </div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-md-6 col-12 bootstrap_default info_list_input">
-                        <input type="password" name="" placeholder="輸入新密碼">
-                     </div>
-                     <div class="col-md-6 col-12 bootstrap_default info_list_input">
-                        <input type="password" name="" placeholder="再次輸入新密碼">
-                     </div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_error">
-                        資料錯誤
-                     </div>
-                  </li>
-                  <li class="row info_list">
-                     <div class="col-lg-10 col-md-8 col-12 bootstrap_default info_list_text">
-                        <label><input type="checkbox">我已閱讀並接受條款細則及隱私權政策。</label>
-                     </div>
-                     <div class="col-lg-2 col-md-4 col-12 bootstrap_default info_list_btn">
-                        <div class="btn btn_black"><a href="javascripr:;">註冊</a></div>
-                     </div>
-                  </li>
-                  <li class="row info_list mt-md-2 mt-lg-3">
-                     <div class="col-lg-12 col-md-12 col-12 bootstrap_default info_list_text text-muted text-md-right">
-                        <span><img src="images/icons/contact_mail.svg" alt=""> service@finedayclub.com</span>
-                        <span><img src="images/icons/contact_tel.svg" alt=""> 02-7703-9668</span>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-         </section>
-         <!--END 登入-->
-      </div>
-      <!--END WRAPPER-->
-      <!-- FOOTER -->
-      <footer>
-         <div id="footer">
-            <ul class="row content">
-               <li class="col-lg col-md-12">
-                  <ul class="footer_info">
-                     <li class="mb-3"><img src="images/logo.svg" alt=""></li>
-                     <li>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</li>
-                     <li>© 2021 FineDayClub All Rights Reserved</li>
-                  </ul>
-               </li>
-               <li class="col-md-auto">
-                  <ul class="footer_nav">
-                     <li><a href="privacy.html">隱私權政策</a></li>
-                     <li><a href="TermsAndConditions.html">使用者條款</a></li>
-                     <li><a href="javascripr:;">常見問題</a></li>
-                     <li><a href="javascript:;" data-toggle="modal" data-target="#contact">聯絡我們</a></li>
-                  </ul>
-               </li>
-               <li class="col-lg-auto col-md">
-                  <ul class="footer_sns">
-                     <li><a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a></li>
-                     <li><a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a></li>
-                     <li><a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a></li>
-                     <li><a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a></li>
-                  </ul>
-               </li>
-            </ul>
-         </div>
-         <div id="btn_top">
-            <a href="javascript:;" data-toggle="modal" data-target="#contact"><img src="images/icons/contact.svg" alt="">
+
+         $('.fdc-header__close-menu').on('click', function () {
+            $('.fdc-header .fdc-nav').removeClass('show');
+         });
+
+         $('.has-datepicker').each(function() {
+            var $container = $(this).parent('.form-group');
+
+            $(this).datepicker({
+               format: 'yyyy-mm-dd',
+               autoclose: true,
+               templates: {
+                  leftArrow: '<i class="bi bi-chevron-left"></i>',
+                  rightArrow: '<i class="bi bi-chevron-right"></i>',
+               }
+            });
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <header class="fdc-header">
+      <div class="container">
+         <div class="fdc-logo">
+            <a href="index.html" class="d-block">
+               <img src="images/logo.svg" alt="">
             </a>
          </div>
-      </footer>
-      <!-- Modal contact -->
-      <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-         <div class="modal-dialog modal-dialog-s" role="document">
-            <div class="modal-content">
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="images/close.png" alt=""></span></button>
-               <div class="modal-body">
-                  <ul class="info">
-                     <li class="info_title">聯絡我們</li>
-                     <li class="row info_list">
-                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                           <p>常用姓名</p>
+         <ul class="fdc-nav">
+            <li class="fdc-header__search">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="請輸入" class="form-control">
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+                  <span>繁體中文</span>
+                  <i class="bi bi-chevron-down"></i>
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+                  <a class="dropdown-item" href="javascript:;">簡体中文</a>
+                  <a class="dropdown-item" href="index_en.html">English</a>
+               </div>
+            </li>
+            <li>
+               <a href="javascript:;" class="fdc-nav__link">快速付款</a>
+            </li>
+            <li>
+               <a href="signin.html" class="fdc-nav__link">登入</a>
+            </li>
+            <li>
+               <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+            </li>
+            <li class="dropdown">
+               <a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+                  <img src="images/header_burger.svg" alt="">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="index.html">首頁</a>
+                  <a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+                  <a class="dropdown-item" href="search.html">熱門商品</a>
+                  <a class="dropdown-item" href="customize.html">企業訂製</a>
+                  <a class="dropdown-item" href="blog.html">最新消息</a>
+               </div>
+            </li>
+            <li class="fdc-header__close-menu">
+               <i class="bi bi-x-lg"></i>
+            </li>
+         </ul>
+         <a href="javascript:;" class="fdc-header__open-menu">
+            <img src="images/header_burger.svg" alt="">
+         </a>
+      </div>
+   </header>
+   <main class="fdc-main">
+      <img src="images/img_deco_line_006.svg" alt="" class="fdc-page-deco">
+      <section class="py-6">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-xl-8">
+                  <div class="fdc-login shadow-none">
+                     <a href="signin.html" class="btn text-primary p-0">
+                        <i class="bi bi-arrow-left"></i>
+                        <span>返回登入</span>
+                     </a>
+                     <h2 class="mt-4 mb-6">加入會員</h2>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="form-group">
+                              <label>常用姓名*</label>
+                              <input type="text" class="form-control" placeholder="e.g. 王小明">
+                           </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name="" placeholder=""></div>
-                     </li>
-                     <li class="row info_list">
-                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                           <p>電子郵件</p>
+                        <div class="col-md-4">
+                           <div class="form-group">
+                              <label>稱謂*</label>
+                              <select class="form-control">
+                                 <option disabled selected>請選擇</option>
+                                 <option>博士</option>
+                                 <option>先生</option>
+                                 <option>小姐</option>
+                                 <option>未知</option>
+                              </select>
+                           </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name="" placeholder=""></div>
-                     </li>
-                     <li class="row info_list">
-                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                           <p>聯絡電話</p>
+                        <div class="col-md-4">
+                           <div class="form-group">
+                              <label>生日*</label>
+                              <div class="input-group">
+                                 <div class="fdc-input-addon">
+                                    <i class="bi bi-calendar4-week"></i>
+                                 </div>
+                                 <input type="text" class="form-control has-datepicker" placeholder="請選擇日期" data-toggle="dropdown">
+                              </div>
+                           </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><input type="text" name="" placeholder=""></div>
-                     </li>
-                     <li class="row info_list">
-                        <div class="col-lg-3 col-md-3 col-12 bootstrap_default info_list_title">
-                           <p>詢問訊息</p>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="form-group">
+                              <label>聯絡電話</label>
+                              <div class="row no-gutters">
+                                 <div class="col-5">
+                                    <select class="form-control">
+                                       <option selected>+886 (台灣)</option>
+                                    </select>
+                                 </div>
+                                 <div class="col">
+                                    <input type="tel" placeholder="e.g. 0912345678" class="form-control ml-2">
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-12 bootstrap_default info_list_input"><textarea id="w3review" name="w3review" rows="4" cols="50"></textarea></div>
-                     </li>
-                     <li class="row mt-1 info_list">
-                        <li class="row info_list_btn justify-content-end">
-                           <div class="col-lg-2 col-md-2 col-12 m-0 bootstrap_default btn btn_black"><a href="javascripr:;">送出</a></div>
-                        </li>
-                     </li>
-                  </ul>
+                        <div class="col-lg-6">
+                           <div class="form-group">
+                              <label>電子郵件</label>
+                              <input type="text" class="form-control" placeholder="e.g. abc@123.com">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="form-group">
+                              <label>密碼*</label>
+                              <input type="password" class="form-control" placeholder="・・・・・・・">
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="form-group">
+                              <label>確認密碼*</label>
+                              <input type="password" class="form-control" placeholder="・・・・・・・">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row align-items-md-center flex-wrap">
+                        <div class="col-md">
+                           <div class="custom-control custom-checkbox mb-4 mb-md-0">
+                              <input class="custom-control-input" type="checkbox" id="agree">
+                              <label class="custom-control-label" for="agree">
+                                 <p class="text-base mb-0">我已閱讀並接受<a href="TermsAndConditions.html">使用者條款細則</a>及<a href="privacy.html">隱私權政策</a>。</p>
+                              </label>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="javascript:;" class="btn btn-primary btn-block">註冊</a>
+                        </div>
+                     </div>
+                     <section class="pt-6 pb-0">
+                        <div class="fdc-alert bg-neutral mt-6">
+                           <div class="fdc-alert__icon text-secondary-light">
+                              <i class="bi bi-info-circle-fill"></i>
+                           </div>
+                           <p class="mb-0 text-center">
+                              遇到問題了嗎？歡迎聯絡我們
+                              <span class="ml-4 text-nowrap">
+                                 <i class="bi bi-envelope"></i>
+                                 <span>service@finedayclub.com</span>
+                              </span>
+                              <span class="ml-4 text-nowrap">
+                                 <i class="bi bi-telephone"></i>
+                                 <span>02-7703-9668</span>
+                              </span>
+                           </p>
+                        </div>
+                     </section>
+                  </div>
                </div>
             </div>
          </div>
+      </section>
+   </main>
+   <footer class="fdc-footer">
+      <div class="container">
+         <div class="row align-items-end">
+            <div class="col-lg">
+               <div class="fdc-logo mb-2 mb-lg-0">
+                  <a href="index.html" class="d-block">
+                     <img src="images/logo.svg" alt="">
+                  </a>
+               </div>
+            </div>
+            <div class="col-xl-auto">
+               <div class="row align-items-center">
+                  <div class="col-lg-auto">
+                     <ul class="fdc-nav justify-content-center justify-content-lg-end">
+                        <li>
+                           <a href="privacy.html" class="fdc-nav__link">隱私權政策</a>
+                        </li>
+                        <li>
+                           <a href="TermsAndConditions.html" class="fdc-nav__link">使用者條款</a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;" class="fdc-nav__link">常見問題</a>
+                        </li>
+                        <li>
+                           <a href="javascript:;" data-toggle="modal" data-target="#contact"
+                              class="fdc-nav__link">聯絡我們</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="col-lg col-xl-auto">
+                     <div class="mr-lg-3 mt-3 mb-4 m-lg-0">
+                        <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+                     </div>
+                  </div>
+                  <div class="col col-lg-auto col-">
+                     <ul class="fdc-sns">
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/whatsapp.svg" alt=""></a>
+                        </li>
+                        <li>
+                           <a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="fdc-footer__copyright">
+            <span>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</span>
+            <span>© 2021 FineDayClub All Rights Reserved</span>
+         </div>
       </div>
-      <!--END FOOTER-->
-      <script type="text/javascript">
-         $(document).on('ready', function() {
-              $('.banner').slick({
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               dots: true,
-               arrows: false,
-                autoplay: true,
-                  autoplaySpeed: 5000
-             });
-              $('#activity_new').slick({
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               dots: false,
-               arrows: true,
-                autoplay: false,
-                autoplaySpeed: 5000
-             });
-              $('#activity_past').slick({
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               dots: false,
-               arrows: true,
-                autoplay: false,
-                autoplaySpeed: 5000
-             });
-         });
-      </script>
-   </body>
-</html>
-<!-- Modal prodcut -->
-<div class="modal fade" id="product_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="images/close.png" alt=""></span></button>
-         <div class="modal-body">
-            <ul class="row">
-               <li class="col-lg-7 col-md-6 col-12 bootstrap_default product_modal_img">
-                  <div><img src="images/product_001.jpg" alt=""></div>
-                  <div><img src="images/product_001.jpg" alt=""></div>
-                  <div><img src="images/product_001.jpg" alt=""></div>
-               </li>
-               <li class="col-lg-5 col-md-6 col-12 bootstrap_default product_modal_info">
-                  <p>台北文華東方</p>
-                  <span>FineDay x 台北文華東方合作推出獨家限量頂級之旅為您獻上專屬寵愛</span>
-                  <span>
-                  總價高達NT70,000的頂級享受
-                  <br>• 頂級行政都會套房 (迎賓香檳、巧克力及迷你吧)
-                  <br>• 米其林推薦Bencotto雙人餐酒晚宴 (餐點搭配侍酒師選酒)
-                  <br>• 90分鐘雙人VIP專屬樓層舒緩SPA水療
-                  <br>• 雙人浴袍晨光客房早餐
-                  <br>• 青隅英式下午茶等行政樓層禮遇
-                  </span>
-               </li>
-            </ul>
+   </footer>
+
+   <!-- 聯絡我們 modal -->
+   <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title">聯絡我們</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="bi bi-x"></i>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group">
+                  <label>常用姓名*</label>
+                  <input type="text" placeholder="e.g. 王小明" class="form-control">
+               </div>
+               <div class="form-group fdc-has-danger">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+                  <div class="form-text">請輸入</div>
+               </div>
+               <div class="form-group">
+                  <label>電子郵件*</label>
+                  <input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>聯絡電話*</label>
+                  <input type="tel" placeholder="e.g. 0912345678" class="form-control">
+               </div>
+               <div class="form-group mb-0">
+                  <label>詢問訊息*</label>
+                  <textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+            </div>
          </div>
       </div>
    </div>
-</div>
+</body>
+
+</html>

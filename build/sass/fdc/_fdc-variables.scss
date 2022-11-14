@@ -319,6 +319,10 @@ $modal-sm:                          400px;
 $modal-fade-transform:              scale(0.9);
 $modal-transition:                  transform .1s;
 
+// Table
+$table-cell-padding:                $fdc-space-lg;
+$table-border-color:                $gray-200;
+
 // Tooltips
 $tooltip-font-size:                 1.3rem;
 $tooltip-bg:                        $fdc-text-gray;

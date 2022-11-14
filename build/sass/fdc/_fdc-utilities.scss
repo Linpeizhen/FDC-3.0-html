@@ -136,3 +136,9 @@ $fdc-text-sizes: map-merge(
 .badge-light {
   color: $fdc-gray-800;
 }
+
+.fdc-page-deco {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

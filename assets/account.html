@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html debug="ture" lang="zh_tw">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Patty Hsu">
+	<meta name="copyright" content="">
+	<title>我的資料｜FDC</title>
+	<meta property="og:title" content="" />
+	<meta property="og:name" content="" />
+	<meta property="og:type" content="">
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:description" content="" />
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="canonical" href="" />
+	<!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript">var console = { log: function() {} };</script>
+      <![endif]-->
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
+	<script>
+		$(function () {
+			$('.fdc-header__open-menu').on('click', function () {
+				$('.fdc-header .fdc-nav').addClass('show');
+			});
+
+			$('.fdc-header__close-menu').on('click', function () {
+				$('.fdc-header .fdc-nav').removeClass('show');
+			});
+
+			$('#recommend-carousel').owlCarousel({
+				responsive: {
+					0: {
+						autoWidth: true,
+						items: 1,
+						nav: false,
+						dots: false,
+						margin: 0,
+						slideBy: 1,
+					},
+					992: {
+						loop: true,
+						items: 3,
+						nav: true,
+						dots: true,
+						margin: 24,
+						slideBy: 'page',
+						dotsContainer: '#recommend-carousel__dots',
+						navContainer: '#recommend-carousel__control',
+						navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+					}
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<header class="fdc-header">
+		<div class="container">
+			<div class="fdc-logo">
+				<a href="index.html" class="d-block">
+					<img src="images/logo.svg" alt="">
+				</a>
+			</div>
+			<ul class="fdc-nav">
+				<li class="fdc-header__search">
+					<i class="bi bi-search"></i>
+					<input type="text" placeholder="請輸入" class="form-control">
+				</li>
+				<li class="dropdown">
+					<a href="javascript:;" class="fdc-nav__link" data-toggle="dropdown">
+						<span>繁體中文</span>
+						<i class="bi bi-chevron-down"></i>
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item active" href="javascript:;">繁體中文<i class="bi bi-check2"></i></a>
+						<a class="dropdown-item" href="javascript:;">簡体中文</a>
+						<a class="dropdown-item" href="index_en.html">English</a>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;" class="fdc-nav__link">快速付款</a>
+				</li>
+				<li class="d-none d-lg-block">
+					<div class="fdc-fdc-text-gray-light">Hi, Ivy!</div>
+				</li>
+				<li class="dropdown">
+					<a href="javascript:;" class="fdc-nav__link d-none d-lg-block" data-toggle="dropdown">
+						<img src="images/header_burger.svg" alt="">
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="index.html">首頁</a>
+						<a class="dropdown-item" href="intro.html">關於 FineDayClub</a>
+						<a class="dropdown-item" href="search.html">熱門商品</a>
+						<a class="dropdown-item" href="customize.html">企業訂製</a>
+						<a class="dropdown-item" href="blog.html">最新消息</a>
+						<a class="dropdown-item" href="account.html">我的資料</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="index.html">登出</a>
+					</div>
+				</li>
+				<li class="fdc-header__close-menu">
+					<i class="bi bi-x-lg"></i>
+				</li>
+			</ul>
+			<a href="javascript:;" class="fdc-header__open-menu">
+				<img src="images/header_burger.svg" alt="">
+			</a>
+		</div>
+	</header>
+	<main class="fdc-main">
+		<section class="py-6 bg-neutral fdc-bg--texture">
+			<img src="images/deco_plane_dark.svg" alt="" class="mb-5 d-none d-lg-block">
+			<div class="container">
+				<ul class="nav fdc-tab mb-3 flex-nowrap overflow-auto">
+					<li class="fdc-tab__item text-nowrap">
+						<a href="javascript:;" class="fdc-tab__link active" id="nav_wishes" data-toggle="tab"
+							data-target="#wishes" type="button" role="tab">我的收藏</a>
+					</li>
+					<li class="fdc-tab__item text-nowrap">
+						<a href="javascript:;" class="fdc-tab__link" id="nav_reserve" data-toggle="tab"
+							data-target="#reserve" type="button" role="tab">預約訂單</a>
+					</li>
+					<li class="fdc-tab__item text-nowrap">
+						<a href="javascript:;" class="fdc-tab__link" id="nav_trip" data-toggle="tab" data-target="#trip"
+							type="button" role="tab">我的旅程</a>
+					</li>
+					<li class="fdc-tab__item text-nowrap">
+						<a href="javascript:;" class="fdc-tab__link" id="nav_info" data-toggle="tab" data-target="#info"
+							type="button" role="tab">個人資料</a>
+					</li>
+				</ul>
+				<div class="bg-white p-6">
+					<div class="tab-content">
+						<div class="tab-pane active" id="wishes">
+							<!-- 有收藏顯示： -->
+							<!-- <div class="row">
+								<div class="col-md-6 col-lg-4">
+									<div class="fdc-product-card">
+										<a href="product_detail.html">
+											<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+											<div class="fdc-product-card__img">
+												<img src="images/product_003.jpg" alt="">
+											</div>
+											<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+											<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="fdc-product-card">
+										<a href="product_detail.html">
+											<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+											<div class="fdc-product-card__img">
+												<img src="images/product_004.jpg" alt="">
+											</div>
+											<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+											<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="fdc-product-card">
+										<a href="product_detail.html">
+											<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+											<div class="fdc-product-card__img">
+												<img src="images/product_005.jpg" alt="">
+											</div>
+											<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+											<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="fdc-product-card">
+										<a href="product_detail.html">
+											<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+											<div class="fdc-product-card__img">
+												<img src="images/product_006.jpg" alt="">
+											</div>
+											<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+											<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="fdc-product-card">
+										<a href="product_detail.html">
+											<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+											<div class="fdc-product-card__img">
+												<img src="images/product_001.jpg" alt="">
+											</div>
+											<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+											<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="fdc-product-card">
+										<a href="product_detail.html">
+											<span class="fdc-product-card__like"><i class="bi bi-bookmark"></i></span>
+											<div class="fdc-product-card__img">
+												<img src="images/product_002.jpg" alt="">
+											</div>
+											<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+											<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+										</a>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- 無收藏顯示： -->
+							<div class="fdc-empty-state">
+								<img src="images/empty_wish.svg" alt="" class="fdc-empty-state__img">
+								<h4>您目前沒有收藏清單</h4>
+							</div>
+						</div>
+						<div class="tab-pane" id="reserve">
+							<!-- 有訂單顯示： -->
+							<table class="table">
+								<thead>
+									<tr>
+										<th>商品名稱</th>
+										<th>付款狀態</th>
+										<th>付款代碼</th>
+										<th>付款期限</th>
+										<th>活動時間</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
+										</td>
+										<td>
+											<div class="badge badge-primary">請洽客服</div>
+										</td>
+										<td data-title="付款代碼：">
+											<span class="fdc-text-gray-light">請洽客服</sp>
+										</td>
+										<td data-title="付款期限："><span class="fdc-text-gray-light">-</span></td>
+										<td data-title="活動時間："><span class="fdc-text-gray-light">-</span></td>
+									</tr>
+									<tr class="fdc-text-gray-light">
+										<td>
+											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
+										</td>
+										<td>
+											<div class="badge badge-light">已取消</div>
+										</td>
+										<td data-title="付款代碼：">
+											<span class="fdc-text-gray-light">-</span>
+										</td>
+										<td data-title="付款期限："><span class="fdc-text-gray-light">-</span></td>
+										<td data-title="活動時間："><span class="fdc-text-gray-light">-</span></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<!-- 無訂單顯示： -->
+							<!-- <div class="fdc-empty-state">
+								<img src="images/empty_order.svg" alt="" class="fdc-empty-state__img">
+								<h4>您目前沒有預約訂單</h4>
+							</div> -->
+						</div>
+						<div class="tab-pane" id="trip">
+							<!-- 有訂單顯示： -->
+							<!-- <table class="table">
+								<thead>
+									<tr>
+										<th>商品名稱</th>
+										<th>付款狀態</th>
+										<th>付款代碼</th>
+										<th>付款期限</th>
+										<th>活動時間</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
+										</td>
+										<td>
+											<div class="badge badge-success">已付款</div>
+										</td>
+										<td data-title="付款代碼：">
+											<span>#1234567</span>
+										</td>
+										<td data-title="付款期限："><span>2022/10/31</span></td>
+										<td data-title="活動時間："><span>2022/12/31</span></td>
+									</tr>
+									<tr>
+										<td>
+											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
+										</td>
+										<td>
+											<div class="badge badge-success">已付款</div>
+										</td>
+										<td data-title="付款代碼：">
+											<span>#1234567</span>
+										</td>
+										<td data-title="付款期限："><span>2022/10/31</span></td>
+										<td data-title="活動時間："><span>2022/12/31</span></td>
+									</tr>
+								</tbody>
+							</table> -->
+
+							<!-- 無旅程顯示： -->
+							<div class="fdc-empty-state">
+								<img src="images/empty_order.svg" alt="" class="fdc-empty-state__img">
+								<h4>您目前沒有旅程</h4>
+							</div>
+						</div>
+						<div class="tab-pane" id="info">
+							<div class="row">
+								<div class="col-md-4 col-lg">
+									<div class="form-group">
+										<label>常用姓名*</label>
+										<input type="text" class="form-control" placeholder="e.g. 王小明">
+									</div>
+								</div>
+								<div class="col-md-4 col-lg">
+									<div class="form-group">
+										<label>中文名</label>
+										<input type="text" class="form-control" placeholder="e.g. 小明">
+									</div>
+								</div>
+								<div class="col-md-4 col-lg">
+									<div class="form-group">
+										<label>中文姓</label>
+										<input type="text" class="form-control" placeholder="e.g. 王">
+									</div>
+								</div>
+								<div class="col-md-6 col-lg">
+									<div class="form-group">
+										<label>護照英文名</label>
+										<input type="text" class="form-control" placeholder="e.g. Ming">
+									</div>
+								</div>
+								<div class="col-md-6 col-lg">
+									<div class="form-group">
+										<label>護照英文姓</label>
+										<input type="text" class="form-control" placeholder="e.g. Wang">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6 col-xl-4">
+									<div class="form-group">
+										<label>聯絡電話</label>
+										<div class="row no-gutters">
+											<div class="col-5">
+												<select class="form-control">
+													<option selected>+886 (台灣)</option>
+												</select>
+											</div>
+											<div class="col">
+												<input type="tel" placeholder="e.g. 0912345678"
+													class="form-control ml-2">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-8 col-lg-6 col-xl-3">
+									<div class="form-group">
+										<label>電子郵件</label>
+										<input type="text" class="form-control" placeholder="e.g. abc@123.com">
+									</div>
+								</div>
+								<div class="col-md-4 col-lg-6 col-xl-2">
+									<div class="form-group">
+										<label>稱謂*</label>
+										<select class="form-control">
+											<option disabled selected>請選擇</option>
+											<option>博士</option>
+											<option>先生</option>
+											<option>小姐</option>
+											<option>未知</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-xl-3">
+									<div class="form-group">
+										<label>生日*</label>
+										<div class="input-group">
+											<div class="fdc-input-addon">
+												<i class="bi bi-calendar4-week"></i>
+											</div>
+											<input type="text" class="form-control has-datepicker" placeholder="請選擇日期"
+												data-toggle="dropdown">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-xl-2">
+									<div class="form-group">
+										<label>所在地國家</label>
+										<select class="form-control">
+											<option disabled selected>請選擇</option>
+											<option>台灣</option>
+											<option>日本</option>
+											<option>韓國</option>
+											<option>美國</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4 col-xl-2">
+									<div class="form-group">
+										<label>所在地城市</label>
+										<select class="form-control">
+											<option disabled selected>請選擇</option>
+											<option>台北</option>
+											<option>台中</option>
+											<option>高雄</option>
+											<option>台南</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4 col-xl-2">
+									<div class="form-group">
+										<label>郵遞區號</label>
+										<input type="text" class="form-control" placeholder="e.g. 123">
+									</div>
+								</div>
+								<div class="col-xl-6">
+									<div class="form-group">
+										<label>地址</label>
+										<input type="text" class="form-control" placeholder="請輸入完整地址">
+									</div>
+								</div>
+							</div>
+							<div class="d-flex justify-content-between align-items-center mt-4">
+								<a href="#" class="btn text-primary p-0" data-toggle="modal"
+									data-target="#change-password">修改密碼</a>
+								<a href="javasctipt:;" class="btn btn-primary">儲存</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 推薦商品 -->
+		<section class="overflow-hidden">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xl-10">
+						<div class="d-lg-flex align-lg-baseline justify-content-lg-between">
+							<h2 class="fdc-section-title">
+								<div class="fdc-section-title__deco">Latest</div>
+								最近活動
+							</h2>
+							<ul class="nav fdc-tab">
+								<li class="fdc-tab__item">
+									<a href="javascript:;" class="fdc-tab__link active" id="tab__travel"
+										data-toggle="tab" data-target="#cat__travel" type="button" role="tab">旅遊度假</a>
+								</li>
+								<li class="fdc-tab__item">
+									<a href="javascript:;" class="fdc-tab__link" id="tab__dining" data-toggle="tab"
+										data-target="#cat__dining" type="button" role="tab">餐酒饗宴</a>
+								</li>
+								<li class="fdc-tab__item">
+									<a href="javascript:;" class="fdc-tab__link" id="tab__lifestyle" data-toggle="tab"
+										data-target="#cat__lifestyle" type="button" role="tab">生活風格</a>
+								</li>
+								<li class="fdc-tab__item">
+									<a href="javascript:;" class="fdc-tab__link" id="tab__hotel" data-toggle="tab"
+										data-target="#cat__hotel" type="button" role="tab">奢華酒店</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="px-lg-4">
+				<div class="row justify-content-center">
+					<div class="col-xl-10">
+						<div class="owl-carousel owl-theme" id="recommend-carousel">
+							<div class="fdc-product-card">
+								<a href="product_detail.html">
+									<span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+									<div class="fdc-product-card__img">
+										<img src="images/product_001.jpg" alt="">
+									</div>
+									<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+									<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+								</a>
+							</div>
+							<div class="fdc-product-card">
+								<a href="product_detail.html">
+									<span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+									<div class="fdc-product-card__img">
+										<img src="images/product_001.jpg" alt="">
+									</div>
+									<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+									<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+								</a>
+							</div>
+							<div class="fdc-product-card">
+								<a href="product_detail.html">
+									<span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+									<div class="fdc-product-card__img">
+										<img src="images/product_001.jpg" alt="">
+									</div>
+									<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+									<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+								</a>
+							</div>
+							<div class="fdc-product-card">
+								<a href="product_detail.html">
+									<span class="fdc-product-card__like active"><i class="bi bi-bookmark"></i></span>
+									<div class="fdc-product-card__img">
+										<img src="images/product_001.jpg" alt="">
+									</div>
+									<h5 class="fdc-product-card__title">縱谷曠麗‧田疇饗宴田疇饗宴田疇饗</h5>
+									<div class="fdc-product-card__des">FineDay x 台北文華東方合作推出獨家限量頂級之旅</div>
+								</a>
+							</div>
+						</div>
+						<div class="fdc-carousel__control" id="recommend-carousel__control">
+							<div class="fdc-carousel__dots" id="recommend-carousel__dots"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center mt-4">
+				<a href="intro.html" class="btn btn-primary">
+					<span>探索更多</span>
+					<i class="bi bi-arrow-right"></i>
+				</a>
+			</div>
+		</section>
+		<!--END 推薦商品-->
+	</main>
+	<!-- Fixed bottom on screnn -->
+	<div class="fdc-fab">
+		<a href="#" class="fdc-fab__btn">
+			<i class="bi bi-chevron-bar-up"></i>
+		</a>
+		<a href="javascript:;" data-toggle="modal" data-target="#contact" class="fdc-fab__btn">
+			<i class="bi bi-question"></i>
+		</a>
+	</div>
+	<footer class="fdc-footer">
+		<div class="container">
+			<div class="row align-items-end">
+				<div class="col-lg">
+					<div class="fdc-logo mb-2 mb-lg-0">
+						<a href="index.html" class="d-block">
+							<img src="images/logo.svg" alt="">
+						</a>
+					</div>
+				</div>
+				<div class="col-xl-auto">
+					<div class="row align-items-center">
+						<div class="col-lg-auto">
+							<ul class="fdc-nav justify-content-center justify-content-lg-end">
+								<li>
+									<a href="privacy.html" class="fdc-nav__link">隱私權政策</a>
+								</li>
+								<li>
+									<a href="TermsAndConditions.html" class="fdc-nav__link">使用者條款</a>
+								</li>
+								<li>
+									<a href="javascripr:;" class="fdc-nav__link">常見問題</a>
+								</li>
+								<li>
+									<a href="javascript:;" data-toggle="modal" data-target="#contact"
+										class="fdc-nav__link">聯絡我們</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-lg col-xl-auto">
+							<!-- <div class="mr-lg-3 mt-3 mb-4 m-lg-0">
+                        <a href="register.html" class="btn btn-sm btn-outline-secondary">加入會員</a>
+                     </div> -->
+						</div>
+						<div class="col col-lg-auto col-">
+							<ul class="fdc-sns">
+								<li>
+									<a href="javascripr:;"><img src="images/icons/fb.svg" alt=""></a>
+								</li>
+								<li>
+									<a href="javascripr:;"><img src="images/icons/ig.svg" alt=""></a>
+								</li>
+								<li>
+									<a href="javascripr:;"><img src="images/icons/line.svg" alt=""></a>
+								</li>
+								<li>
+									<a href="javascripr:;"><img src="images/icons/whatsapp.svg" alt=""></a>
+								</li>
+								<li>
+									<a href="javascripr:;"><img src="images/icons/mail.svg" alt=""></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fdc-footer__copyright">
+				<span>旅遊產品由 酷遊天國際旅行社股份有限公司 提供</span>
+				<span>© 2021 FineDayClub All Rights Reserved</span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- 聯絡我們 modal -->
+	<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">聯絡我們</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>常用姓名*</label>
+						<input type="text" placeholder="e.g. 王小明" class="form-control">
+					</div>
+					<div class="form-group fdc-has-danger">
+						<label>電子郵件*</label>
+						<input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+						<div class="form-text">請輸入</div>
+					</div>
+					<div class="form-group">
+						<label>電子郵件*</label>
+						<input type="mail" placeholder="e.g. abc@123.com" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>聯絡電話*</label>
+						<input type="tel" placeholder="e.g. 0912345678" class="form-control">
+					</div>
+					<div class="form-group mb-0">
+						<label>詢問訊息*</label>
+						<textarea rows="4" class="form-control" placeholder="請輸入"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 修改密碼 modal -->
+	<div class="modal fade" id="change-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">修改密碼</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>新密碼*</label>
+						<input type="password" class="form-control" placeholder="・・・・・・・">
+					</div>
+					<div class="form-group">
+						<label>確認新密碼*</label>
+						<input type="password" class="form-control" placeholder="・・・・・・・">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
