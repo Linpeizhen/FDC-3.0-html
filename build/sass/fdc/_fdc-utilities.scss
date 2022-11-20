@@ -142,3 +142,12 @@ $fdc-text-sizes: map-merge(
   left: 0;
   top: 0;
 }
+
+.fdc-left-0 {
+  left: 0;
+}
+
+.fdc-sticky-under-header {
+  position: sticky;
+  top: $fdc-header-height + 24px;
+}

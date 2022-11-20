@@ -16,14 +16,4 @@
     min-width: 12rem;
     width: 100%;
   }
-
-  .fdc-board & {
-    margin-left: auto;
-  }
-
-  @include media-breakpoint-down(md) {
-    .fdc-board-header &:not(:first-child) {
-      display: none;
-    }
-  }
 }
