@@ -98,7 +98,8 @@
     background: transparent;
     border: 0;
 
-    &:focus {
+    &:focus,
+    &:hover {
       box-shadow: none;
     }
 

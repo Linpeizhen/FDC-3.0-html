@@ -27,10 +27,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link href="css/vendor/owl.carousel.min.css" rel="stylesheet" type="text/css" />
 	<link href="css/vendor/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/vendor/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" type="text/css" />
 	<link href="css/fdc-common.css" rel="stylesheet" type="text/css" />
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/bootstrap-datepicker.min.js"></script>
 	<script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-64325.js"></script>
 	<script>
 		$(function () {
@@ -42,28 +44,17 @@
 				$('.fdc-header .fdc-nav').removeClass('show');
 			});
 
-			$('#recommend-carousel').owlCarousel({
-				responsive: {
-					0: {
-						autoWidth: true,
-						items: 1,
-						nav: false,
-						dots: false,
-						margin: 0,
-						slideBy: 1,
-					},
-					992: {
-						loop: true,
-						items: 3,
-						nav: true,
-						dots: true,
-						margin: 24,
-						slideBy: 'page',
-						dotsContainer: '#recommend-carousel__dots',
-						navContainer: '#recommend-carousel__control',
-						navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-					}
+			$('.has-datepicker').each(function() {
+				var $container = $(this).parent('.form-group');
+
+				$(this).datepicker({
+				format: 'yyyy-mm-dd',
+				autoclose: true,
+				templates: {
+					leftArrow: '<i class="bi bi-chevron-left"></i>',
+					rightArrow: '<i class="bi bi-chevron-right"></i>',
 				}
+				});
 			});
 		});
 	</script>
@@ -248,6 +239,19 @@
 											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
 										</td>
 										<td>
+											<div class="badge badge-success">已付款</div>
+										</td>
+										<td data-title="付款代碼：">
+											<span class="fdc-text-gray-light">Q72FP53G</sp>
+										</td>
+										<td data-title="付款期限："><span class="fdc-text-gray-light">-</span></td>
+										<td data-title="活動時間："><span class="fdc-text-gray-light">2021-07-06</span></td>
+									</tr>
+									<tr>
+										<td>
+											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
+										</td>
+										<td>
 											<div class="badge badge-primary">請洽客服</div>
 										</td>
 										<td data-title="付款代碼：">
@@ -280,51 +284,58 @@
 						</div>
 						<div class="tab-pane" id="trip">
 							<!-- 有訂單顯示： -->
-							<!-- <table class="table">
+							<table class="table">
 								<thead>
 									<tr>
-										<th>商品名稱</th>
-										<th>付款狀態</th>
-										<th>付款代碼</th>
-										<th>付款期限</th>
-										<th>活動時間</th>
+										<th>訂單日期</th>
+										<th>訂單編號</th>
+										<th class="w-50">商品名稱</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
+										<td data-title="訂單日期：">
+											<span>2020-07-01</span>
+										</td>
+										<td data-title="訂單編號：">
+											<span>2KK21112356890</span>
+										</td>
 										<td>
 											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
 										</td>
 										<td>
-											<div class="badge badge-success">已付款</div>
+											<a href="javascript:;">
+												<span>憑證下載</span>
+												<i class="bi bi-download"></i>
+											</a>
 										</td>
-										<td data-title="付款代碼：">
-											<span>#1234567</span>
-										</td>
-										<td data-title="付款期限："><span>2022/10/31</span></td>
-										<td data-title="活動時間："><span>2022/12/31</span></td>
 									</tr>
 									<tr>
+										<td data-title="訂單日期：">
+											<span>2020-07-01</span>
+										</td>
+										<td data-title="訂單編號：">
+											<span>2KK21112356890</span>
+										</td>
 										<td>
 											<h5 class="mb-0">Diptyqye 夏日香氛慢旅</h5>
 										</td>
 										<td>
-											<div class="badge badge-success">已付款</div>
+											<a href="javascript:;">
+												<span>憑證下載</span>
+												<i class="bi bi-download"></i>
+											</a>
 										</td>
-										<td data-title="付款代碼：">
-											<span>#1234567</span>
-										</td>
-										<td data-title="付款期限："><span>2022/10/31</span></td>
-										<td data-title="活動時間："><span>2022/12/31</span></td>
 									</tr>
 								</tbody>
-							</table> -->
+							</table>
 
 							<!-- 無旅程顯示： -->
-							<div class="fdc-empty-state">
+							<!-- <div class="fdc-empty-state">
 								<img src="images/empty_order.svg" alt="" class="fdc-empty-state__img">
 								<h4>您目前沒有旅程</h4>
-							</div>
+							</div> -->
 						</div>
 						<div class="tab-pane" id="info">
 							<div class="row">
@@ -539,7 +550,7 @@
 				</div>
 			</div>
 			<div class="text-center mt-4">
-				<a href="intro.html" class="btn btn-primary">
+				<a href="search.html" class="btn btn-primary">
 					<span>探索更多</span>
 					<i class="bi bi-arrow-right"></i>
 				</a>

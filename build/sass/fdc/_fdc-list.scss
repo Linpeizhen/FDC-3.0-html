@@ -3,8 +3,12 @@
 	list-style: none;
 	padding-left: 0;
 
+	li {
+		margin-bottom: 4px;
+	}
+
 	> li {
-		$list-indent: 2em;
+		$list-indent: 2.2em;
 
 		position: relative;
 		padding-left: $list-indent;

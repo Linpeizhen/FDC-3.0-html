@@ -2,6 +2,7 @@
     margin-top: -$input-btn-border-width;
     border-radius: 0;
     border-color: $fdc-c-primary;
+    z-index: 99 !important;
 }
 
 .datepicker table {

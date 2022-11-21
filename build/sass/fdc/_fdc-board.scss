@@ -4,4 +4,8 @@
     margin: 8px 0;
     background-color: $fdc-c-white;
     box-shadow: 0 16px 40px rgba(0,0,0,0.02);
+
+    ul {
+        margin-bottom: $fdc-space-sm;
+    }
 }
