@@ -9,7 +9,7 @@
 
   > li {
     margin: 0 20px;
-    font-family: $fdc-font-family-title;
+    font-family: var(--serif-font);
   }
 
   &__link {

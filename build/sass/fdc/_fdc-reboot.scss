@@ -6,6 +6,14 @@ html {
   font-size: 10px; // 讓 1rem = 10 px
 }
 
+html[lang=zh_tw] {
+  --serif-font: #{$fdc-font-family-title};
+}
+
+html[lang=zh_cn] {
+  --serif-font: #{$fdc-font-family-title-sc};
+}
+
 body {
   letter-spacing: $fdc-letter-spacing-base;
   -moz-osx-font-smoothing: grayscale;
@@ -25,7 +33,7 @@ ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $fdc-font-family-title !important;
+  font-family: var(--serif-font) !important;
   font-weight: normal;
   letter-spacing: 0.8px;
 }

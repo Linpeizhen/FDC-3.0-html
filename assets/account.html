@@ -338,128 +338,107 @@
 							</div> -->
 						</div>
 						<div class="tab-pane" id="info">
-							<div class="row">
-								<div class="col-md-4 col-lg">
-									<div class="form-group">
-										<label>常用姓名*</label>
-										<input type="text" class="form-control" placeholder="e.g. 王小明">
-									</div>
-								</div>
-								<div class="col-md-4 col-lg">
-									<div class="form-group">
-										<label>中文名</label>
-										<input type="text" class="form-control" placeholder="e.g. 小明">
-									</div>
-								</div>
-								<div class="col-md-4 col-lg">
-									<div class="form-group">
-										<label>中文姓</label>
-										<input type="text" class="form-control" placeholder="e.g. 王">
-									</div>
-								</div>
-								<div class="col-md-6 col-lg">
-									<div class="form-group">
-										<label>護照英文名</label>
-										<input type="text" class="form-control" placeholder="e.g. Ming">
-									</div>
-								</div>
-								<div class="col-md-6 col-lg">
-									<div class="form-group">
-										<label>護照英文姓</label>
-										<input type="text" class="form-control" placeholder="e.g. Wang">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-6 col-xl-4">
-									<div class="form-group">
-										<label>聯絡電話</label>
-										<div class="row no-gutters">
-											<div class="col-5">
+							<div class="row justify-content-center">
+								<div class="col-xl-10">
+									<div class="row">
+										<div class="col-md-7 col-lg-5 col-xl-6">
+											<div class="form-group">
+												<label>中文姓名*</label>
+												<input type="text" class="form-control" placeholder="e.g. 王小明">
+											</div>
+										</div>
+										<div class="col-md-5 col-lg-3 col-xl-2">
+											<div class="form-group">
+												<label>稱謂*</label>
 												<select class="form-control">
-													<option selected>+886 (台灣)</option>
+													<option disabled selected>請選擇</option>
+													<option>博士</option>
+													<option>先生</option>
+													<option>小姐</option>
+													<option>未知</option>
 												</select>
 											</div>
-											<div class="col">
-												<input type="tel" placeholder="e.g. 0912345678"
-													class="form-control ml-2">
+										</div>
+										<div class="col-lg-4 col-xl-4">
+											<div class="form-group">
+												<label>生日*</label>
+												<div class="input-group">
+													<div class="fdc-input-addon">
+														<i class="bi bi-calendar4-week"></i>
+													</div>
+													<input type="text" class="form-control has-datepicker" placeholder="請選擇日期"
+														data-toggle="dropdown">
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-8 col-lg-6 col-xl-3">
-									<div class="form-group">
-										<label>電子郵件</label>
-										<input type="text" class="form-control" placeholder="e.g. abc@123.com">
-									</div>
-								</div>
-								<div class="col-md-4 col-lg-6 col-xl-2">
-									<div class="form-group">
-										<label>稱謂*</label>
-										<select class="form-control">
-											<option disabled selected>請選擇</option>
-											<option>博士</option>
-											<option>先生</option>
-											<option>小姐</option>
-											<option>未知</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-lg-6 col-xl-3">
-									<div class="form-group">
-										<label>生日*</label>
-										<div class="input-group">
-											<div class="fdc-input-addon">
-												<i class="bi bi-calendar4-week"></i>
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="form-group">
+												<label>聯絡電話</label>
+												<div class="row no-gutters">
+													<div class="col-6">
+														<select class="form-control">
+															<option selected>+886 (台灣)</option>
+														</select>
+													</div>
+													<div class="col pl-2">
+														<input type="tel" placeholder="e.g. 0912345678" class="form-control">
+													</div>
+												</div>
 											</div>
-											<input type="text" class="form-control has-datepicker" placeholder="請選擇日期"
-												data-toggle="dropdown">
+										</div>
+										<div class="col-md col-lg-6">
+											<div class="form-group">
+												<label>電子郵件</label>
+												<input type="text" class="form-control" placeholder="e.g. abc@123.com">
+											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4 col-xl-2">
-									<div class="form-group">
-										<label>所在地國家</label>
-										<select class="form-control">
-											<option disabled selected>請選擇</option>
-											<option>台灣</option>
-											<option>日本</option>
-											<option>韓國</option>
-											<option>美國</option>
-										</select>
+									<div class="row">
+										<div class="col-md-4 col-xl-2">
+											<div class="form-group">
+												<label>所在地國家</label>
+												<select class="form-control">
+													<option disabled selected>請選擇</option>
+													<option>台灣</option>
+													<option>日本</option>
+													<option>韓國</option>
+													<option>美國</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4 col-xl-2">
+											<div class="form-group">
+												<label>所在地城市</label>
+												<select class="form-control">
+													<option disabled selected>請選擇</option>
+													<option>台北</option>
+													<option>台中</option>
+													<option>高雄</option>
+													<option>台南</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4 col-xl-2">
+											<div class="form-group">
+												<label>郵遞區號</label>
+												<input type="text" class="form-control" placeholder="e.g. 123">
+											</div>
+										</div>
+										<div class="col-xl-6">
+											<div class="form-group">
+												<label>地址</label>
+												<input type="text" class="form-control" placeholder="請輸入完整地址">
+											</div>
+										</div>
+									</div>
+									<div class="d-flex justify-content-between align-items-center mt-4">
+										<a href="#" class="btn text-primary p-0" data-toggle="modal"
+											data-target="#change-password">修改密碼</a>
+										<a href="javasctipt:;" class="btn btn-primary">儲存</a>
 									</div>
 								</div>
-								<div class="col-md-4 col-xl-2">
-									<div class="form-group">
-										<label>所在地城市</label>
-										<select class="form-control">
-											<option disabled selected>請選擇</option>
-											<option>台北</option>
-											<option>台中</option>
-											<option>高雄</option>
-											<option>台南</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-4 col-xl-2">
-									<div class="form-group">
-										<label>郵遞區號</label>
-										<input type="text" class="form-control" placeholder="e.g. 123">
-									</div>
-								</div>
-								<div class="col-xl-6">
-									<div class="form-group">
-										<label>地址</label>
-										<input type="text" class="form-control" placeholder="請輸入完整地址">
-									</div>
-								</div>
-							</div>
-							<div class="d-flex justify-content-between align-items-center mt-4">
-								<a href="#" class="btn text-primary p-0" data-toggle="modal"
-									data-target="#change-password">修改密碼</a>
-								<a href="javasctipt:;" class="btn btn-primary">儲存</a>
 							</div>
 						</div>
 					</div>

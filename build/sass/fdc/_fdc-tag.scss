@@ -7,7 +7,7 @@
 
 .fdc-tag {
     background-color: $fdc-c-neutral-light;
-	font-family: $fdc-font-family-title;
+	font-family: var(--serif-font);
     border-radius: 50px;
     margin-top: $fdc-space-sm;
     margin-right: $fdc-space-sm;

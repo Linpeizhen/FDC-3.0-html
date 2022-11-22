@@ -48,7 +48,7 @@
       padding-bottom: $fdc-space-base;
       vertical-align: middle;
       white-space: nowrap;
-      font-family: $fdc-font-family-title;
+      font-family: var(--serif-font);
       font-weight: normal;
       color: $fdc-gray-700;
     }

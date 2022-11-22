@@ -38,7 +38,7 @@
 
 		&:has(h3):before {
 			font-size: $h3-font-size;
-			font-family: $fdc-font-family-title;
+			font-family: var(--serif-font);
 			vertical-align: top;
 		}
 

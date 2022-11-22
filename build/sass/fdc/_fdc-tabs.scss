@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  font-family: $fdc-font-family-title;
+  font-family: var(--serif-font);
 
   @include media-breakpoint-down(lg) {
     margin-left: calc(-1 * var(--tab-padding-x));

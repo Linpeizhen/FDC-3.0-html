@@ -75,7 +75,7 @@
 		&-date {
 			margin: $fdc-space-base 0;
 			color: $fdc-c-primary;
-			font-family: $fdc-font-family-title;
+			font-family: var(--serif-font);
 		}
 
 		&-sub {

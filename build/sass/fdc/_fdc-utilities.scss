@@ -50,7 +50,7 @@ $fdc-text-sizes: map-merge(
     left:-80px;
     top: -72px;
     padding: 0 20px;
-    font-family: $fdc-font-family-title;
+    font-family: var(--serif-font);
     font-size: 100px;
     font-style: italic;
     text-transform: uppercase;
