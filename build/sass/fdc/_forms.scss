@@ -13,7 +13,8 @@
   }
 }
 
-select.form-control {
+select.form-control,
+.select2-selection {
   appearance: none;
   background-image: url("../images/icons/bi_chevron-down.svg");
   background-repeat: no-repeat;
@@ -258,4 +259,83 @@ label {
   + .form-control {
     padding-right: 44px;
   }
+}
+
+// 覆蓋 Select 2 的 CSS
+.select2-container .select2-selection--single {
+  height: $input-height;
+  border-color: $input-border-color;
+  border-radius: $input-border-radius;
+}
+
+.select2-container.select2-container--open .select2-selection {
+  border-color: $input-focus-border-color;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding: 0;
+  line-height: $input-line-height;
+}
+
+.select2-selection__arrow {
+  display: none;
+}
+
+.select2-dropdown {
+  display: block;
+  margin: 0;
+}
+
+.select2-search {
+  padding-left: 24px;
+  border-bottom: 1px solid $fdc-gray-600;
+
+  &:focus-within {
+    border-color: $input-focus-border-color;
+  }
+
+  &::before {
+    content: "\f52a";
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    font-family: bootstrap-icons !important;
+    font-size: $font-size-sm;
+    line-height: 1;
+    vertical-align: -0.125em;
+    color: $fdc-gray-600
+  }
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 0;
+  border-radius: $input-border-radius;
+  outline: none;
+}
+
+.select2-results__option {
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  border-bottom: 1px solid $dropdown-divider-bg;
+
+}
+
+.select2-results__option.select2-results__message {
+  font-size: $font-size-sm;
+  color: $fdc-gray-600;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: $dropdown-link-hover-bg;
+  color: inherit;
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: $fdc-c-primary;
+  color: $fdc-c-white;
+}
+
+.select2-container--default .select2-results__option--selected.select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: $fdc-c-primary-dark;
+  color: $fdc-c-white;
 }
