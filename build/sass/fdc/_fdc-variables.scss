@@ -204,7 +204,7 @@ $font-size-lg:                $font-size-base * 1.25;
 $font-size-sm:                $font-size-base * .875;
 $font-size-xs:                $font-size-base * .75;
 
-$font-family-base:            "Lato", "Helvetica Neue", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+$font-family-base:            "Lato", "Helvetica Neue", var(--sans-font), "PingFang TC", "Microsoft JhengHei", sans-serif;
 
 $h1-font-size:                $font-size-base * 2.5;
 $h2-font-size:                $font-size-base * 2.25;

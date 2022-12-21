@@ -6,12 +6,19 @@ html {
   font-size: 10px; // 讓 1rem = 10 px
 }
 
+html[lang=en_us] {
+  --serif-font: #{$fdc-font-family-title};
+  --sans-font: "Lato";
+}
+
 html[lang=zh_tw] {
   --serif-font: #{$fdc-font-family-title};
+  --sans-font: "Noto Sans TC";
 }
 
 html[lang=zh_cn] {
   --serif-font: #{$fdc-font-family-title-sc};
+  --sans-font: "Noto Sans SC";
 }
 
 body {
