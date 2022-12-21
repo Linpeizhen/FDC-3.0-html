@@ -7,8 +7,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
-        padding-top: 120px;
-        padding-bottom: 120px;
+		padding: 120px 40px;
         color: #fff;
 		text-align: center;
 
@@ -23,6 +22,14 @@
 			margin-top: 24px;
 		}
     }
+
+	html[lang=en_us] &__content {
+		h2,
+		h3,
+		h6 {
+			letter-spacing: 0;
+		}
+	}
 
 	&__logo {
 		width: 120px;
